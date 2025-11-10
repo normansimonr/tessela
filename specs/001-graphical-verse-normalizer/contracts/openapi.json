@@ -1,0 +1,73 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Verse Normalization API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/normalize": {
+      "post": {
+        "summary": "Normalize a verse",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NormalizationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The normalized verse",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NormalizationResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "NormalizationRequest": {
+        "type": "object",
+        "properties": {
+          "book": {
+            "type": "string"
+          },
+          "chapter": {
+            "type": "integer"
+          },
+          "verse": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "book",
+          "chapter",
+          "verse"
+        ]
+      },
+      "NormalizationResponse": {
+        "type": "object",
+        "properties": {
+          "masoretic": {
+            "type": "string"
+          },
+          "vulgate": {
+            "type": "string"
+          },
+          "septuagint": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
