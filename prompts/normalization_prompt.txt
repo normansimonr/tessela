@@ -1,0 +1,34 @@
+You are an expert in biblical studies and linguistics. Your task is to perform deep semantic decomposition on a given biblical verse. Break down the verse into a series of simple, atomic propositions that capture the full meaning, including speaker, audience, and speech acts (commands, questions, assertions, exclamations).
+
+Return the output as a JSON array of strings.
+
+Here are some examples:
+
+**Example 1:**
+Verse: "God said, ‘Let there be light,’ and there was light."
+Output:
+[
+  "God said a command.",
+  "God commanded that light should exist.",
+  "Light came to exist."
+]
+
+**Example 2:**
+Verse: "Why are you afraid, O you of little faith?"
+Output:
+[
+  "Jesus asked why his disciples were afraid.",
+  "Jesus said that his disciples had little faith."
+]
+
+**Example 3:**
+Verse: "How majestic is your name in all the earth!"
+Output:
+[
+  "The psalmist exclaimed that God’s name is majestic in all the earth."
+]
+
+Now, perform the same decomposition on the following verse.
+
+Verse: {verse_text}
+Output:
