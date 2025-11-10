@@ -1,31 +1,13 @@
-# Tasks: Graphical Verse Normalizer
-
-**Input**: Design documents from `/specs/001-graphical-verse-normalizer/`
-**Prerequisites**: plan.md (required), spec.md (required for user stories), research.md, data-model.md, contracts/
-
-**Tests**: The examples below include test tasks. Tests are OPTIONAL - only include them if explicitly requested in the feature specification.
-
-**Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.
-
-## Format: `[ID] [P?] [Story] Description`
-
-- **[P]**: Can run in parallel (different files, no dependencies)
-- **[Story]**: Which user story this task belongs to (e.g., US1, US2, US3)
-- Include exact file paths in descriptions
-
-## Path Conventions
-
-- **Web app**: `backend/src/`, `frontend/src/`
-
 ## Phase 1: Setup (Shared Infrastructure)
 
 **Purpose**: Project initialization and basic structure
 
 - [X] T001 Create `backend/` and `frontend/` directories in the repository root.
 - [X] T002 Create `backend/requirements.txt` with FastAPI, Pandas, uvicorn, and google-generativeai.
-- [X] T003 Create `frontend/requirements.txt` with Streamlit.
-- [X] T004 Create `backend/Dockerfile` for the FastAPI service.
-- [X] T005 [P] Configure initial `.gitignore` for backend and frontend.
+- [X] T003 Update `frontend/requirements.txt` with Streamlit and requests.
+- [X] T004 Create a unified `Dockerfile` at the project root for Cloud Run deployment.
+- [X] T005 Create `run.sh` entrypoint script at the project root.
+- [X] T006 [P] Configure initial `.gitignore` for backend and frontend.
 
 ---
 
@@ -35,12 +17,12 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete.
 
-- [X] T006 Implement data loading logic for `data/masoretic.csv`, `data/vulgate.csv`, and `data/septuagint.csv` in `backend/src/data_loader.py`. This includes handling different book name representations (FR-008).
-- [X] T007 Implement the verse normalization logic in `backend/src/normalization_service.py`.
-- [X] T008 Create the FastAPI application instance in `backend/src/api/main.py`.
-- [X] T009 Implement the `/normalize` API endpoint in `backend/src/api/main.py` as defined in `contracts/openapi.json`. This endpoint should accept `NormalizationRequest` and return `NormalizationResponse`.
-- [X] T010 Add unit tests for data loading logic in `backend/tests/test_data_loader.py`.
-- [X] T011 Add unit tests for normalization logic in `backend/tests/test_normalization_service.py`.
+- [X] T007 Implement data loading logic for `data/masoretic.csv`, `data/vulgate.csv`, and `data/septuagint.csv` in `backend/src/data_loader.py`. This includes handling different book name representations (FR-008).
+- [ ] T008 Implement the deep semantic decomposition logic in `backend/src/normalization_service.py`, including renaming the method to `decompose_text` and loading the prompt from `prompts/normalization_prompt.txt`.
+- [X] T009 Create the FastAPI application instance in `backend/src/api/main.py`.
+- [ ] T010 Implement the `/normalize` API endpoint in `backend/src/api/main.py` as defined in `contracts/openapi.json`. This endpoint should accept `NormalizationRequest` and return `NormalizationResponse`, calling the `decompose_text` method from `NormalizationService` and handling its `List[str]` output.
+- [X] T011 Add unit tests for data loading logic in `backend/tests/test_data_loader.py`.
+- [ ] T012 Add unit tests for deep semantic decomposition logic in `backend/tests/test_normalization_service.py`, ensuring coverage for JSON parsing and the expected output format.
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel.
 
@@ -54,15 +36,24 @@
 
 ### Implementation for User Story 1
 
-- [X] T012 [US1] Set up the Streamlit application in `frontend/src/app.py`.
-- [X] T013 [US1] Implement the single dropdown menu for verse selection in `frontend/src/app.py`.
-- [X] T014 [US1] Populate the dropdown with the union of all unique verses from the datasets (FR-001, FR-002). This will require an initial call to the backend to get the list of available verses.
-- [X] T015 [US1] Implement the display of three distinct output text boxes in `frontend/src/app.py` (FR-005).
-- [X] T016 [US1] Implement the logic to call the backend normalization service when a verse is selected in `frontend/src/app.py` (FR-003, FR-004).
-- [X] T017 [US1] Handle cases where a verse is not found in a particular dataset, displaying a clear message (FR-007).
-- [X] T018 [US1] Ensure each output area is clearly labeled with the dataset name (FR-006).
+- [X] T013 [US1] Set up the Streamlit application in `frontend/src/app.py`.
+- [X] T014 [US1] Implement the single dropdown menu for verse selection in `frontend/src/app.py`.
+- [X] T015 [US1] Populate the dropdown with the union of all unique verses from the datasets (FR-001, FR-002). This will require an initial call to the backend to get the list of available verses.
+- [X] T016 [US1] Implement the display of three distinct output text boxes in `frontend/src/app.py` (FR-005).
+- [X] T017 [US1] Implement the logic to call the backend normalization service when a verse is selected in `frontend/src/app.py` (FR-003, FR-004).
+- [X] T018 [US1] Handle cases where a verse is not found in a particular dataset, displaying a clear message (FR-007).
+- [X] T019 [US1] Ensure each output area is clearly labeled with the dataset name (FR-006).
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently.
+
+---
+
+## Phase 4: Deployment Unification
+
+**Purpose**: Integrate backend and frontend into a single deployable unit for Cloud Run.
+
+- [X] T020 Modify `frontend/src/app.py` to update `BACKEND_URL` to `http://localhost:8001` for internal communication.
+- [X] T021 Remove `backend/Dockerfile`.
 
 ---
 
@@ -70,8 +61,8 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [X] T019 Code cleanup and refactoring for both backend and frontend.
-- [X] T020 Run `quickstart.md` validation.
+- [X] T022 Code cleanup and refactoring for both backend and frontend.
+- [X] T023 Run `quickstart.md` validation.
 
 ---
 
@@ -84,6 +75,7 @@
 - **User Stories (Phase 3+)**: All depend on Foundational phase completion
   - User stories can then proceed in parallel (if staffed)
   - Or sequentially in priority order (P1 → P2 → P3)
+- **Deployment Unification (Phase 4)**: Depends on Foundational and User Stories completion.
 - **Polish (Final Phase)**: Depends on all desired user stories being complete
 
 ### User Story Dependencies
@@ -127,8 +119,9 @@
 1. Complete Phase 1: Setup
 2. Complete Phase 2: Foundational (CRITICAL - blocks all stories)
 3. Complete Phase 3: User Story 1
-4. **STOP and VALIDATE**: Test User Story 1 independently
-5. Deploy/demo if ready
+4. Complete Phase 4: Deployment Unification
+5. **STOP and VALIDATE**: Test User Story 1 independently
+6. Deploy/demo if ready
 
 ### Incremental Delivery
 

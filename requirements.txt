@@ -1,3 +1,8 @@
+fastapi
 pandas
+uvicorn
 google-generativeai
-tqdm
+pytest
+streamlit
+requests
+gunicorn

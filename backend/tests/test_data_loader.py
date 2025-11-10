@@ -5,28 +5,28 @@ from backend.src.data_loader import DataLoader
 
 # Mock data for testing
 MOCK_MASORETIC_CSV = """book_name,chapter,verse,text
-Genesis,1,1,In the beginning God created the heaven and the earth.
-Genesis,1,2,And the earth was without form, and void; and darkness was upon the face of the deep.
-Exodus,1,1,Now these are the names of the children of Israel, which came into Egypt; every man and his household came with Jacob.
+Genesis,1,1,"In the beginning God created the heaven and the earth."
+Genesis,1,2,"And the earth was without form, and void; and darkness was upon the face of the deep."
+Exodus,1,1,"Now these are the names of the children of Israel, which came into Egypt; every man and his household came with Jacob."
 """
 
 MOCK_SEPTUAGINT_CSV = """book_name,chapter,verse,text
-Gen,1,1,In the beginning God made the heaven and the earth.
-Gen,1,2,But the earth was unsightly and unfurnished, and darkness was over the abyss.
-Leviticus,1,1,And the Lord called Moses, and spoke to him out of the tabernacle of witness, saying,
+Gen,1,1,"In the beginning God made the heaven and the earth."
+Gen,1,2,"But the earth was unsightly and unfurnished, and darkness was over the abyss."
+Leviticus,1,1,"And the Lord called Moses, and spoke to him out of the tabernacle of witness, saying,"
 """
 
 MOCK_VULGATE_CSV = """book_name,chapter,verse,text
-Genesis,1,1,In principio creavit Deus caelum et terram.
-Genesis,1,2,Terra autem erat inanis et vacua, et tenebrae super faciem abyssi: et spiritus Dei ferebatur super aquas.
-Numbers,1,1,Locutusque est Dominus ad Moysen in deserto Sinai, in tabernaculo foederis, prima die mensis secundi, anno altero egressionis eorum de terra Aegypti, dicens:
+Genesis,1,1,"In principio creavit Deus caelum et terram."
+Genesis,1,2,"Terra autem erat inanis et vacua, et tenebrae super faciem abyssi: et spiritus Dei ferebatur super aquas."
+Numbers,1,1,"Locutusque est Dominus ad Moysen in deserto Sinai, in tabernaculo foederis, prima die mensis secundi, anno altero egressionis eorum de terra Aegypti, dicens:"
 """
 
 @pytest.fixture
 def mock_data_files():
     with patch("builtins.open", new_callable=mock_open) as mocked_file_open:
         # Configure mock_open to return different content based on the filename
-        def mock_read(filename, mode='r', encoding=None):
+        def mock_read(filename, mode='r', encoding=None, errors=None, newline=''):
             if "masoretic.csv" in filename:
                 mocked_file_open.return_value.__enter__.return_value.read.return_value = MOCK_MASORETIC_CSV
             elif "septuagint.csv" in filename:
