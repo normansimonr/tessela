@@ -22,9 +22,9 @@ class NormalizationRequest(BaseModel):
     verse: int
 
 class NormalizationResponse(BaseModel):
-    masoretic: Optional[List[str]]
-    vulgate: Optional[List[str]]
-    septuagint: Optional[List[str]]
+    masoretic: Optional[str]
+    vulgate: Optional[str]
+    septuagint: Optional[str]
 
 @app.get("/")
 async def read_root():
@@ -47,20 +47,20 @@ async def normalize_verse(request: NormalizationRequest):
     septuagint_text = data_loader.get_verse(request.book, request.chapter, request.verse, "septuagint")
     vulgate_text = data_loader.get_verse(request.book, request.chapter, request.verse, "vulgate")
 
-    normalized_masoretic: Optional[List[str]] = None
+    normalized_masoretic = None
     if masoretic_text:
-        normalized_masoretic = normalization_service.decompose_text(masoretic_text)
+        normalized_masoretic = normalization_service.normalize_text(masoretic_text)
 
-    normalized_septuagint: Optional[List[str]] = None
+    normalized_septuagint = None
     if septuagint_text:
-        normalized_septuagint = normalization_service.decompose_text(septuagint_text)
+        normalized_septuagint = normalization_service.normalize_text(septuagint_text)
 
-    normalized_vulgate: Optional[List[str]] = None
+    normalized_vulgate = None
     if vulgate_text:
-        normalized_vulgate = normalization_service.decompose_text(vulgate_text)
+        normalized_vulgate = normalization_service.normalize_text(vulgate_text)
 
     return NormalizationResponse(
         masoretic=normalized_masoretic,
         vulgate=normalized_vulgate,
-        septuagint=normalized_septuagint
+        septuagint=normalized_septugint
     )

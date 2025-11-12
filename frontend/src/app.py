@@ -9,7 +9,7 @@ st.title("Biblical Verse Normalizer")
 st.write("Select a verse to view its normalized text from different datasets.")
 
 # Backend API URL (assuming it's running locally on port 8000)
-BACKEND_URL = "http://localhost:8001"
+BACKEND_URL = "http://localhost:8000"
 
 @st.cache_data
 def get_all_unique_verses():
