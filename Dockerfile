@@ -1,29 +1,19 @@
 # Use an official Python runtime as a parent image
-FROM python:3.11-slim-bookworm
+FROM python:3.11-slim
 
-# Set environment variables
-ENV PYTHONUNBUFFERED=True
-ENV APP_HOME=/app
-WORKDIR $APP_HOME
+# Set the working directory in the container
+WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
-
-# Copy and install Python dependencies
-COPY requirements.txt ./requirements.txt
+# Copy the requirements file and install dependencies
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application code
-COPY . $APP_HOME
+# Copy the rest of the application code into the container
+COPY src/ ./src
+COPY scripts/ ./scripts
+COPY prompts/ ./prompts
 
-# Make the entrypoint script executable
-RUN chmod +x run.sh
-
-# Expose the port Streamlit will run on (Cloud Run provides PORT env var)
-# Streamlit will bind to $PORT, FastAPI will bind to 8001 internally
-EXPOSE 8080
-
-# Run the entrypoint script
-CMD ["./run.sh"]
+# The main command to run when the container starts
+# It assumes that the 'data' and 'output' directories will be mounted as volumes
+# and the GOOGLE_API_KEY will be passed as an environment variable.
+CMD ["python", "scripts/run_normalization.py"]
