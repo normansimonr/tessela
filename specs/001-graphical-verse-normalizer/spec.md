@@ -38,7 +38,6 @@ As a user, I want to select a biblical verse from a dropdown menu and see the no
 -   **FR-006**: Each output area MUST be clearly labeled with the name of its corresponding dataset (Masoretic, Vulgate, Septuagint).
 -   **FR-007**: If a verse is not found in a particular dataset, its corresponding output area MUST display a clear message indicating that the verse is not available.
 -   **FR-008**: The system MUST reconcile different representations of book names (e.g., 'Genesis', 'GEN', '1 Samuel', '1Samuel') across the datasets to ensure a verse is correctly identified.
--   **FR-009**: The system MUST be deployable on Cloud Run.
 
 ### Key Entities *(include if feature involves data)*
 
