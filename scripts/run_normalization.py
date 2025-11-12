@@ -3,10 +3,14 @@ import os
 import pandas as pd
 from tqdm import tqdm
 import logging
+import concurrent.futures
 
 # Assuming the script is run from the root of the project
 from src.data_loader import load_data, filter_septuagint
 from src.normalization_service import normalize_text
+
+# Define the maximum number of concurrent workers for API calls
+MAX_WORKERS = 10
 
 def setup_logging():
     """Sets up the logging for the script."""
@@ -72,22 +76,44 @@ def main(args):
                 logging.info(f"All verses in {source_name} have already been processed. Skipping.")
                 continue
 
-            # Normalize text for each row
-            normalized_texts = []
-            for text in tqdm(df_to_process['text'], desc=f"Normalizing {source_name}"):
-                propositions = normalize_text(text, prompt_path)
-                normalized_texts.append(propositions)
+            # Normalize text for each row concurrently
+            normalized_results = []
+            with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+                # Submit tasks to the executor
+                future_to_verse = {
+                    executor.submit(normalize_text, text, prompt_path): text
+                    for text in df_to_process['text']
+                }
+                
+                # Process results as they complete
+                for future in tqdm(
+                    concurrent.futures.as_completed(future_to_verse), 
+                    total=len(df_to_process), 
+                    desc=f"Normalizing {source_name}"
+                ):
+                    verse_text = future_to_verse[future]
+                    try:
+                        propositions = future.result()
+                        normalized_results.append({'text': verse_text, 'normalization': propositions})
+                    except Exception as exc:
+                        logging.error(f"'{verse_text}' generated an exception: {exc}")
+                        normalized_results.append({'text': verse_text, 'normalization': []}) # Append empty list on error
             
-            df_to_process['normalization'] = normalized_texts
-
-            # Save the processed dataframe
-            df_to_process.to_csv(
-                output_file_path, 
-                mode='a', 
-                header=not os.path.exists(output_file_path), 
-                index=False
-            )
-            logging.info(f"Successfully processed and saved {output_files[source_name]}")
+            # Convert results to DataFrame and merge with original
+            if normalized_results:
+                new_normalized_df = pd.DataFrame(normalized_results)
+                # Ensure the order is maintained if needed, or just append
+                # For appending, order doesn't strictly matter as much as having all data
+                
+                # If output file exists, append without header, otherwise write with header
+                if os.path.exists(output_file_path):
+                    new_normalized_df.to_csv(output_file_path, mode='a', header=False, index=False)
+                else:
+                    new_normalized_df.to_csv(output_file_path, mode='w', header=True, index=False)
+                
+                logging.info(f"Successfully processed and saved {len(new_normalized_df)} new verses to {output_files[source_name]}")
+            else:
+                logging.info(f"No new verses processed for {source_name}.")
 
         except FileNotFoundError:
             logging.warning(f"Source file not found at {file_path}. Skipping.")
