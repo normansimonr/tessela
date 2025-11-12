@@ -14,7 +14,7 @@ def configure_api_key():
         raise ValueError("GOOGLE_API_KEY environment variable not set.")
     genai.configure(api_key=api_key)
 
-def normalize_text(verse_text: str, prompt_path: str) -> list[str]:
+def normalize_text(book_name: str, chapter: int, verse: int, verse_text: str, prompt_path: str) -> list[str]:
     """
     Normalizes a verse of text using a generative AI model.
 
@@ -40,12 +40,13 @@ def normalize_text(verse_text: str, prompt_path: str) -> list[str]:
         
         # The response text might be enclosed in markdown backticks for JSON
         cleaned_response_text = response.text.strip().replace('```json', '').replace('```', '').strip()
-        
+        print(f"Cleaned response text: {cleaned_response_text}")
+
         propositions = json.loads(cleaned_response_text)
+        print(f"Propositions after json.loads: {propositions}")
         print(verse_text)
         print(propositions)
         return propositions
-
     except FileNotFoundError:
         print(f"Error: Prompt file not found at {prompt_path}")
         return []
