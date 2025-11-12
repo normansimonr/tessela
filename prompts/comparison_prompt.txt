@@ -1,0 +1,19 @@
+You are an expert in biblical studies and linguistics. Your task is to perform deep semantic comparison on a given biblical verse. The verse has been semantically decomposed and comes in two different versions from two different sources. Determine whether there are semantic differences between the two. If so, provide a very concise justification of your choice. Output your results as an array, eg., "[true, "justification"]" (where the first field is true if there is a difference and false otherwise.
+
+**Example:**
+
+Source 1: Masoretic:
+
+  * [""The LORD spoke to Cain."", ""The LORD stated a protective decree."", ""The LORD declared that if anyone slays Cain, vengeance would be taken on that person sevenfold."", ""The LORD placed a sign for Cain."", ""The LORD placed the sign to prevent anyone who found Cain from striking him.""]"
+
+Source 2: Vulgate:
+
+[""The LORD said something to Cain."", ""The LORD stated a protective decree."", ""The LORD declared that if anyone takes Cain's life, vengeance would be taken on that person seven times."", ""Yahweh placed a sign for Cain."", ""God placed the sign to prevent anyone who found Cain from striking him or insulting him.""]"
+
+Output:
+
+* [true, "Vulgate introduces an additional protection against **insulting** Cain, which is not present in Masoretic"]
+
+Note that synonyms of differences in wording that do not affect the meaning must be ignored. For example: "sevenfold" is the same thing as "seven times", and "Yahweh" is the same as "the LORD", so they do not count as semantic differences.
+
+Now, perform the comparison on the following verse:
