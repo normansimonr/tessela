@@ -25,9 +25,5 @@ Python 3.11: Follow standard conventions
 
 - 001-graphical-verse-normalizer: Added Python 3.11
 
-## Deployment
-
-- The system must be deployable on Cloud Run.
-
 <!-- MANUAL ADDITIONS START -->
 <!-- MANUAL ADDITIONS END -->
