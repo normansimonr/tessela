@@ -28,6 +28,15 @@ Output:
   "The psalmist exclaimed that God’s name is majestic in all the earth."
 ]
 
+**Example 4:**
+Verse: "In the beginning God created the heaven and the earth."
+
+Output:
+[
+  "In the beginning, God created the heaven."
+  "In the beginning, God created the earth."
+]
+
 Now, perform the same decomposition on the following verse.
 
 Verse: {verse_text}

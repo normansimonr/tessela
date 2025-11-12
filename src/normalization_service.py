@@ -32,7 +32,7 @@ def normalize_text(verse_text: str, prompt_path: str) -> list[str]:
         with open(prompt_path, 'r') as f:
             prompt_template = f.read()
             
-        model = genai.GenerativeModel(model_name="gemini-2.5-pro")
+        model = genai.GenerativeModel(model_name="gemini-2.5-flash")
         
         final_prompt = prompt_template.format(verse_text=verse_text)
         
@@ -42,6 +42,8 @@ def normalize_text(verse_text: str, prompt_path: str) -> list[str]:
         cleaned_response_text = response.text.strip().replace('```json', '').replace('```', '').strip()
         
         propositions = json.loads(cleaned_response_text)
+        print(verse_text)
+        print(propositions)
         return propositions
 
     except FileNotFoundError:
