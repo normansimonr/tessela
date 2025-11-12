@@ -1,3 +1,4 @@
 #!/bin/bash
 source .venv/bin/activate
-python3 src/normalization_service.py
+export PYTHONPATH=$PYTHONPATH:$(pwd)
+python3 scripts/run_normalization.py
