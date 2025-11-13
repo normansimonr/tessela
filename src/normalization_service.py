@@ -32,7 +32,7 @@ def normalize_text(book_name: str, chapter: int, verse: int, verse_text: str, pr
         with open(prompt_path, 'r') as f:
             prompt_template = f.read()
             
-        model = genai.GenerativeModel(model_name="gemini-2.0-flash")
+        model = genai.GenerativeModel(model_name="gemini-2.0-flash-lite")
         
         final_prompt = prompt_template.format(verse_text=verse_text)
         
