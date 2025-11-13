@@ -1,6 +1,7 @@
 import google.generativeai as genai
 import os
 import json
+from src.utils import retry_with_exponential_backoff
 
 def configure_api_key():
     """
@@ -14,6 +15,7 @@ def configure_api_key():
         raise ValueError("GOOGLE_API_KEY environment variable not set.")
     genai.configure(api_key=api_key)
 
+@retry_with_exponential_backoff()
 def normalize_text(book_name: str, chapter: int, verse: int, verse_text: str, prompt_path: str) -> list[str]:
     """
     Normalizes a verse of text using a generative AI model.
@@ -32,7 +34,7 @@ def normalize_text(book_name: str, chapter: int, verse: int, verse_text: str, pr
         with open(prompt_path, 'r') as f:
             prompt_template = f.read()
             
-        model = genai.GenerativeModel(model_name="gemini-2.0-flash-lite")
+        model = genai.GenerativeModel(model_name="gemini-2.0-flash")
         
         final_prompt = prompt_template.format(verse_text=verse_text)
         
@@ -52,8 +54,5 @@ def normalize_text(book_name: str, chapter: int, verse: int, verse_text: str, pr
         return []
     except ValueError as e:
         print(f"Configuration Error: {e}")
-        return []
-    except Exception as e:
-        print(f"An unexpected error occurred during normalization: {e}")
         return []
 

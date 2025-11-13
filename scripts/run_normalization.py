@@ -11,7 +11,7 @@ from src.data_loader import load_data, filter_septuagint
 from src.normalization_service import normalize_text
 
 # Define the maximum number of concurrent workers for API calls
-MAX_WORKERS = 1
+MAX_WORKERS = 5
 
 def setup_logging():
     """Sets up the logging for the script."""
