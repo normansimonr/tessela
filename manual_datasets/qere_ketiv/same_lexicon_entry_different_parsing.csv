@@ -1,0 +1,504 @@
+book,chapter,verse,word_index,Qere,Ketiv,Strongs Q,Parsing Q,Strongs K,Parsing K
+Gen,9,21,7,אָהֳלֽ/וֹ\׃,"K= 'o.ho.Lo/h (אָהֳלֹ/ה\׃) ""tent/ his"" (H0168G/H9023\H9016=HNcbsc/Sp3ms)",H0168G H9023 H9016,HNcmsc Sp3ms,H0168G H9023 H9016,HNcbsc Sp3ms
+Gen,12,8,8,אָהְָל֑/וֹ,"K= 'o.ho.Lo/h (אָהֳלֹ/ה) ""tent/ his"" (H0168G/H9023=HNcbsc/Sp3ms)",H0168G H9023,HNcmsc Sp3ms,H0168G H9023,HNcbsc Sp3ms
+Gen,13,3,12,אָֽהֳל/וֹ֙,"K= 'o.ho.lo/h (אָהֳלֹ/ה) ""tent/ his"" (H0168G/H9023=HNcbsc/Sp3ms)",H0168G H9023,HNcmsc Sp3ms,H0168G H9023,HNcbsc Sp3ms
+Gen,27,29,3,וְ/יִֽשְׁתַּחֲו֤וּ,"K= ve./yish.ta.chu (וְ/יִשְׁתַּחוּ) ""and/ may it bow down"" (H9002/H7812=HC/Vvu3ms)",H7812,Vvu3mp,H7812,Vvu3ms
+Gen,35,21,4,אָֽהֳל֔/וֹ,"K= 'o.ho.Lo/h (אָהֳלֹ/ה) ""tent/ his"" (H0168G/H9023=HNcbsc/Sp3ms)",H0168G H9023,HNcmsc Sp3ms,H0168G H9023,HNcbsc Sp3ms
+Gen,43,28,8,וַ/יִּֽשְׁתַּחֲוּֽוּ\׃,"K= va/i.yish.ta.chu (וַ/יִּשְׁתַּחוּ\׃) ""and/ he bowed down"" (H9001/H7812\H9016=Hc/Vvw3ms)",H7812 H9016,Vvw3mp,H7812 H9016,Vvw3ms
+Gen,49,11,3,עִיר֔/וֹ,"K= i.ro/h (עִירֹ/ה) ""donkey/ his"" (H5895/H9023=HNcbsc/Sp3ms)",H5895 H9023,HNcmsc Sp3ms,H5895 H9023,HNcbsc Sp3ms
+Gen,49,11,12,סוּתֽ/וֹ\׃,"K= su.to/h (סוּתֹ/ה\׃) ""robe/ his"" (H5497/H9023\H9016=HNcbsc/Sp3ms)",H5497 H9023 H9016,HNcmsc Sp3ms,H5497 H9023 H9016,HNcbsc Sp3ms
+Exo,16,2,1,וַ/יִּלּ֜וֹנוּ,"K= va/i.yi.li.nu (וַ/יַּלִּינוּ) ""and/ they caused to grumble"" (H9001/H3885B=Hc/Vhw3mp)",H3885B,VNw3mp,H3885B,Vhw3mp
+Exo,16,7,14,תַלִּ֖ינוּ,"K= ta.lo.nu (תִלּוֹנוּ) ""you will grumble"" (H3885B=HVqi2mp)",H3885B,HVhi2mp,H3885B,HVqi2mp
+Exo,22,5(22,9,בְּעִיר֔/וֹ,"K= be.'i.ra/h (בְּעִירֹ/ה) ""cattle/ his"" (H1165/H9023=HNcbsc/Sp3ms)",H1165 H9023,HNcmsc Sp3ms,H1165 H9023,HNcbsc Sp3ms
+Exo,27,11,8,וְ/עַמּוּדָ֣י/ו,"K= ve./'am.d/u (וְ/עַמְדּ/וּ) ""and/ pillar/ its"" (H9002/H5982G/H9023=HC/Ncmsc/Sp3ms)",H5982G H9023,Ncmpc Sp3ms,H5982G H9023,Ncmsc Sp3ms
+Exo,28,28,4,מִֽ/טַּבְּעֹתָ֞י/ו,"K= mi./ta.be.'o.to/v (מִ/טַּבְּעֹת/וֹ) ""from/ ring/ its"" (H9006/H2885/H9023=HR/Ncfsc/Sp3ms)",H9006 H2885 H9023,HR Ncfpc Sp3ms,H9006 H2885 H9023,HR Ncfsc Sp3ms
+Exo,32,17,6,בְּ/רֵע֑/וֹ,"K= be./re.'O/h (בְּ/רֵעֹ/ה) ""in/ shouting/ its"" (H9003/H7452/H9023=HR/Ncbsc/Sp3ms)",H9003 H7452 H9023,HR Ncmsc Sp3ms,H9003 H7452 H9023,HR Ncbsc Sp3ms
+Exo,32,19,14,מִ/יָּדָי/ו֙,"K= mi./ya.do/v (מִ/יָּד/וֹ) ""from/ hand/ his"" (H9006/H3027G/H9023=HR/Ncbsc/Sp3ms)",H9006 H3027G H9023,HR Ncbdc Sp3ms,H9006 H3027G H9023,HR Ncbsc Sp3ms
+Exo,35,11,12,בְּרִיחָ֕י/ו,"K= be.ri.Cha/v (בְּרִיח/וֹ) ""bar/ its"" (H1280/H9023=HNcmsc/Sp3ms)",H1280 H9023,HNcmpc Sp3ms,H1280 H9023,HNcmsc Sp3ms
+Exo,39,33,13,בְּרִיחָ֖י/ו,"K= be.ri.cho/v (בְּרִיח/וֹ) ""bar/ its"" (H1280/H9023=HNcmsc/Sp3ms)",H1280 H9023,HNcmpc Sp3ms,H1280 H9023,HNcmsc Sp3ms
+Lev,9,22,4,יָדָ֛י/ו,"K= ya.do/v (יָד/וֹ) ""hand/ his"" (H3027S/H9023=HNcbsc/Sp3ms)",H3027S H9023,HNcbdc Sp3ms,H3027S H9023,HNcbsc Sp3ms
+Lev,16,21,5,יָדָ֗י/ו,"K= ya.do/v (יָד/וֹ) ""hand/ his"" (H3027G/H9023=HNcbsc/Sp3ms)",H3027G H9023,HNcbdc Sp3ms,H3027G H9023,HNcbsc Sp3ms
+Lev,23,13,11,וְ/נִסְכּ֥/וֹ,"K= ve./nis.Ko/h (וְ/נִסְכֹּ/ה) ""and/ drink offering/ its"" (H9002/H5262/H9023=HC/Ncbsc/Sp3ms)",H5262 H9023,Ncmsc Sp3ms,H5262 H9023,Ncbsc Sp3ms
+Num,12,3,3,עָנָ֣יו,"K= a.nav (עָנָו) ""[was] humble"" (H6035=HAabsa)",H6035,HAamsa,H6035,HAabsa
+Num,14,36,9,וַ/יַּלִּ֤ינוּ,"K= va/i.yi.lo.nu (וַ/יִּלּוֹנוּ) ""and/ they grumbled"" (H9001/H3885B=Hc/VNw3mp)",H3885B,Vhw3mp,H3885B,VNw3mp
+Num,16,11,12,תַלִּ֖ינוּ,"K= ti.lo.nu (תִלּוֹנוּ) ""you will grumble"" (H3885B=HVqi2mp)",H3885B,HVhi2mp,H3885B,HVqi2mp
+Num,21,32,8,וַ/יּ֖וֹרֶשׁ,"K= va/i.yi.resh (וַ/יִּירַשׁ) ""and/ it possessed"" (H9001/H3423H=Hc/Vqw3ms)",H3423H,Vhw3ms,H3423H,Vqw3ms
+Num,32,7,2,תְנִיא֔וּ/ן,"K= te.nu.'u/n (תְנוּאוּ/ן) ""do you hinder/ !"" (H5106/H9013=HVqi2mp/Sn)",H5106 H9013,HVhi2mp Sn,H5106 H9013,HVqi2mp Sn
+Num,34,4,9,וְ/הָיוּ֙,"K= ve./ha.yah (וְ/הָיָה) ""and/ it will be"" (H9001/H1961=Hc/Vqq3ms)",H1961,Vqq3cp,H1961,Vqq3ms
+Deu,2,33,8,בָּנָ֖י/ו,"K= be.no/v (בְּנ/וֹ) ""son/ his"" (H1121A/H9023=HNcmsc/Sp3ms)",H1121A H9023,HNcmpc Sp3ms,H1121A H9023,HNcmsc Sp3ms
+Deu,7,9,14,מִצְוֹתָ֖י/ו,"K= mitz.vo.to/v (מִצְוֹת/וֹ) ""commandment/ his"" (H4687/H9023=HNcfsc/Sp3ms)",H4687 H9023,HNcfpc Sp3ms,H4687 H9023,HNcfsc Sp3ms
+Deu,8,2,21,מִצְוֹתָ֖י/ו,"K= mitz.vo.to/v (מִצְוֹת/וֹ) ""commandment/ his"" (H4687/H9023=HNcfsc/Sp3ms)",H4687 H9023,HNcfpc Sp3ms,H4687 H9023,HNcfsc Sp3ms
+Deu,13,15(13,6,הַ/הִ֖יא,"K= ha./hu' (הַ/הוּא) ""<the>/ that"" (H9009/H1931=HTd/Pp3ms)",H1931,HTd Pp3fs,H1931,HTd Pp3ms
+Deu,21,7,5,שָֽׁפְכוּ֙,"K= sha.fe.khah (שָׁפְכָה) ""it shed"" (H8210H=HVqp3fs)",H8210H,HVqp3cp,H8210H,HVqp3fs
+Deu,27,10,7,מִצְוֹתָי/ו֙,"K= mitz.vo.Ta/v (מִצְוֹת/וֹ) ""commandment/ his"" (H4687/H9023=HNcfsc/Sp3ms)",H4687 H9023,HNcfpc Sp3ms,H4687 H9023,HNcfsc Sp3ms
+Deu,33,9,11,בָּנָ֖י/ו,"K= ba.no/v (בָּנ/וֹ) ""child/ his"" (H1121A/H9023=HNcmsc/Sp3ms)",H1121A H9023,HNcmpc Sp3ms,H1121A H9023,HNcmsc Sp3ms
+Jos,2,13,9,אַחְיוֹתַ֔/י,"K= 'a.cho.ta/i (אַחוֹתַ/י) ""sister/ my"" (H0269/H9020=HNcfsc/Sp1bs)",H0269 H9020,HNcfpc Sp1bs,H0269 H9020,HNcfsc Sp1bs
+Jos,6,7,1,וַ/יֹּ֙אמֶר֙,"K= va/i.yo.me.ru (וַ/יֹּאמְרוּ) ""and/ they said"" (H9001/H0559=Hc/Vqw3mp)",H0559,Vqw3ms,H0559,Vqw3mp
+Jos,6,9,5,תֹּקְעֵ֖י,"K= ta.ke.'u (תָּקְעוּ) ""they gave a blast on"" (H8628=HVqp3cp)",H8628,HVqrmpc,H8628,HVqp3cp
+Jos,6,13,22,הָל֖וֹךְ,"K= ho.lekh (הוֹלֵךְ) ""walking"" (H1980L=HVqrmsa)",H1980L,HVqaa,H1980L,HVqrmsa
+Jos,9,7,1,וַ/יֹּ֥אמֶר,"K= va/i.yo.me.ru (וַ/יֹּאמְרוּ) ""and/ they said"" (H9001/H0559=Hc/Vqw3mp)",H0559,Vqw3ms,H0559,Vqw3mp
+Jos,15,4,6,וְ/הָי֛וּ,"K= ve./ha.yah (וְ/הָיָה) ""and/ it is"" (H9001/H1961=Hc/Vqq3ms)",H1961,Vqq3cp,H1961,Vqq3ms
+Jos,15,63,6,יָכְל֥וּ,"K= yu.khe.lu (יוּכְלוּ) ""they are able"" (H3201=HVqi3mp)",H3201,HVqp3cp,H3201,HVqi3mp
+Jos,16,3,14,תֹצְאֹתָ֖י/ו,"K= to.tze.'o.to/v (תֹצְאֹת/וֹ) ""extremity/ its"" (H8444/H9023=HNcfsc/Sp3ms)",H8444 H9023,HNcfpc Sp3ms,H8444 H9023,HNcfsc Sp3ms
+Jos,18,12,17,וְ/הָיוּ֙,"K= ve./ha.yah (וְ/הָיָה) ""and/ it is"" (H9001/H1961=Hc/Vqq3ms)",H1961,Vqq3cp,H1961,Vqq3ms
+Jos,18,14,15,וְ/הָי֣וּ,"K= ve./ha.yah (וְ/הָיָה) ""and/ it is"" (H9001/H1961=Hc/Vqq3ms)",H1961,Vqq3cp,H1961,Vqq3ms
+Jos,18,19,8,וְ/הָי֣וּ,"K= ve./ha.yah (וְ/הָיָה) ""and/ it is"" (H9001/H1961=Hc/Vqq3ms)",H1961,Vqq3cp,H1961,Vqq3ms
+Jos,19,29,11,וְ/הָי֧וּ,"K= ve./yih.yu (וְ/יִהְיוּ) ""and/ they are"" (H9002/H1961=HC/Vqu3mp)",H1961,Vqq3cp,H1961,Vqu3mp
+Jdg,1,27,14,יֹשְׁבֵ֨י,"K= yo.shev (יֹשֵׁב) ""[the] inhabitant[s] of"" (H3427=HVqrmsc)",H3427,HVqrmpc,H3427,HVqrmsc
+Jdg,6,5,6,וּ/בָ֤אוּ,"K= ya.vo.'u (יָבֹאוּ) ""they came"" (H0935G=HVqi3mp)",H0935G,Vqq3cp,H0935G,HVqi3mp
+Jdg,7,13,13,צְלִ֜יל,"K= tze.lol (צְלוֹל) ""a round loaf of"" (H6742=HNcbsc)",H6742,HNcmsc,H6742,HNcbsc
+Jdg,7,21,10,וַ/יָּנֽוּסוּ\׃,"K= va/i.ya.ni.su (וַ/יָּנִיסוּ\׃) ""and/ they put [them] to flight"" (H9001/H5127\H9016=Hc/Vqw3mp)",H5127 H9016,Vhw3mp,H5127 H9016,Vqw3mp
+Jdg,13,17,10,דְבָרְ/ךָ֖,"K= div.rei./kha (דִבְרֶי/ךָ) ""words/ your"" (H1697G/H9021=HNcmpc/Sp2ms)",H1697G H9021,HNcmsc Sp2ms,H1697G H9021,HNcmpc Sp2ms
+Jdg,21,20,1,וַ/יְצַוּ֕וּ,"K= va/y.tzav (וַ/יְצַו) ""and/ he commanded"" (H9001/H6680=Hc/Vpw3ms)",H6680,Vpw3mp,H6680,Vpw3ms
+Rut,1,8,10,יַ֣עַשׂ,"K= ya.'a.seh (יַעֲשֶׂה) ""he will deal"" (H6213A=HVqi3ms)",H6213A,HVqj3ms,H6213A,HVqi3ms
+Rut,3,3,4,שִׂמְלֹתַ֛יִ/ךְ,"K= sim.lo.te/kh (שִׂמְלֹתֵ/ךְ) ""garment/ your"" (H8071/H9022=HNcfsc/Sp2fs)",H8071 H9022,HNcfpc Sp2fs,H8071 H9022,HNcfsc Sp2fs
+Rut,3,3,6,וְ/יָרַ֣דְתְּ,"K= ve./ya.rad.ti (וְ/יָרַדְתִּי) ""and/ I will go down"" (H9001/H3381=Hc/Vqq1cs)",H3381,Vqq2fs,H3381,Vqq1cs
+Rut,3,14,2,מַרְגְּלוֹתָי/ו֙,"K= mar.ge.la.ta/v (מַרְגְּלֹת/וֹ) ""foot/ his"" (H4772/H9023=HNcfsc/Sp3ms)",H4772 H9023,HNcfpc Sp3ms,H4772 H9023,HNcfsc Sp3ms
+Rut,4,4,20,וְ/אֵֽדְעָה֙,"K= ve./'e.da' (וְ/אֵדַע) ""so/ I may know"" (H9002/H3045=HC/Vqu1cs)",H3045,Vqc1cs,H3045,Vqu1cs
+Rut,4,5,13,קָנִ֔יתָה,"K= ka.ni.ti (קָנִיתִי) ""I have acquired"" (H7069=HVqp1cs)",H7069,HVqp2ms,H7069,HVqp1cs
+1Sa,2,9,2,חֲסִידָי/ו֙,"K= cha.si.do/v (חֲסִיד/וֹ) ""faithful [person]/ his"" (H2623/H9023=HAamsc/Sp3ms)",H2623 H9023,HAampc Sp3ms,H2623 H9023,HAamsc Sp3ms
+1Sa,2,10,3,מְרִיבָ֗י/ו,"K= me.ri.vo/v (מְרִיב/וֹ) ""[the one who] contends against/ him"" (H7378/H9033=HVhrmsc/Sp3ms)",H7378 H9033,HVhrmpc Sp3ms,H7378 H9033,HVhrmsc Sp3ms
+1Sa,3,2,7,וְ/עֵינָי/ו֙,"K= ve./'ei.no/v (וְ/עֵינ/וֹ) ""and/ eye/ his"" (H9002/H5869H/H9023=HC/Ncbsc/Sp3ms)",H5869H H9023,Ncfdc Sp3ms,H5869H H9023,Ncbsc Sp3ms
+1Sa,3,18,14,בְּ/עֵינָ֖י/ו,"K= be./'ei.Na/v (בְּ/עֵינ/וֹ) ""in/ eye/ his"" (H9003/H5869I/H9023=HR/Ncbsc/Sp3ms)",H9003 H5869I H9023,HR Ncfdc Sp3ms,H9003 H5869I H9023,HR Ncbsc Sp3ms
+1Sa,8,3,4,בִּ/דְרָכָ֔י/ו,"K= be./dar.kho/v (בְּ/דַרְכּ/וֹ) ""in/ way/ his"" (H9003/H1870G/H9023=HR/Ncbsc/Sp3bs)",H9003 H1870G H9023,HR Ncbpc Sp3ms,H9003 H1870G H9023,HR Ncbsc Sp3bs
+1Sa,10,21,5,לְ/מִשְׁפְּחֹתָ֔י/ו,"K= le./mish.pe.cho.to/v (לְ/מִשְׁפַּחְתּ/וֹ) ""to/ family/ its"" (H9005/H4940/H9023=HR/Ncfsc/Sp3ms)",H9005 H4940 H9023,HR Ncfpc Sp3ms,H9005 H4940 H9023,HR Ncfsc Sp3ms
+1Sa,12,10,4,וַ/יֹּאמְר֣וּ,"K= va/i.yo.mer (וַ/יֹּאמֶר) ""and/ he said"" (H9001/H0559=Hc/Vqw3ms)",H0559,Vqw3mp,H0559,Vqw3ms
+1Sa,13,8,1,וַ/יּ֣וֹחֶל,"K= va/i.yi.chel (וַ/יִּיחֶל) ""and/ he waited"" (H9001/H3176G=Hc/VNw3ms)",H3176G,Vhw3ms,H3176G,VNw3ms
+1Sa,13,19,8,אָמְר֣וּ,"K= 'a.mar (אָמַר) ""he said"" (H0559=HVqp3ms)",H0559,HVqp3cp,H0559,HVqp3ms
+1Sa,14,32,4,הַ/שָּׁלָ֔ל,"K= sha.lal (שָׁלָל) ""plunder"" (H7998=HNcbsa)",H7998,HTd Ncmsa,H7998,HNcbsa
+1Sa,15,16,14,וַ/יֹּ֥אמֶר,"K= va/i.yo.me.ru (וַ/יֹּאמְרוּ) ""and/ they said"" (H9001/H0559=Hc/Vqw3mp)",H0559,Vqw3ms,H0559,Vqw3mp
+1Sa,18,7,7,בַּ/אֲלָפָ֔י/ו,"K= ba./'el.fo/v (בְּ/אַלְפּ/וֹ) ""<on>/ thousand/ his"" (H9003/H0505G/H9023=HR/Ncbsc/Sp3bs)",H9003 H0505G H9023,HR Ncbpc Sp3ms,H9003 H0505G H9023,HR Ncbsc Sp3bs
+1Sa,18,14,4,דְּרָכָ֖י/ו,"K= da.re.Kha/v (דַּרְכּ/וֹ) ""way/ his"" (H1870G/H9023=HNcbsc/Sp3bs)",H1870G H9023,HNcbpc Sp3ms,H1870G H9023,HNcbsc Sp3bs
+1Sa,18,22,4,עֲבָדָ֗י/ו,"K= 'a.va.Da/v (עַבְדּ/וֹ) ""servant/ his"" (H5650/H9023=HNcmsc/Sp3ms)",H5650 H9023,HNcmpc Sp3ms,H5650 H9023,HNcmsc Sp3ms
+1Sa,20,2,8,יַעֲשֶׂ֨ה,"K= 'a.sah (עָשָׂה) ""he has done"" (H6213A=HVqp3ms)",H6213A,HVqi3ms,H6213A,HVqp3ms
+1Sa,21,11(21,17,בַּ/אֲלָפָ֔י/ו,"K= ba./'a.la.fo/v (בְּ/אַלְפּ/וֹ) ""<on>/ thousand/ his"" (H9003/H0505G/H9023=HR/Ncbsc/Sp3bs)",H9003 H0505G H9023,HR Ncbpc Sp3ms,H9003 H0505G H9023,HR Ncbsc Sp3bs
+1Sa,21,11(21,19,בְּ/רִבְבֹתָֽי/ו\׃,"K= be./ri.vo.Ta/v (בְּ/רִבְבֹת/וֹ\׃) ""<on>/ ten thousand/ his"" (H9003/H7233/H9023\H9016=HR/Ncfsc/Sp3ms)",H9003 H7233 H9023 H9016,HR Ncfpc Sp3ms,H9003 H7233 H9023 H9016,HR Ncfsc Sp3ms
+1Sa,23,5,3,וַ/אֲנָשָׁ֨י/ו,"K= va./'in.sho/v (וְ/אֲנָשׁ/וֹ) ""and/ man/ his"" (H9002/H0582/H9023=HC/Ncmsc/Sp3ms)",H0582 H9023,Ncmpc Sp3ms,H0582 H9023,Ncmsc Sp3ms
+1Sa,24,4(24,15,אֹֽיִבְ/ךָ֙,"K= 'o.ye.vei./kha (אֹיְבֶי/ךָ) ""enemies/ your"" (H0341/H9021=HVqrmpc/Sp2ms)",H0341 H9021,HVqrmsc Sp2ms,H0341 H9021,HVqrmpc Sp2ms
+1Sa,26,5,28,סְבִיבֹתָֽי/ו\׃,"K= se.vi.vo.to/v (סְבִיבֹת/וֹ\׃) ""around/ him"" (H5439G/H9033\H9016=HNcbsc/Sp3bs)",H5439G H9033 H9016,HNcbpc Sp3ms,H5439G H9033 H9016,HNcbsc Sp3bs
+1Sa,26,7,15,מְרַאֲשֹׁתָ֑י/ו,"K= me.ra.'a.sho.to/v (מְרַאֲשֹׁת/וֹ) ""[the] place of head/ his"" (H4763/H9023=HNcfsc/Sp3ms)",H4763 H9023,HNcfpc Sp3ms,H4763 H9023,HNcfsc Sp3ms
+1Sa,26,11,14,מְרַאֲשֹׁתָ֛י/ו,"K= me.ra.'a.sho.to/v (מְרַאֲשֹׁת/וֹ) ""[is the] place of head/ his"" (H4763/H9023=HNcfsc/Sp3ms)",H4763 H9023,HNcfpc Sp3ms,H4763 H9023,HNcfsc Sp3ms
+1Sa,26,16,30,מְרַאֲשֹׁתָֽי/ו\׃,"K= me.ra.'a.sho.to/v (מְרַאֲשֹׁת/וֹ\׃) ""[was the] place of head/ his"" (H4763/H9023\H9016=HNcfsc/Sp3ms)",H4763 H9023 H9016,HNcfpc Sp3ms,H4763 H9023 H9016,HNcfsc Sp3ms
+1Sa,26,22,5,חֲנִ֣ית,"K= ha./cha.nit (הַ/חֲנִית) ""the/ spear of"" (H9009/H2595=HTd/Ncbsc)",H2595,HNcfsc,H2595,HTd Ncbsc
+1Sa,27,4,8,יָסַ֥ף,"K= yo.saf (יוֹסַף) ""repeating"" (H3254G=HVqrmsa)",H3254G,HVqp3ms,H3254G,HVqrmsa
+1Sa,27,8,7,וְ/הַ/גִּזְרִ֖י,"K= ve./ha./gir.zi (וְ/הַ/גִּרְזִי) ""and/ the/ Girzite[s]"" (H9002/H9009/H1511=HC/Td/Ngbsa)",H1511,Td Ngmsa,H1511,Td Ngbsa
+1Sa,30,6,15,בָּנָ֣י/ו,"K= be.no/v (בְּנ/וֹ) ""son/ his"" (H1121A/H9023=HNcmsc/Sp3ms)",H1121A H9023,HNcmpc Sp3ms,H1121A H9023,HNcmsc Sp3ms
+2Sa,1,8,5,וָ/אֹמַ֣ר,"K= va/i.yo.mer (וַ/יֹּאמֶר) ""and/ he said"" (H9001/H0559=Hc/Vqw3ms)",H0559,Vqw1cs,H0559,Vqw3ms
+2Sa,1,11,3,בִּ/בְגָדָ֖י/ו,"K= bi/v.ga.do/v (בִּ/בְגָד/וֹ) ""on/ garment/ his"" (H9003/H0899B/H9023=HR/Ncmsc/Sp3ms)",H9003 H0899B H9023,HR Ncmpc Sp3ms,H9003 H0899B H9023,HR Ncmsc Sp3ms
+2Sa,1,16,4,דָּמְ/ךָ֖,"K= da.mei./kha (דָּמֶי/ךָ) ""blood<s>/ your"" (H1818/H9021=HNcmpc/Sp2ms)",H1818 H9021,HNcmsc Sp2ms,H1818 H9021,HNcmpc Sp2ms
+2Sa,2,23,15,תַּחְתָּ֑י/ו,"K= ta.cha.to/v (תַּחַת/וֹ) ""in place/ his"" (H8478I/H9033=HNcmsc/Sp3ms)",H8478I H9033,HNcmpc Sp3ms,H8478I H9033,HNcmsc Sp3ms
+2Sa,3,2,1,וַ/יִּוָּלְד֧וּ,"K= va/i.ye.le.du (וַ/יֵּלְדוּ) ""and/ they gave birth to"" (H9001/H3205=Hc/Vqw3mp)",H3205,VNw3mp,H3205,Vqw3mp
+2Sa,3,12,6,תַּחְתָּ֥י/ו,"K= ta.cha.to/v (תַּחַת/וֹ) ""in place of/ himself"" (H8478I/H9033=HNcmpc/Sp3ms)",H8478I H9033,HNcmsc Sp3ms,H8478I H9033,HNcmpc Sp3ms
+2Sa,5,2,11,הַ/מּוֹצִ֥יא,"K= mo.tzi' (מוֹצִיא) ""leading out"" (H3318H=HVhrmsa)",H3318H,HTd Vhrmsa,H3318H,HVhrmsa
+2Sa,5,8,14,שְׂנֻאֵ֖י,"K= se.nov (שָׂנְאוּ) ""[who] they hate"" (H8130=HVqp3cp)",H8130,HVqsmpc,H8130,HVqp3cp
+2Sa,12,20,7,שִׂמְלֹתָ֔י/ו,"K= sim.lo.t/o (שִׂמְלָת/וֹ) ""garment/ his"" (H8071/H9023=HNcfsc/Sp3ms)",H8071 H9023,HNcfpc Sp3ms,H8071 H9023,HNcfsc Sp3ms
+2Sa,12,22,11,וְ/חַנַּ֥/נִי,"K= ye.cha.na./ni (יְחָנַּ/נִי) ""he will show favor to/ me"" (H2603A/H9030=HVqi3ms/Sp1bs)",H2603A H9030,Vqq3ms Sp1bs,H2603A H9030,HVqi3ms Sp1bs
+2Sa,12,24,13,וַ/תִּקְרָ֤א,"K= va/i.yik.ra' (וַ/יִּקְרָא) ""and/ he called"" (H9001/H7121H=Hc/Vqw3ms)",H7121H,Vqw3fs,H7121H,Vqw3ms
+2Sa,12,31,14,בַּ/מַּלְבֵּ֔ן,"K= ba./mal.ken (בַּ/מַּלְכֶּן) ""in the/ brick mold[s]"" (H9003/H4404=HRd/Ncbsa)",H9003 H4404,HRd Ncmsa,H9003 H4404,HRd Ncbsa
+2Sa,13,34,7,עֵינָ֔י/ו,"K= ei.n/o (עֵינ/וֹ) ""eye/ his"" (H5869A/H9023=HNcbsc/Sp3ms)",H5869A H9023,HNcfdc Sp3ms,H5869A H9023,HNcbsc Sp3ms
+2Sa,14,30,13,וְ/הַצִּית֣וּ/הָ,"K= ve./ho.tzi.tei./ha (וְ/הוֹצִתִּי/הָ) ""and/ I will set on fire/ it"" (H9001/H3341/H9034=Hc/Vhq1cs/Sp3fs)",H3341 H9034,Vhv2mp Sp3fs,H3341 H9034,Vhq1cs Sp3fs
+2Sa,15,20,4,אֲנִֽיעֲ/ךָ֤,"K= 'a.no.'a./kha (אֲנוֹעֲ/ךָ) ""will I wander?/ you"" (H5128/H9031=HVqi1cs/Sp2ms)",H5128 H9031,HVhi1cs Sp2ms,H5128 H9031,HVqi1cs Sp2ms
+2Sa,16,8,10,תַּחְתָּ֔י/ו,"K= tach.t/o (תַּחְתּ/וֹ) ""in place of/ him"" (H8478H/H9033=HNcmsc/Sp3ms)",H8478H H9033,HNcmpc Sp3ms,H8478H H9033,HNcmsc Sp3ms
+2Sa,16,10,10,כִּ֤י,"K= ve./khi (וְ/כִי) ""and/ for"" (H9002/H3588A=HC/Tc)",H3588A,HTc,H3588A,Tc
+2Sa,18,8,4,נָפֹ֖צֶת,"K= na.fo.tzeit (נָפֹצֵית) ""scattered"" (H6327A=HVNrfpa)",H6327A,HVNrfsa,H6327A,HVNrfpa
+2Sa,18,18,5,בְ/חַיָּי/ו֙,"K= ve./cha.ya/v (בְ/חַיָּ/ו) ""in/ life/ his"" (H9003/H2416E/H9023=HR/Ncmsc/Sp3ms)",H9003 H2416E H9023,HR Ncmpc Sp3ms,H9003 H2416E H9023,HR Ncmsc Sp3ms
+2Sa,19,18(19,9,בְּ/עֵינָ֑י/ו,"K= be./'ay.n/o (בְּ/עֵינ/וֹ) ""in/ eye/ his"" (H9003/H5869I/H9023=HR/Ncbsc/Sp3ms)",H9003 H5869I H9023,HR Ncfdc Sp3ms,H9003 H5869I H9023,HR Ncbsc Sp3ms
+2Sa,19,40(19,10,הֶעֱבִ֣ירוּ,"K= va/y.'e.vi.ru (וַ/יַּעֲבִרוּ) ""and/ they brought over"" (H9001/H5674C=Hc/Vhw3mp)",H5674C,HVhp3cp,H5674C,Vhw3mp
+2Sa,21,6,1,יֻתַּן,"K= ye.na.ton- (יְנָתָן) ""let it be given"" (H5414G=HVNi3ms)",H5414G,HVHi3ms,H5414G,HVNi3ms
+2Sa,21,12,24,פְּלִשְׁתִּ֔ים,"K= ha./pe.lish.tim (הַ/פְּלִשְׁתִּים) ""the/ Philistines"" (H9009/H6430G=HTd/Ngmpa)",H6430G,HNgmpa,H6430G,HTd Ngmpa
+2Sa,22,8,1,וַ/יִּתְגָּעַ֤שׁ,"K= va/t.ga.'ash (וַ/תִּגְעַשׁ) ""and/ it shook"" (H9001/H1607=Hc/Vqw3fs)",H1607,Vtw3ms,H1607,Vqw3fs
+2Sa,22,23,3,מִשְׁפָּטָ֖י/ו,"K= mish.po.t/o (מִשְׁפָּט/וֹ) ""judgment/ his"" (H4941G/H9023=HNcmsc/Sp3ms)",H4941G H9023,HNcmpc Sp3ms,H4941G H9023,HNcmsc Sp3ms
+2Sa,23,9,8,הַ/גִּבֹּרִ֜ים,"K= gi.bo.rim (גִבֹּרִים) ""warriors"" (H1368=HNcmpa)",H1368,HTd Ncmpa,H1368,HNcmpa
+2Sa,23,37,5,נֹשֵׂ֕א,"K= no.se.'ei (נֹשְׂאֵי) ""[the] bearers of"" (H5375W=HVqrmpc)",H5375W,HVqrmsc,H5375W,HVqrmpc
+2Sa,24,14,14,רַֽחֲמָ֔י/ו,"K= ra.cha.m/o (רַחֲמ/וֹ) ""compassion/ his"" (H7356B/H9023=HNcmsc/Sp3ms)",H7356B H9023,HNcmpc Sp3ms,H7356B H9023,HNcmsc Sp3ms
+2Sa,24,22,10,בְּ/עֵינָ֑י/ו,"K= be./'ay.n/o (בְּ/עֵינ/וֹ) ""in/ eye/ his"" (H9003/H5869I/H9023=HR/Ncbsc/Sp3ms)",H9003 H5869I H9023,HR Ncfdc Sp3ms,H9003 H5869I H9023,HR Ncbsc Sp3ms
+1Ki,1,27,11,עַבְדְּ/ךָ֔,"K= av.dei./kha (עַבְדֶּי/ךָ) ""servants/ your"" (H5650/H9021=HNcmpc/Sp2ms)",H5650 H9021,HNcmsc Sp2ms,H5650 H9021,HNcmpc Sp2ms
+1Ki,1,37,8,יִֽהְיֶ֣ה,"K= ye.hi (יְהִי) ""may he be"" (H1961=HVqj3ms)",H1961,HVqi3ms,H1961,HVqj3ms
+1Ki,4,7,17,הָ/אֶחָ֖ד,"K= 'e.chad (אֶחָד) ""one"" (H0259=HNcfsa)",H0259,HTd Ncfsa,H0259,HNcfsa
+1Ki,6,5,5,יָצִ֙יעַ֙,"K= ya.tzo.a' (יָצוֹעַ) ""a bed"" (H3326B=HNcbsa)",H3326B,HNcmsa,H3326B,HNcbsa
+1Ki,6,6,1,הַ/יָּצִ֨יעַ,"K= hai./ya.tzo.a' (הַ/יָּצוֹעַ) ""the/ bed"" (H9009/H3326B=HTd/Ncbsa)",H3326B,HTd Ncmsa,H3326B,HTd Ncbsa
+1Ki,6,10,3,הַ/יָּצִ֙יעַ֙,"K= hai./ya.tzo.a' (הַ/יָּצוֹעַ) ""the/ bed"" (H9009/H3326B=HTd/Ncbsa)",H3326B,HTd Ncmsa,H3326B,HTd Ncbsa
+1Ki,6,38,14,מִשְׁפָּטָ֑י/ו,"K= mish.pa.to/v (מִשְׁפָּט/וֹ) ""plan/ its"" (H4941J/H9023=HNcmsc/Sp3ms)",H4941J H9023,HNcmpc Sp3ms,H4941J H9023,HNcmsc Sp3ms
+1Ki,7,20,11,הַ/שְּׂבָכָ֑ה,"K= se.va.khah (שְׂבָכָה) ""a network"" (H7639=HNcfsa)",H7639,HTd Ncfsa,H7639,HNcfsa
+1Ki,7,36,6,מִסְגְּרֹתֶ֔י/הָ,"K= va./mis.ge.ro.tei./ha (וּ/מִסְגְּרֹתֶי/הָ) ""<and>/ rims/ its"" (H9002/H4526/H9024=HC/Ncfpc/Sp3fs)",H4526 H9024,HNcfpc Sp3fs,H4526 H9024,Ncfpc Sp3fs
+1Ki,8,26,6,דְּבָ֣רְ/ךָ֔,"K= de.va.rei./kha (דְּבָרֶי/ךָ) ""words/ your"" (H1697G/H9021=HNcmpc/Sp2ms)",H1697G H9021,HNcmsc Sp2ms,H1697G H9021,HNcmpc Sp2ms
+1Ki,8,48,24,בָּנִ֥יתִי,"K= ba.ni.ta (בָּנִיתָ) ""you have built"" (H1129=HVqp2ms)",H1129,HVqp1cs,H1129,HVqp2ms
+1Ki,9,9,17,וַ/יִּשְׁתַּחֲו֥וּ,"K= va/i.yish.ta.chu (וַ/יִּשְׁתַּחוּ) ""and/ he bowed down"" (H9001/H7812=Hc/Vvw3ms)",H7812,Vvw3mp,H7812,Vvw3ms
+1Ki,10,5,6,מְשָׁרְתָ֜י/ו,"K= me.sha.re.to/v (מְשָׁרְת/וֹ) ""servant/ his"" (H8334/H9033=HVprmsc/Sp3ms)",H8334 H9033,HVprmpc Sp3ms,H8334 H9033,HVprmsc Sp3ms
+1Ki,12,3,4,וַ/יָּבֹ֥א,"K= va/i.ya.vo.'u (וַ/יָּבֹאוּ) ""and/ they came"" (H9001/H0935G=Hc/Vqw3mp)",H0935G,Vqw3ms,H0935G,Vqw3mp
+1Ki,12,7,1,וַ/יְדַבְּר֨וּ,"K= va/y.da.ber (וַ/יְדַבֵּר) ""and/ he spoke"" (H9001/H1696G=Hc/Vpw3ms)",H1696G,Vpw3mp,H1696G,Vpw3ms
+1Ki,12,21,1,וַ/יָּבֹ֣א,"K= va/i.ya.vo.'u (וַ/יָּבֹאוּ) ""and/ they came"" (H9001/H0935G=Hc/Vqw3mp)",H0935G,Vqw3ms,H0935G,Vqw3mp
+1Ki,15,18,14,הַ/מֶּ֔לֶךְ,"K= Me.lekh (מֶלֶךְ) ""a king"" (H4428G=HNcbsa)",H4428G,HTd Ncmsa,H4428G,HNcbsa
+1Ki,16,19,2,חַטֹּאתָי/ו֙,"K= cha.ta.to/v (חַטָּאת/וֹ) ""sin/ his"" (H2403B/H9023=HNcfsc/Sp3ms)",H2403B H9023,HNcfpc Sp3ms,H2403B H9023,HNcfsc Sp3ms
+1Ki,16,26,7,וּ/בְ/חַטָּאת֔/וֹ,"K= u./ve./cha.to.ta/v (וּ/בְ/חַטֹּאתָי/ו) ""and/ in/ sins/ his"" (H9002/H9003/H2403B/H9023=HC/R/Ncfpc/Sp3ms)",H9003 H2403B H9023,R Ncfsc Sp3ms,H9003 H2403B H9023,R Ncfpc Sp3ms
+1Ki,17,15,6,הִֽיא\־,"K= hu'- (הוּא\־) ""he"" (H1931\H9014=HPp3ms)",H1931 H9014,HPp3fs,H1931 H9014,HPp3ms
+1Ki,18,36,21,וּ/בִ/דְבָרְ/ךָ֣,"K= u./ve./div.rei./kha (וּ/בְ/דִבְרֶי/ךָ) ""and/ at/ words/ your"" (H9002/H9003/H1697G/H9021=HC/R/Ncmpc/Sp2ms)",H9003 H1697G H9021,R Ncmsc Sp2ms,H9003 H1697G H9021,R Ncmpc Sp2ms
+1Ki,18,42,15,בִּרְכָּֽי/ו\׃,"K= be.ra.kho/v (בְּרָכ/וֹ\׃) ""knee/ his"" (H1290/H9023\H9016=HNcbsc/Sp3ms)",H1290 H9023 H9016,HNcfdc Sp3ms,H1290 H9023 H9016,HNcbsc Sp3ms
+1Ki,21,8,8,סְפָרִ֗ים,"K= ha/s.fa.rim (הַ/סְפָרִים) ""the/ letters"" (H9009/H5612A=HTd/Ncmpa)",H5612A,HNcmpa,H5612A,HTd Ncmpa
+1Ki,22,13,20,דְבָרְ/ךָ֗,"K= div.rei./kha (דִבְרֶי/ךָ) ""words/ your"" (H1697G/H9021=HNcmpc/Sp2ms)",H1697G H9021,HNcmsc Sp2ms,H1697G H9021,HNcmpc Sp2ms
+1Ki,22,48(22,11,נִשְׁבְּר֥וּ,"K= nish.be.rah (נִשְׁבְּרָה) ""it was broken"" (H7665=HVNp3fs)",H7665,HVNp3cp,H7665,HVNp3fs
+2Ki,4,7,12,נִשְׁיֵ֑/ךְ,"K= nish.ye./khi (נִשְׁיֵ/כִי) ""debt/ your"" (H5386/H9022=HNcbsc/Sp2fs)",H5386 H9022,HNcmsc Sp2fs,H5386 H9022,HNcbsc Sp2fs
+2Ki,4,7,14,וּ/בָנַ֔יִ/ךְ,"K= be.nei./khi (בְּנֵי/כִי) ""children/ your"" (H1121A/H9022=HNcmpc/Sp2fs)",H1121A H9022,Ncmpc Sp2fs,H1121A H9022,HNcmpc Sp2fs
+2Ki,4,34,14,כַּפָּ֔י/ו,"K= ka.po/v (כַּפּ/וֹ) ""palm/ his"" (H3709G/H9023=HNcbsc/Sp3ms)",H3709G H9023,HNcfdc Sp3ms,H3709G H9023,HNcbsc Sp3ms
+2Ki,5,9,3,בְּ/סוּסָ֣י/ו,"K= be./su.so/v (בְּ/סוּס/וֹ) ""with/ horse/ his"" (H9003/H5483M/H9023=HR/Ncmsc/Sp3ms)",H9003 H5483M H9023,HR Ncmpc Sp3ms,H9003 H5483M H9023,HR Ncmsc Sp3ms
+2Ki,7,13,16,הֲמ֤וֹן,"K= he./ha.mon (הֶ/הָמוֹן) ""the/ multitude of"" (H9009/H1995A=HTd/Ncbsc)",H1995A,HNcmsc,H1995A,HTd Ncbsc
+2Ki,8,17,8,שָׁנִ֔ים,"K= sha.nah (שָׁנָה) ""year[s]"" (H8141=HNcfsa)",H8141,HNcmpa,H8141,HNcfsa
+2Ki,11,1,4,רָאֲתָ֖ה,"K= u./ra.'a.tah (וְ/רָאֲתָה) ""and/ she saw"" (H9002/H7200G=HC/Vqp3fs)",H7200G,HVqp3fs,H7200G,Vqp3fs
+2Ki,11,2,17,הַ/מּ֣וּמָתִ֔ים,"K= ha./ma.mo.tim (הַ/מָּמוֹתְתִים) ""who/ were to be put to death"" (H9009/H4191=HTd/VOrmpa)",H4191,HTd VHsmpa,H4191,HTd VOrmpa
+2Ki,11,18,9,מִזְבְּחֹתָ֤י/ו,"K= miz.be.cho.to/v (מִזְבְּחֹת/וֹ) ""altar/ its"" (H4196/H9023=HNcfsc/Sp3ms)",H4196 H9023,HNcfpc Sp3ms,H4196 H9023,HNcfsc Sp3ms
+2Ki,12,11(12,6,יְדֵי֙,"K= yad (יַד) ""[the] hand of"" (H3027G=HNcbsc)",H3027G,HNcbdc,H3027G,HNcbsc
+2Ki,12,11(12,9,הַ/מֻּפְקָדִ֖ים,"K= ha./pe.ku.dim (הַ/פְּקֻדִים) ""who/ were appointed"" (H9009/H6485J=HTd/Vqsmpa)",H6485J,HTd VHsmpa,H6485J,HTd Vqsmpa
+2Ki,14,6,28,יוּמָֽת\׃,"K= ya.mut (יָמוּת\׃) ""he will die"" (H4191\H9016=HVqi3ms)",H4191 H9016,HVHi3ms,H4191 H9016,HVqi3ms
+2Ki,14,7,6,מֶ֙לַח֙,"K= ha./me.lach (הַ/מֶּלַח) ""<the>/ Salt"" (H9009/H4417H=HTd/Ncbsa)",H4417H,HNcmsa,H4417H,HTd Ncbsa
+2Ki,14,12,7,לְ/אֹהָלָֽי/ו\׃,"K= le./'o.ho.lo/v (לְ/אָהֳל/וֹ\׃) ""to/ tent/ his"" (H9005/H0168H/H9023\H9016=HR/Ncmsc/Sp3ms)",H9005 H0168H H9023 H9016,HR Ncmpc Sp3ms,H9005 H0168H H9023 H9016,HR Ncmsc Sp3ms
+2Ki,14,13,15,וַ/יָּבֹא֙,"K= va/i.ya.vo.'u (וַ/יָּבֹאוּ) ""and/ they came"" (H9001/H0935G=Hc/Vqw3mp)",H0935G,Vqw3ms,H0935G,Vqw3mp
+2Ki,15,25,11,הַ/מֶּ֙לֶךְ֙,"K= Me.lekh (מֶלֶךְ) ""a king"" (H4428G=HNcbsa)",H4428G,HTd Ncmsa,H4428G,HNcbsa
+2Ki,16,17,9,אֶת,"K= ve./'Et (וְ/אֶת) ""and/ <obj.>"" (H9002/H0853=HC/To)",H0853,HTo,H0853,To
+2Ki,16,18,2,מוּסַ֨ךְ,"K= mi.sakh (מִיסַךְ) ""[the] covered structure of"" (H4329=HNcbsc)",H4329,HNcmsc,H4329,HNcbsc
+2Ki,17,16,10,שְׁנֵ֣י,"K= she.neim (שְׁנֵים) ""two"" (H8147=HNcbda)",H8147,HNcbdc,H8147,HNcbda
+2Ki,19,23,21,קִצּ֔/וֹ,"K= ki.Tzo/h (קִצֹּ֔/ה) ""end/ its"" (H7093/H9023=HNcbsc/Sp3ms)",H7093 H9023,HNcmsc Sp3ms,H7093 H9023,HNcbsc Sp3ms
+2Ki,20,13,8,נְכֹת֡/וֹ,"K= ne.kho.To/h (נְכֹתֹ/ה) ""treasure/ his"" (H5238/H9023=HNcbsc/Sp3ms)",H5238 H9023,HNcfsc Sp3ms,H5238 H9023,HNcbsc Sp3ms
+2Ki,20,18,7,יִקָּ֑חוּ,"K= yi.kach (יִקָּח) ""someone will take away"" (H3947G=HVqi3ms)",H3947G,HVqi3mp,H3947G,HVqi3ms
+2Ki,23,10,6,בֶן,"K= ve.nei- (בְנֵי) ""[the] sons of"" (H1121A=HNcmpc)",H1121A,HNcmsc,H1121A,HNcmpc
+2Ki,24,10,3,עָל֗וּ,"K= a.lah (עָלָה) ""he went up"" (H5927G=HVqp3ms)",H5927G,HVqp3cp,H5927G,HVqp3ms
+2Ki,24,14,12,עֲשֶׂ֤רֶת,"K= a.sa.rah (עֲשָׂרָה) ""ten"" (H6235=HNcfsa)",H6235,HNcfsc,H6235,HNcfsa
+2Ki,25,17,13,אַמּוֹת֒,"K= 'a.mah (אַמָּה) ""cubit[s]"" (H0520A=HNcfsa)",H0520A,HNcfpa,H0520A,HNcfsa
+1Ch,2,55,3,יֹשְׁבֵ֣י,"K= yo.she.vu (יָשְׁבוּ) ""[who] they dwelt"" (H3427=HVqp3cp)",H3427,HVqrmpc,H3427,HVqp3cp
+1Ch,7,34,5,וְ/חֻבָּ֥ה,"K= yach.bah (יַחְבָּה) ""Jachbah"" (H3160=HNpm)",H3160,Npm,H3160,HNpm
+1Ch,12,5(12,6,הַ/חֲרוּפִֽי\׃,"K= ha./cha.ri.fi (הַ/חֲרִיפִי\׃) ""the/ Hariphite"" (H9009/H2741\H9016=HTd/Ngbsa)",H2741 H9016,HTd Ngmsa,H2741 H9016,HTd Ngbsa
+1Ch,29,16,14,ה֖וּא,"K= hi' (הִיא) ""it"" (H1931=HPp3fs)",H1931,HPp3ms,H1931,HPp3fs
+2Ch,18,33,16,יָדְ/ךָ֛,"K= ya.dei./kha (יָדֶי/ךָ) ""hands/ your"" (H3027I/H9021=HNcbdc/Sp2ms)",H3027I H9021,HNcbsc Sp2ms,H3027I H9021,HNcbdc Sp2ms
+2Ch,34,25,4,וַֽ/יְקַטְּרוּ֙,"K= va/i.yak.ti.ru (וַ/יַּקְטִירוּ) ""and/ they have made smoke"" (H9001/H6999H=Hc/Vhw3mp)",H6999H,Vpw3mp,H6999H,Vhw3mp
+2Ch,35,4,1,וְ/הָכִ֥ינוּ,"K= ve./hi.ko.nu (וְ/הִכּוֹנוּ) ""and/ be prepared"" (H9002/H3559A=HC/VNv2mp)",H3559A,Vhv2mp,H3559A,VNv2mp
+Ezr,3,3,10,וַ/יַּעֲל֨וּ,"K= va/i.ya.'al (וַ/יַּעַל) ""and/ he offered up"" (H9001/H5927I=Hc/Vhw3ms)",H5927I,Vhw3mp,H5927I,Vhw3ms
+Ezr,4,7,8,כְּנָוֹתָ֔י/ו,"K= ke.na.vo.to/v (כְּנָוֹת/וֹ) ""colleague/ his"" (H3674/H9023=HNcfsc/Sp3ms)",H3674 H9023,HNcfpc Sp3ms,H3674 H9023,HNcfsc Sp3ms
+Ezr,4,11,10,עַבְדָ֛/ךְ,"K= av.da.yi/kh (עֲבָדֶ֣י/ךָ) ""servants/ your"" (H5649/H9021=ANcbsc/Sp2ms)",H5649 H9021,ANcmpc Sp2ms,H5649 H9021,ANcbsc Sp2ms
+Ezr,4,12,18,שַׁכְלִ֔ילוּ,"K= shakh.Li.lu (אֲשַׁכְלְלוּ) ""they have been finished"" (H3635A=AVvp3mp)",H3635A,AVep3mp,H3635A,AVvp3mp
+Ezr,10,12,8,כִּ/דְבָרְ/ךָ֥,"K= ke./div.rei./kha (כְּ/דִבְרֶי/ךָ) ""according to/ words/ your"" (H9004/H1697G/H9021=HR/Ncmpc/Sp2ms)",H9004 H1697G H9021,HR Ncmsc Sp2ms,H9004 H1697G H9021,HR Ncmpc Sp2ms
+Ezr,10,44,3,נָשְׂאוּ,"K= na.se.'u (נֹשְׂאֵי) ""[the] takers"" (H5375U=HVqrmpc)",H5375U,HVqp3cp,H5375U,HVqrmpc
+Neh,3,15,15,וְ/יַעֲמִיד֙,"K= ve./ya.'a.mi.du (וְ/יַעֲמִידוּ) ""so/ they may set up"" (H9002/H5975G=HC/Vhu3mp)",H5975G,Vhu3ms,H5975G,Vhu3mp
+Neh,5,9,1,וָ/אוֹמַ֕ר,"K= va/i.yo.mer (וַ/יֹּאמֶר) ""and/ he said"" (H9001/H0559=Hc/Vqw3ms)",H0559,Vqw1cs,H0559,Vqw3ms
+Neh,7,3,1,וָ/אֹמַ֣ר,"K= va/i.yo.mer (וַ/יֹּאמֶר) ""and/ he said"" (H9001/H0559=Hc/Vqw3ms)",H0559,Vqw1cs,H0559,Vqw3ms
+Neh,9,17,25,חֶ֖סֶד,"K= ve./che.sed (וְ/חֶסֶד) ""and/ covenant loyalty"" (H9002/H2617A=HC/Ncbsa)",H2617A,HNcmsa,H2617A,Ncbsa
+Neh,12,46,6,רָאשֵׁי֙,"K= rosh (רֹאשׁ) ""[the] leader of"" (H7218H=HNcmsc)",H7218H,HNcmpc,H7218H,HNcmsc
+Est,9,27,2,וְ/קִבְּל֣וּ,"K= ve./ki.bel (וְ/קִבֵּל) ""and/ he accepted"" (H9001/H6901=Hc/Vpq3ms)",H6901,Vpq3cp,H6901,Vpq3ms
+Job,2,7,13,וְ/עַ֥ד,"K= ad (עַד) ""to"" (H5704=HR)",H5704,R,H5704,HR
+Job,5,18,6,וְ/יָדָ֥י/ו,"K= ve./ya.do/v (וְ/יָד/וֹ) ""and/ hand/ his"" (H9002/H3027G/H9023=HC/Ncbsc/Sp3ms)",H3027G H9023,Ncbdc Sp3ms,H3027G H9023,Ncbsc Sp3ms
+Job,6,29,6,וְ/שׁ֥וּבוּ,"K= ve./shu.vi (וְ/שֻׁבִי) ""and/ turn back"" (H9002/H7725I=HC/Vqv2fs)",H7725I,Vqv2mp,H7725I,Vqv2fs
+Job,7,5,4,וְ/ג֣וּשׁ,"K= ve./gish (וְ/גִישׁ) ""and/ clod[s] of"" (H9002/H1487=HC/Ncbsc)",H1487,Ncmsc,H1487,Ncbsc
+Job,10,20,4,וַ/חֲדָ֑ל,"K= yech.dal (יֶחְדָּל) ""may it cease"" (H2308=HVqv2ms)",H2308,Vqv2ms,H2308,HVqv2ms
+Job,10,20,5,וְ/שִׁ֥ית,"K= ya.shit (יָשִׁית) ""may he put"" (H7896H=HVqi3ms)",H7896H,Vqv2ms,H7896H,HVqi3ms
+Job,14,5,7,חֻקָּ֥י/ו,"K= chu.ko/v (חֻקּ/וֹ) ""limit/ his"" (H2706I/H9023=HNcmsc/Sp3ms)",H2706I H9023,HNcmpc Sp3ms,H2706I H9023,HNcmsc Sp3ms
+Job,15,15,2,בִּ֭/קְדֹשָׁי/ו,"K= bi/k.do.sho/v (בִּ/קְדֹשׁ/וֹ) ""in/ holy [one]/ his"" (H9003/H6918G/H9023=HR/Aamsc/Sp3ms)",H9003 H6918G H9023,HR Aampc Sp3ms,H9003 H6918G H9023,HR Aamsc Sp3ms
+Job,15,31,3,בַּ/שָּׁ֣יו,"K= ba./shov (בַּ/שּׁוֹ) ""in/ <the> worthlessness"" (H9003/H7723H=HRd/Ncbsa)",H9003 H7723H,HRd Ncmsa,H9003 H7723H,HRd Ncbsa
+Job,16,16,2,חֳ֭מַרְמְרוּ,"K= cho.mar.me.rah (חֳמַרְמְרָה) ""it is reddened"" (H2560C=HVpp3fs)",H2560C,HVpp3cp,H2560C,HVpp3fs
+Job,20,11,3,עֲלוּמָ֑י/ו,"K= a.lu.mo/v (עֲלוּמ/וֹ) ""youthful vigor/ his"" (H5934/H9023=HNcmsc/Sp3ms)",H5934 H9023,HNcmpc Sp3ms,H5934 H9023,HNcmsc Sp3ms
+Job,21,20,2,עֵינָ֣י/ו,"K= ei.no/v (עֵינ/וֹ) ""own eye/ his"" (H5869A/H9023=HNcbsc/Sp3ms)",H5869A H9023,HNcfdc Sp3ms,H5869A H9023,HNcbsc Sp3ms
+Job,24,1,6,וְ֝/יֹדְעָ֗י/ו,"K= ve./yo.de.'o/v (וְ/יֹדְע/וֹ) ""and/ [one who] knows/ him"" (H9002/H3045/H9033=HC/Vqrmsc/Sp3ms)",H3045 H9033,Vqrmpc Sp3ms,H3045 H9033,Vqrmsc Sp3ms
+Job,24,6,3,יִקְצ֑וֹרוּ,"K= yak.tzi.ru (יַקְצִירוּ) ""they cause to harvest"" (H7114B=HVhi3mp)",H7114B,HVqi3mp,H7114B,HVhi3mp
+Job,26,14,4,דְּרָכָ֗י/ו,"K= dar.ko/v (דַּרְכּ/וֹ) ""way/ his"" (H1870G/H9023=HNcbsc/Sp3bs)",H1870G H9023,HNcbpc Sp3ms,H1870G H9023,HNcbsc Sp3bs
+Job,26,14,11,גְּ֝בוּרוֹתָ֗י/ו,"K= ge.vu.ra.to/v (גְּבוּרָת/וֹ) ""might/ his"" (H1369/H9023=HNcfsc/Sp3ms)",H1369 H9023,HNcfpc Sp3ms,H1369 H9023,HNcfsc Sp3ms
+Job,27,15,1,שְׂ֭רִידָי/ו,"K= se.ri.do/v (שְׂרִיד/וֹ) ""survivor/ his"" (H8300/H9023=HNcmsc/Sp3ms)",H8300 H9023,HNcmpc Sp3ms,H8300 H9023,HNcmsc Sp3ms
+Job,31,11,2,הִ֥יא,"K= hu' (הוּא) ""that"" (H1931=HPp3ms)",H1931,HPp3fs,H1931,HPp3ms
+Job,31,20,4,חֲלָצָ֑י/ו,"K= cha.la.tzo/v (חֲלָצ/וֹ) ""loin/ his"" (H2504/H9023=HNcbsc/Sp3ms)",H2504 H9023,HNcfdc Sp3ms,H2504 H9023,HNcbsc Sp3ms
+Job,37,12,4,בְּ/תַחְבּוּלֹתָ֣י/ו,"K= be./tach.bu.la.to/v (בְּ/תַחְבּוּלָת/וֹ) ""by/ guidance/ his"" (H9003/H8458/H9023=HR/Ncfsc/Sp3ms)",H9003 H8458 H9023,HR Ncfpc Sp3ms,H9003 H8458 H9023,HR Ncfsc Sp3ms
+Job,38,12,5,הַ/שַּׁ֣חַר,"K= sha.char (שַׁחַר) ""dawn"" (H7837=HNcbsa)",H7837,HTd Ncmsa,H7837,HNcbsa
+Job,38,41,6,יְ֭לָדָי/ו,"K= ye.la.do/v (יְלָד/וֹ) ""young one/ its"" (H3206/H9023=HNcmsc/Sp3ms)",H3206 H9023,HNcmpc Sp3ms,H3206 H9023,HNcmsc Sp3ms
+Job,39,12,4,יָשִׁ֣יב,"K= ya.shuv (יָשׁוּב) ""it will come back"" (H7725G=HVqi3ms)",H7725G,HVhi3ms,H7725G,HVqi3ms
+Job,39,26,5,כְּנָפָ֣י/ו,"K= ke.na.fo/v (כְּנָפ/וֹ) ""wing/ its"" (H3671/H9023=HNcbsc/Sp3ms)",H3671 H9023,HNcfdc Sp3ms,H3671 H9023,HNcbsc Sp3ms
+Job,39,30,1,וְ/אֶפְרֹחָ֥י/ו,"K= ve./'ef.ro.cho/v (וְ/אֶפְרֹח/וֹ) ""and/ young one/ its"" (H9002/H0667/H9023=HC/Ncmsc/Sp3ms)",H0667 H9023,Ncmpc Sp3ms,H0667 H9023,Ncmsc Sp3ms
+Job,40,17,6,פַחֲדָ֣י/ו,"K= fa.cha.do/v (פַחֲד/וֹ) ""thigh/ its"" (H6344/H9023=HNcmsc/Sp3ms)",H6344 H9023,HNcmpc Sp3ms,H6344 H9023,HNcmsc Sp3ms
+Job,42,2,1,יָ֭דַעְתִּי,"K= ya.da'.ta (יָדַעְתָּ) ""you know"" (H3045=HVqp2ms)",H3045,HVqp1cs,H3045,HVqp2ms
+Psa,6,3(6,4,וְ/אַתָּ֥ה,"K= ve./'at (וְ/אַתְּ) ""and/ you"" (H9002/H0859C=HC/Pp2fs)",H0859C,Pp2ms,H0859C,Pp2fs
+Psa,10,10,1,יִדְכֶּ֥ה,"K= va./da.khah (וְ/דָכָה) ""and/ he is crushed"" (H9001/H1794=Hc/Vqq3ms)",H1794,HVqi3ms,H1794,Vqq3ms
+Psa,11,1,8,נ֝֗וּדִי,"K= nu.du (נוּדוּ) ""take flight"" (H5110=HVqv2mp)",H5110,HVqv2fs,H5110,HVqv2mp
+Psa,41,2(41,4,וְ/אֻשַּׁ֣ר,"K= ye.'u.Shar (יֶאְשֹּׁר) ""he will be called blessed"" (H0833=HVPi3ms)",H0833,VPq3ms,H0833,HVPi3ms
+Psa,42,8(42,6,שִׁיר֣/וֹ,"K= shi.R/o (שִׁירָ/הּ) ""song/ his"" (H7892A/H9023=HNcbsc/Sp3ms)",H7892A H9023,HNcmsc Sp3ms,H7892A H9023,HNcbsc Sp3ms
+Psa,51,2(51,1,הֶ֭רֶב,"K= He.rev (הַרְבֵּה) ""greatly"" (H7235A=HVhaa)",H7235A,HVhv2ms,H7235A,HVhaa
+Psa,56,6(56,2,יִצְפּ֗וֹנוּ,"K= yitz.Po.nu (יַצְפִּינוּ) ""they lie hidden"" (H6845=HVhi3mp)",H6845,HVqi3mp,H6845,HVhi3mp
+Psa,58,7(58,7,חִ֝צָּ֗י/ו,"K= chi.Tza/v (חִצּ/וֹ) ""arrow/ his"" (H2671/H9023=HNcmsc/Sp3ms)",H2671 H9023,HNcmpc Sp3ms,H2671 H9023,HNcmsc Sp3ms
+Psa,59,15(59,2,יְנִיע֣וּ/ן,"K= ye.ni.'U/n (יְנוּעוּ/ן) ""they wander about/ !"" (H5128/H9013=HVqi3mp/Sn)",H5128 H9013,HVhi3mp Sn,H5128 H9013,HVqi3mp Sn
+Psa,66,7,9,יָר֖וּמוּ,"K= ya.Ru.mu (יָרִימוּ) ""they exalt"" (H7311A=HVhi3mp)",H7311A,HVqi3mp,H7311A,HVhi3mp
+Psa,72,17,6,יִנּ֪וֹן,"K= yi.Non (יָנִין) ""may it cause to increase"" (H5125=HVhi3ms)",H5125,HVNi3ms,H5125,HVhi3ms
+Psa,73,2,3,נָטָ֣יוּ,"K= na.Ta.yu (נָטוּי) ""[was] bent down"" (H5186=HVqsmsa)",H5186,HVqp3cp,H5186,HVqsmsa
+Psa,73,2,6,שֻׁפְּכ֥וּ,"K= shu.pe.Khu (שֻׁפְּכָה) ""it had been poured out"" (H8210J=HVPp3ms)",H8210J,HVPp3cp,H8210J,HVPp3ms
+Psa,73,10,2,יָשׁ֣וּב,"K= ya.Shuv (יָשִׁיב) ""he brings back"" (H7725G=HVhi3ms)",H7725G,HVqi3ms,H7725G,HVhi3ms
+Psa,73,16,5,ה֣וּא,"K= Hu' (הִיא) ""it"" (H1931=HPp3fs)",H1931,HPp3ms,H1931,HPp3fs
+Psa,77,11(77,1,אֶזְכּ֥וֹר,"K= 'ez.Kor (אַזְכִּיר) ""I will bring to remembrance"" (H2142=HVhi1cs)",H2142,HVqi1cs,H2142,HVhi1cs
+Psa,77,19(77,3,וּֽ֭/שְׁבִֽילְ/ךָ,"K= U./she.vi.le./kha (וּ/שְׁבִילֶי/ךָ) ""and/ paths/ your"" (H9002/H7635/H9021=HC/Ncmpc/Sp2ms)",H7635 H9021,Ncmsc Sp2ms,H7635 H9021,Ncmpc Sp2ms
+Psa,89,17(89,6,תָּר֥וּם,"K= ta.Rum (תָּרִים) ""you exalt"" (H7311A=HVhi2ms)",H7311A,HVqi3fs,H7311A,HVhi2ms
+Psa,105,18,3,רַגְל֑/וֹ,"K= rag.L/o (רַגְלָי/ו) ""feet/ his"" (H7272/H9023=HNcbdc/Sp3ms)",H7272 H9023,HNcfsc Sp3ms,H7272 H9023,HNcbdc Sp3ms
+Psa,105,28,7,דְּבָרֽ/וֹ\׃,"K= de.va.R/o (דְּבָרָו/ו\׃) ""words/ his"" (H1697G/H9023\H9016=HNcmpc/Sp3ms)",H1697G H9023 H9016,HNcmsc Sp3ms,H1697G H9023 H9016,HNcmpc Sp3ms
+Psa,106,45,6,חֲסָדָֽי/ו\׃,"K= cha.sa.Da/v (חַסְדּ/וֹ\׃) ""covenant loyalty/ his"" (H2617A/H9023\H9016=HNcbsc/Sp3ms)",H2617A H9023 H9016,HNcmpc Sp3ms,H2617A H9023 H9016,HNcbsc Sp3ms
+Psa,119,79,4,וְ֝/יֹדְעֵ֗י,"K= ve./yo.de.'Ei (וְ/יָדְעוּ) ""and/ they will know"" (H9001/H3045=Hc/Vqq3cp)",H3045,Vqrmpc,H3045,Vqq3cp
+Psa,119,147,4,לִ/דְבָרְ/ךָ֥,"K= li/d.va.rei./kha (לִ/דְבָרֶי/ךָ) ""for/ words/ your"" (H9005/H1697G/H9021=HR/Ncmpc/Sp2ms)",H9005 H1697G H9021,HR Ncmsc Sp2ms,H9005 H1697G H9021,HR Ncmpc Sp2ms
+Psa,119,161,4,וּ֝/מִ/דְּבָרְ/ךָ֗,"K= u./mi./de.va.rei./kha (וּ/מִ/דְּבָרֶי/ךָ) ""and/ from/ words/ your"" (H9002/H9006/H1697G/H9021=HC/R/Ncmpc/Sp2ms)",H9006 H1697G H9021,R Ncmsc Sp2ms,H9006 H1697G H9021,R Ncmpc Sp2ms
+Psa,129,3,6,לְ/מַעֲנִיתָֽ/ם\׃,"K= le./ma.'a.no.ta/m (לְ/מַעֲנוֹתָ/ם\׃) ""<to>/ furrow/ their"" (H9005/H4618/H9028\H9016=HR/Ncfsc/Sp3mp)",H9005 H4618 H9028 H9016,HR Ncfpc Sp3mp,H9005 H4618 H9028 H9016,HR Ncfsc Sp3mp
+Psa,140,9(140,5,יְכַסֵּֽ/מוֹ\׃,"K= ye.kha.su./mov (יְכַסּוּ/מוֹ\׃) ""may they cover/ them"" (H3680/H9038\H9016=HVpi3mp/Sp3mp)",H3680 H9038 H9016,HVpi3ms Sp3mp,H3680 H9038 H9016,HVpi3mp Sp3mp
+Psa,140,10(140,1,יִמּ֥וֹטוּ,"K= ya.mi.tu (יָמִיטוּ) ""may people drop"" (H4131=HVhi3mp)",H4131,HVNi3mp,H4131,HVhi3mp
+Psa,145,6,4,וּ/גְדוּלָּתְ/ךָ֥,"K= u./ge.du.lo.tei./kha (וּ/גְדוּלֹּתֶי/ךָ) ""and/ greatness<es>/ your"" (H9002/H1420/H9021=HC/Ncfpc/Sp2ms)",H1420 H9021,Ncfsc Sp2ms,H1420 H9021,Ncfpc Sp2ms
+Psa,147,19,2,דְּבָרָ֣י/ו,"K= de.va.ro/v (דְּבָר/וֹ) ""word/ his"" (H1697G/H9023=HNcmsc/Sp3ms)",H1697G H9023,HNcmpc Sp3ms,H1697G H9023,HNcmsc Sp3ms
+Psa,148,2,6,צְבָאָֽי/ו\׃,"K= tze.va.'o/v (צְבָא/וֹ\׃) ""host/ his"" (H6635A/H9023\H9016=HNcmsc/Sp3ms)",H6635A H9023 H9016,HNcmpc Sp3ms,H6635A H9023 H9016,HNcmsc Sp3ms
+Pro,2,7,1,יִצְפֹּ֣ן,"K= ve./tza.fan (וְ/צָפַן) ""and/ he stores up"" (H9002/H6845=HC/Vqu3ms)",H6845,HVqi3ms,H6845,Vqu3ms
+Pro,2,8,5,חֲסִידָ֣י/ו,"K= cha.si.do/v (חֲסִיד/וֹ) ""faithful [person]/ his"" (H2623/H9023=HAamsc/Sp3ms)",H2623 H9023,HAampc Sp3ms,H2623 H9023,HAamsc Sp3ms
+Pro,3,27,7,יָדְ/ךָ֣,"K= ya.dei./kha (יָדֶי/ךָ) ""hands/ your"" (H3027H/H9021=HNcbdc/Sp2ms)",H3027H H9021,HNcbsc Sp2ms,H3027H H9021,HNcbdc Sp2ms
+Pro,3,28,3,לְ/רֵֽעֲ/ךָ֨,"K= le./re.'ei./kha (לְ/רֵעֶי/ךָ) ""to/ neighbors/ your"" (H9005/H7453/H9021=HR/Ncmpc/Sp2ms)",H9005 H7453 H9021,HR Ncmsc Sp2ms,H9005 H7453 H9021,HR Ncmpc Sp2ms
+Pro,4,16,11,יַכְשִֽׁילוּ\׃,"K= yikh.sho.lu (יִכְשׁוֹלוּ\׃) ""they stumble"" (H3782\H9016=HVqi3mp)",H3782 H9016,HVhi3mp,H3782 H9016,HVqi3mp
+Pro,6,13,2,בְּ֭/עֵינָי/ו,"K= Be./'ei.na/v (בְּ֭/עֵינ/וֹ) ""with/ eye/ his"" (H9003/H5869A/H9023=HR/Ncbsc/Sp3ms)",H9003 H5869A H9023,HR Ncfdc Sp3ms,H9003 H5869A H9023,HR Ncbsc Sp3ms
+Pro,6,13,4,בְּ/רַגְלָ֑י/ו,"K= be./rag.La/v (בְּ/רַגְל/וֹ) ""with/ foot/ his"" (H9003/H7272/H9023=HR/Ncbsc/Sp3ms)",H9003 H7272 H9023,HR Ncfdc Sp3ms,H9003 H7272 H9023,HR Ncbsc Sp3ms
+Pro,6,16,6,תּוֹעֲבַ֥ת,"K= to.'a.Vot (תּוֹעֲבוֹת) ""[the] disgusting things of"" (H8441=HNcfpc)",H8441,HNcfsc,H8441,HNcfpc
+Pro,8,35,3,מָצָ֣א,"K= mo.tze.'ei (מֹצְאֵי) ""[are] finders of"" (H4672=HVqrmsc)",H4672,HVqp3ms,H4672,HVqrmsc
+Pro,12,14,9,יָשִׁ֥יב,"K= ya.shuv (יָשׁוּב) ""it will return"" (H7725G=HVqi3ms)",H7725G,HVhi3ms,H7725G,HVqi3ms
+Pro,13,20,1,הוֹלֵ֣ךְ,"K= ha.lokh (הָלוֹךְ) ""walking"" (H1980I=HVqaa)",H1980I,HVqrmsa,H1980I,HVqaa
+Pro,13,20,4,יֶחְכָּ֑ם,"K= va./cha.kham (וַ/חֲכָם) ""and/ become wise"" (H9002/H2449=HC/Vqv2ms)",H2449,HVqi3ms,H2449,Vqv2ms
+Pro,16,27,6,שְׂ֝פָת֗/וֹ,"K= se.fa.ta/v (שְׂפָתָי/ו) ""lips/ his"" (H8193H/H9023=HNcfpc/Sp3ms)",H8193H H9023,HNcfsc Sp3ms,H8193H H9023,HNcfpc Sp3ms
+Pro,18,17,4,וּ/בָֽא,"K= ya.vo'- (יָבֹא) ""he will come"" (H0935G=HVqi3ms)",H0935G,Vqq3ms,H0935G,HVqi3ms
+Pro,19,16,7,יָמֽוּת\׃,"K= yu.mat (יוּמָת\׃) ""he will be put to death"" (H4191\H9016=HVHi3ms)",H4191 H9016,HVqi3ms,H4191 H9016,HVHi3ms
+Pro,20,4,5,וְ/שָׁאַ֖ל,"K= yish.'al (יִשְׁאַל) ""he asks"" (H7592=HVqi3ms)",H7592,Vqq3ms,H7592,HVqi3ms
+Pro,20,16,7,נָכְרִיָּ֣ה,"K= na.khe.rim (נָכְרִים) ""foreigners"" (H5237=HAampa)",H5237,HAafsa,H5237,HAampa
+Pro,20,20,6,בֶּ/אֱשׁ֥וּן,"K= be./'i.shon (בְּ/אִישׁוֹן) ""in/ [the] middle of"" (H9003/H0380=HR/Ncbsc)",H9003 H0380,HR Ncmsc,H9003 H0380,HR Ncbsc
+Pro,21,29,8,דַּרְכּֽ/וֹ\׃,"K= de.ra.kha/v (דְּרָכָי/ו\׃) ""ways/ his"" (H1870G/H9023\H9016=HNcbpc/Sp3ms)",H1870G H9023 H9016,HNcbsc Sp3ms,H1870G H9023 H9016,HNcbpc Sp3ms
+Pro,22,3,4,וְ/נִסְתָּ֑ר,"K= ve./yi.sa.ter (וְ/יִסָּתֵר) ""and/ he hides himself"" (H9001/H5641=Hc/VNw3ms)",H5641,VNq3ms,H5641,VNw3ms
+Pro,22,11,2,טְהָר,"K= te.hor- (טְהוֹר) ""pure of"" (H2889=HAabsc)",H2889,HAamsc,H2889,HAabsc
+Pro,22,25,3,אֹֽרְחֹתָ֑י/ו,"K= 'a.re.cha.to/v (אָרְחָת/וֹ) ""way/ his"" (H0734/H9023=HNcfsc/Sp3ms)",H0734 H9023,HNcfpc Sp3ms,H0734 H9023,HNcfsc Sp3ms
+Pro,23,5,1,הֲ/תָ֤עִיף,"K= ha./ta.'uf (הֲ/תָעוּף) ""¿/ do you fly"" (H9008/H5774A=HTi/Vqi2ms)",H9008 H5774A,HTi Vhi2ms,H9008 H5774A,HTi Vqi2ms
+Pro,23,5,11,יָע֥וּף,"K= ve./'a.yef (וְ/עָיֵף) ""and/ it flies away"" (H9001/H5774A=Hc/Vqq3ms)",H5774A,HVqi3ms,H5774A,Vqq3ms
+Pro,23,24,5,וְ/יוֹלֵ֥ד,"K= yo.led (יוֹלֵד) ""[one who] begets"" (H3205=HVqrmsa)",H3205,Vqrmsa,H3205,HVqrmsa
+Pro,23,24,7,יִשְׂמַח,"K= ve./yis.mach- (וְ/יִשְׂמַח) ""and/ he rejoices"" (H9002/H8055=HC/Vqu3ms)",H8055,HVqi3ms,H8055,Vqu3ms
+Pro,24,17,2,אֽ֭וֹיִבְ/ךָ,"K= 'oy.vei./kha (אוֹיְבֶי/ךָ) ""enemies/ your"" (H0341/H9021=HVqrmpc/Sp2ms)",H0341 H9021,HVqrmsc Sp2ms,H0341 H9021,HVqrmpc Sp2ms
+Pro,26,24,1,בִּ֭/שְׂפָתָי/ו,"K= bi/s.fa.to/v (בִּ/שְׂפָת/וֹ) ""with/ lip/ his"" (H9003/H8193G/H9023=HR/Ncfsc/Sp3ms)",H9003 H8193G H9023,HR Ncfdc Sp3ms,H9003 H8193G H9023,HR Ncfsc Sp3ms
+Pro,27,24,8,וָ/דֽוֹר\׃,"K= dor (דּוֹר\׃) ""a generation"" (H1755\H9016=HNcbsa)",H1755 H9016,Ncmsa,H1755 H9016,HNcbsa
+Pro,28,16,6,שֹׂ֥נֵא,"K= so.ne.'ei (שֹׂנְאֵי) ""[those who] hate"" (H8130=HVqrmpc)",H8130,HVqrmsa,H8130,HVqrmpc
+Pro,30,10,5,אֲדֹנָ֑י/ו,"K= 'a.do.no/v (אֲדֹנ/וֹ) ""master/ his"" (H0113/H9023=HNcbsc/Sp3ms)",H0113 H9023,HNcmpc Sp3ms,H0113 H9023,HNcbsc Sp3ms
+Pro,31,16,6,נָ֣טְעָה,"K= ne.ta' (נְטַע) ""he plants"" (H5193=HVqp3ms)",H5193,HVqp3fs,H5193,HVqp3ms
+Pro,31,18,7,בַ/לַּ֣יְלָה,"K= va./la.yil (בַ/לַּיִל) ""in the/ night"" (H9003/H3915=HRd/Ncbsa)",H9003 H3915,HRd Ncmsa,H9003 H3915,HRd Ncbsa
+Ecc,4,8,15,עֵינ֖/וֹ,"K= ei.na/v (עֵינָי/ו) ""eyes/ his"" (H5869A/H9023=HNcbdc/Sp3ms)",H5869A H9023,HNcfsc Sp3ms,H5869A H9023,HNcbdc Sp3ms
+Ecc,5,1(4,2,רַגְלְ/ךָ֗,"K= rag.lei./kha (רַגְלֶי/ךָ) ""feet/ your"" (H7272/H9021=HNcbdc/Sp2ms)",H7272 H9021,HNcfsc Sp2ms,H7272 H9021,HNcbdc Sp2ms
+Ecc,5,9(5,4,ה֑וּא,"K= hi' (הִיא) ""it"" (H1931=HPp3fs)",H1931,HPp3ms,H1931,HPp3fs
+Ecc,10,20,18,כְּנָפַ֖יִם,"K= ha./ke.na.fa.yim (הַ/כְּנָפַיִם) ""of the/ wings"" (H9009/H3671=HTd/Ncbda)",H3671,HNcfda,H3671,HTd Ncbda
+Sng,1,17,4,רַהִיטֵ֖/נוּ,"K= ra.chi.te./nu (רַחִיטֵ/נוּ) ""rafters/ our"" (H7351/H9025=HNcbsc/Sp1bp)",H7351 H9025,HNcmsc Sp1bp,H7351 H9025,HNcbsc Sp1bp
+Sng,2,11,3,הַ/סְּתָ֖יו,"K= ha./se.tav (הַ/סְּתָו) ""the/ winter"" (H9009/H5638=HTd/Ncbsa)",H5638,HTd Ncmsa,H5638,HTd Ncbsa
+Sng,4,9,5,בְּ/אַחַ֣ת,"K= be./'a.chad (בְּ/אַחַד) ""with/ one"" (H9003/H0259=HR/Ncbsc)",H9003 H0259,HR Acfsa,H9003 H0259,HR Ncbsc
+Isa,5,29,4,יִשְׁאַ֨ג,"K= ve./sha.'ag (וְ/שָׁאַג) ""and/ it will roar"" (H9001/H7580=Hc/Vqq3ms)",H7580,HVqi3ms,H7580,Vqq3ms
+Isa,9,7(9,1,לְ/מַרְבֵּ֨ה,"K= le./mar.beh (לְ/םַרְבֵּה) ""to/ [the] increase of"" (H9005/H4766=HR/Ncbsc)",H9005 H4766,HR Ncmsc,H9005 H4766,HR Ncbsc
+Isa,12,5,6,מוּדַ֥עַת,"K= me.yu.da.'at (מְיֻדַּעַת) ""[is] known"" (H3045=HVPsfsa)",H3045,HVHsfsa,H3045,HVPsfsa
+Isa,16,3,1,הָבִ֤יאִי,"K= ha.vi.'u (הָבִיאוּ) ""bring"" (H0935P=HVhv2mp)",H0935P,HVhv2fs,H0935P,HVhv2mp
+Isa,26,20,6,דְּלָתְ/ךָ֖,"K= de.la.tei./kha (דְּלָתֶי/ךָ) ""doors/ your"" (H1817B/H9021=HNcbdc/Sp2ms)",H1817B H9021,HNcfsc Sp2ms,H1817B H9021,HNcbdc Sp2ms
+Isa,28,15,14,יַֽעֲבֹר֙,"K= a.var (עָבַר) ""it has passed by"" (H5674A=HVqp3ms)",H5674A,HVqi3ms,H5674A,HVqp3ms
+Isa,29,11,13,סֵ֛פֶר,"K= ha./se.fer (הַ/סֵּפֶר) ""the/ scroll"" (H9009/H5612H=HTd/Ncbsa)",H5612H,HNcmsa,H5612H,HTd Ncbsa
+Isa,30,33,6,הִ֛יא,"K= hu' (הוּא) ""it"" (H1931=HPp3ms)",H1931,HPp3fs,H1931,HPp3ms
+Isa,32,15,9,וְ/הַ/כַּרְמֶ֖ל,"K= ve./khar.mel (וְ/כַרְמֶל) ""and/ an orchard"" (H9002/H3759=HC/Ncbsa)",H3759,Td Ncmsa,H3759,Ncbsa
+Isa,37,30,16,וְ/אִכְל֥וּ,"K= ve./'a.khol (וֶ/אֱכוֹל) ""and/ eat"" (H9002/H0398=HC/Vqv2ms)",H0398,Vqv2mp,H0398,Vqv2ms
+Isa,39,2,7,נְכֹת֡/וֹ,"K= ne.kho.ta/h (נְכֹתָ/ה) ""treasure/ his"" (H5238/H9023=HNcbsc/Sp3ms)",H5238 H9023,HNcfsc Sp3ms,H5238 H9023,HNcbsc Sp3ms
+Isa,41,23,12,וְ/נִרְאֶ֥ה,"K= ve./ne.re' (וְ/נִרָא) ""so/ we may see"" (H9002/H7200L=HC/Vqc1up)",H7200L,Vqc1cp,H7200L,Vqc1up
+Isa,42,20,1,רָא֥וֹת,"K= ra.'i.ta (רָאִיתָ) ""you have caused to see"" (H7200G=HVhaa)",H7200G,HVqaa,H7200G,HVhaa
+Isa,45,2,5,אֲיַשֵּׁ֑ר,"K= 'o.shir (אוֹשִׁר) ""I will make smooth"" (H3474=HVhi1cs)",H3474,HVpi1cs,H3474,HVhi1cs
+Isa,47,13,7,הֹבְרֵ֣י,"K= ha.ve.ru (הָבְרוּ) ""they have divided"" (H1895=HVqp3cp)",H1895,HVqrmpc,H1895,HVqp3cp
+Isa,49,13,5,וּ/פִצְח֥וּ,"K= yif.tze.chu (יִפְצְחוּ) ""let them break forth"" (H6476=HVqi3mp)",H6476,Vqv2mp,H6476,HVqi3mp
+Isa,52,2,6,הִֽתְפַּתְּחִי֙,"K= hit.pa.te.chu (הִתְפַּתְּחוּ) ""loosen for yourselves"" (H6605A=HVtv2mp)",H6605A,HVtv2fs,H6605A,HVtv2mp
+Isa,52,5,11,מֹשְׁלָ֤י/ו,"K= mo.she.lo/v (מֹשְׁל/וֹ) ""ruler/ its"" (H4910/H9033=HVqrmsc/Sp3ms)",H4910 H9033,HVqrmpc Sp3ms,H4910 H9033,HVqrmsc Sp3ms
+Isa,55,13,5,וְ/תַ֥חַת,"K= ta.chat (תַּחַת) ""in place of"" (H8478H=HNcbsc)",H8478H,Ncmsc,H8478H,HNcbsc
+Isa,62,3,6,וּ/צְנִ֥יף,"K= u./tze.nof (וּ/צְנוֹף) ""and/ a headdress of"" (H9002/H6797=HC/Ncbsc)",H6797,Ncmsc,H6797,Ncbsc
+Isa,66,17,6,אַחַת֙,"K= 'e.chad (אֶחָד) ""one"" (H0259=HAcbsa)",H0259,HAcfsa,H0259,HAcbsa
+Jer,2,3,5,תְּבוּאָת֑/וֹ,"K= te.vu.'a.To/h (תְּבוּאָתֹ֑/ה) ""produce/ his"" (H8393/H9023=HNcfsc/Sp3fs)",H8393 H9023,HNcfsc Sp3ms,H8393 H9023,HNcfsc Sp3fs
+Jer,2,15,10,נִצְּת֖וּ,"K= ni.tze.tah (נִצְּתָה) ""it is burnt"" (H3341=HVNp3fs)",H3341,HVNp3cp,H3341,HVNp3fs
+Jer,2,33,10,לִמַּ֖דְתְּ,"K= li.mad.ti (לִמַּדְתִּי) ""I have taught"" (H3925G=HVpp1cs)",H3925G,HVpp2fs,H3925G,HVpp1cs
+Jer,3,4,3,קָרָ֥את,"K= ka.ra.ti (קָרָאתִי) ""have I called"" (H7121G=HVqp1cs)",H7121G,HVqp2fs,H7121G,HVqp1cs
+Jer,3,5,7,דִבַּ֛רְתְּ,"K= di.bar.ti (דִבַּרְתִּי) ""I spoke"" (H1696G=HVpp1cs)",H1696G,HVpp2fs,H1696G,HVpp1cs
+Jer,3,19,16,תִּקְרְאִי,"K= tik.re.'u- (תִּקְרְאוּ) ""you will call"" (H7121H=HVqi2mp)",H7121H,HVqi2fs,H7121H,HVqi2mp
+Jer,3,19,20,תָשֽׁוּבִי\׃,"K= ta.shu.vu (תָשׁוּבוּ\׃) ""you will turn away"" (H7725I\H9016=HVqi2mp)",H7725I H9016,HVqi2fs,H7725I H9016,HVqi2mp
+Jer,4,5,6,תִּקְע֥וּ,"K= v./tik.'u (וְ/תִקְעוּ) ""and/ blow"" (H9002/H8628=HC/Vqv2mp)",H8628,HVqv2mp,H8628,Vqv2mp
+Jer,4,19,14,שָׁמַ֣עַתְּ,"K= sha.ma'.ti (שָׁמַעְתִּי) ""I have heard"" (H8085G=HVqp1cs)",H8085G,HVqp2fs,H8085G,HVqp1cs
+Jer,5,24,11,יוֹרֶ֥ה,"K= ve./yo.reh (וְ/יֹרֶה) ""and/ autumn rain"" (H9002/H3138=HC/Ncbsa)",H3138,HNcmsa,H3138,Ncbsa
+Jer,6,25,2,תֵּֽצְאוּ֙,"K= te.tze.'i (תֵּצְאִי) ""you go out"" (H3318G=HVqj2fs)",H3318G,HVqj2mp,H3318G,HVqj2fs
+Jer,6,25,6,תֵּלֵ֑כוּ,"K= te.le.khi (תֵּלֵכִי) ""you walk"" (H1980I=HVqj2fs)",H1980I,HVqj2mp,H1980I,HVqj2fs
+Jer,8,1,5,יוֹצִ֣יאוּ,"K= ve./yo.tzi.'u (וְ/יֹצִיאוּ) ""and/ people will bring out"" (H9002/H3318H=HC/Vhu3mp)",H3318H,HVhi3mp,H3318H,Vhu3mp
+Jer,8,6,16,בִּ/מְר֣וּצָתָ֔/ם,"K= bi/m.ru.tzo.ta/m (בִּ/מְרֻצוֹתָ/ם) ""in/ own courses/ their"" (H9003/H4794/H9028=HR/Ncfpc/Sp3mp)",H9003 H4794 H9028,HR Ncfsc Sp3mp,H9003 H4794 H9028,HR Ncfpc Sp3mp
+Jer,8,7,7,וְ/סִיס֙,"K= ve./sus (וְ/סוּס) ""and/ a swallow"" (H9002/H5483A=HC/Ncbsa)",H5483A,Ncmsa,H5483A,Ncbsa
+Jer,9,8(9,2,שָׁח֛וּט,"K= sho.chet (שׁוֹחֵט) ""slaughtering"" (H7819A=HVqrmsa)",H7819A,HVqsmsa,H7819A,HVqrmsa
+Jer,10,13,9,הָ/אָ֑רֶץ,"K= 'e.retz (אֶרֶץ) ""[the] earth"" (H0776G=HNcfsa)",H0776G,HTd Ncfsa,H0776G,HNcfsa
+Jer,10,17,4,יֹשֶׁ֖בֶת,"K= yo.shav.ti (יֹשַׁבְתִּי) ""O [you who] dwell"" (H3427=HVqrfsc)",H3427,HVqrfsa,H3427,HVqrfsc
+Jer,13,16,17,וְ/שִׁ֖ית,"K= ya.shit (יָשִׁית) ""he will make [it]"" (H7896G=HVqi3ms)",H7896G,Vqq3ms,H7896G,HVqi3ms
+Jer,13,20,1,שְׂא֤וּ,"K= se.'i (שְׂאִי) ""lift up"" (H5375M=HVqv2fs)",H5375M,HVqv2mp,H5375M,HVqv2fs
+Jer,13,20,3,וּ/רְא֔וּ,"K= u./re.'i (וּ/רְאִי) ""and/ see"" (H9002/H7200G=HC/Vqv2fs)",H7200G,Vqv2mp,H7200G,Vqv2fs
+Jer,15,8,3,אַלְמְנֹתָי/ו֙,"K= 'al.me.no.Ta/v (אַלְמְנֹת/וֹ) ""widow/ its"" (H0490/H9023=HNcfsc/Sp3ms)",H0490 H9023,HNcfpc Sp3ms,H0490 H9023,HNcfsc Sp3ms
+Jer,15,9,6,בָּ֥א,"K= ba.'ah (בָּאָה) ""it went"" (H0935G=HVqp3fs)",H0935G,HVqp3ms,H0935G,HVqp3fs
+Jer,15,16,5,דְבָֽרְ/ךָ֙,"K= de.va.rei./kha (דְבָרֶי/ךָ) ""words/ your"" (H1697G/H9021=HNcmpc/Sp2ms)",H1697G H9021,HNcmsc Sp2ms,H1697G H9021,HNcmpc Sp2ms
+Jer,17,10,9,כִּ/דְרָכָ֔י/ו,"K= ke./dar.ko/v (כְּ/דַרְכּ/וֹ) ""according to/ way/ his"" (H9004/H1870G/H9023=HR/Ncbsc/Sp3bs)",H9004 H1870G H9023,HR Ncbpc Sp3ms,H9004 H1870G H9023,HR Ncbsc Sp3bs
+Jer,17,11,10,יָמָי/ו֙,"K= yo.mo/v (יֹמ/וֹ) ""day/ his"" (H3117G/H9023=HNcmsc/Sp3ms)",H3117G H9023,HNcmpc Sp3ms,H3117G H9023,HNcmsc Sp3ms
+Jer,17,19,9,הָ/עָ֔ם,"K= am (עָם) ""a people"" (H5971H=HNcbsa)",H5971H,HTd Ncmsa,H5971H,HNcbsa
+Jer,17,23,11,שְׁמ֔וֹעַ,"K= sho.me.a' (שׁוֹמֵעַ) ""listening"" (H8085G=HVqrmsa)",H8085G,HVqcc,H8085G,HVqrmsa
+Jer,18,23,17,וְ/יִהְי֤וּ,"K= ve./ha.yu (וְ/הָיוּ) ""and/ they will be"" (H9001/H1961=Hc/Vqq3cp)",H1961,Vqu3mp,H1961,Vqq3cp
+Jer,21,9,14,וְ/חָיָ֔ה,"K= yich.yeh (יִחְיֶה) ""he will live"" (H2421=HVqi3ms)",H2421,Vqq3ms,H2421,HVqi3ms
+Jer,22,4,21,וַ/עֲבָדָ֖י/ו,"K= ve./'av.da/v (וְ/עַבְדּ/וֹ) ""and/ servant/ his"" (H9002/H5650/H9023=HC/Ncmsc/Sp3ms)",H5650 H9023,Ncmpc Sp3ms,H5650 H9023,Ncmsc Sp3ms
+Jer,22,6,20,נוֹשָֽׁבוּ\׃,"K= no.sha.vah (נוֹשָׁבָה\׃) ""[is] inhabited"" (H3427\H9016=HVNp3fs)",H3427 H9016,HVNp3cp,H3427 H9016,HVNp3fs
+Jer,22,18,24,הֹדֽ/וֹ\׃,"K= ho.Do/h (הֹדֹֽ/ה\׃) ""splendor/ his"" (H1935/H9023\H9016=HNcbsc/Sp3ms)",H1935 H9023 H9016,HNcmsc Sp3ms,H1935 H9023 H9016,HNcbsc Sp3ms
+Jer,22,23,1,יֹשַׁבְתְּ֙,"K= yo.shav.ti (יֹשַׁבְתִּי) ""O [you who] dwell"" (H3427=HVqrfsc)",H3427,HVqrfsa,H3427,HVqrfsc
+Jer,25,7,7,הַכְעִיסֵ֛/נִי,"K= hikh.'i.su./ni (הִכְעִסוּ/נִי) ""they have provoked to anger/ me"" (H3707/H9030=HVhp3cp/Sp1bs)",H3707 H9030,HVhcc Sp1bs,H3707 H9030,HVhp3cp Sp1bs
+Jer,28,1,9,בַּ/שָּׁנָה֙,"K= bi/sh.nat (בִּ/שְׁנַת) ""in the/ year"" (H9003/H8141=HRd/Ncfsc)",H9003 H8141,HRd Ncfsa,H9003 H8141,HRd Ncfsc
+Jer,31,21,11,הָלָ֑כְתְּ,"K= ha.la.khe.ti (הָלָכְתִּי) ""[which] I went"" (H1980G=HVqp1cs)",H1980G,HVqp2fs,H1980G,HVqp1cs
+Jer,32,1,8,בַּ/שָּׁנָה֙,"K= bi/sh.nat (בִּ/שְׁנַת) ""in the/ year"" (H9003/H8141=HRd/Ncfsc)",H9003 H8141,HRd Ncfsa,H9003 H8141,HRd Ncfsc
+Jer,32,4,20,עֵינָ֥י/ו,"K= ei.no/v (עֵינ/וֹ) ""eye/ his"" (H5869A/H9023=HNcbsc/Sp3ms)",H5869A H9023,HNcfdc Sp3ms,H5869A H9023,HNcbsc Sp3ms
+Jer,32,23,7,וּ/בְ/תוֹרָתְ/ךָ֣,"K= u./ve./to.ro.te./kha (וּ/בְ/תֹרוֹתֶ/ךָ) ""and/ in/ laws/ your"" (H9002/H9003/H8451/H9021=HC/R/Ncfpc/Sp2ms)",H9003 H8451 H9021,R Ncfsc Sp2ms,H9003 H8451 H9021,R Ncfpc Sp2ms
+Jer,33,8,8,לְ/כָל,"K= le./khol- (לְ/כוֹל) ""<to>/ all"" (H9005/H3605=HR/Ncbsc)",H9005 H3605,HR Ncmsc,H9005 H3605,HR Ncbsc
+Jer,33,26,16,אָשִׁ֥יב,"K= 'a.shuv (אָשׁוּב) ""I will turn back"" (H7725H=HVqi1cs)",H7725H,HVhi1cs,H7725H,HVqi1cs
+Jer,34,11,12,וַֽ/יִּכְבְּשׁ֔וּ/ם,"K= va/i.yakh.bi.shu/m (וַ/יַּכְבִּישׁוּ/ם) ""and/ they subjugated/ them"" (H9001/H3533/H9038=Hc/Vhw3mp/Sp3mp)",H3533 H9038,Vqw3mp Sp3mp,H3533 H9038,Vhw3mp Sp3mp
+Jer,37,4,10,הַ/כְּלֽוּא\׃,"K= ha./ke.li' (הַ/כְּלִיא\׃) ""<the>/ imprisonment"" (H9009/H3628\H9016=HTd/Ncbsa)",H3628 H9016,HTd Ncmsa,H3628 H9016,HTd Ncbsa
+Jer,38,2,14,וְ/חָיָ֔ה,"K= yich.yeh (יִחְיֶה) ""he will live"" (H2421=HVqi3ms)",H2421,Vqq3ms,H2421,HVqi3ms
+Jer,38,11,16,סְחָב֔וֹת,"K= ha./se.cha.Vot (הַ/סְּחָבוֹת) ""the/ clothes"" (H9009/H5499=HTd/Ncfpa)",H5499,HNcfpa,H5499,HTd Ncfpa
+Jer,40,3,14,הַ/דָּבָ֥ר,"K= da.var (דָּבָר) ""a thing"" (H1697I=HNcbsa)",H1697I,HTd Ncmsa,H1697I,HNcbsa
+Jer,43,10,26,שַׁפְרִיר֖/וֹ,"K= shaf.ru.ro/v (שַׁפְרוּר/וֹ) ""state tent/ his"" (H8237/H9023=HNcbsc/Sp3ms)",H8237 H9023,HNcmsc Sp3ms,H8237 H9023,HNcbsc Sp3ms
+Jer,46,11,9,הִרְבֵּ֣ית,"K= hir.bei.ti (הִרְבֵּיתִי) ""I have multiplied"" (H7235A=HVhp1cs)",H7235A,HVhp2fs,H7235A,HVhp1cs
+Jer,48,18,3,וּ/שְׁבִ֣י,"K= yo.she.vei (יֹשְׁבֶי) ""O inhabitants"" (H3427=HVqrmpc)",H3427,Vqv2fs,H3427,HVqrmpc
+Jer,48,20,5,הֵילִ֣ילוּ,"K= hei.li.li (הֵילִילִי) ""wail"" (H3213=HVhv2fs)",H3213,HVhv2mp,H3213,HVhv2fs
+Jer,48,20,6,וּֽ/זְעָ֑קוּ,"K= u./ze.'a.ki (וּ/זְעָקִי) ""and/ cry out"" (H9002/H2199=HC/Vhv2fs)",H2199,Vqv2mp,H2199,Vhv2fs
+Jer,48,27,9,נִמְצָ֑א,"K= nim.tza.'ah (נִמְצָאָה) ""was it found"" (H4672=HVNp3fs)",H4672,HVNp3ms,H4672,HVNp3fs
+Jer,49,25,5,תְּהִלָּ֑ת,"K= te.hi.lah (תְּהִלָּה) ""praise"" (H8416=HNcfsa)",H8416,HNcfsc,H8416,HNcfsa
+Jer,49,39,4,אָשִׁ֛יב,"K= 'a.shuv (אָשׁוּב) ""I will turn back"" (H7725H=HVqi1cs)",H7725H,HVhi1cs,H7725H,HVqi1cs
+Jer,50,6,3,הָי֣וּ,"K= ha.yah (הָיָה) ""it has become"" (H1961=HVqp3ms)",H1961,HVqp3cp,H1961,HVqp3ms
+Jer,50,8,6,צֵ֑אוּ,"K= ya.tze.'u (יָצְאוּ) ""they went forth"" (H3318G=HVqp3cp)",H3318G,HVqv2mp,H3318G,HVqp3cp
+Jer,50,11,2,תִשְׂמְחוּ֙,"K= tis.me.chi (תִשְׂמְחִי) ""you are rejoicing"" (H8055=HVqi2fs)",H8055,HVqi2mp,H8055,HVqi2fs
+Jer,50,11,4,תַֽעֲלְז֔וּ,"K= ta.'al.zi (תַעֲלְזִי) ""you are gloating"" (H5937=HVqi2fs)",H5937,HVqi2mp,H5937,HVqi2fs
+Jer,50,11,8,תָפ֙וּשׁוּ֙,"K= ta.fu.shi (תָפוּשִׁי) ""you are skipping about"" (H6335A=HVqi2fs)",H6335A,HVqi2mp,H6335A,HVqi2fs
+Jer,50,11,11,וְ/תִצְהֲל֖וּ,"K= ve./titz.ha.li (וְ/תִצְהֲלִי) ""so/ you may neigh"" (H9002/H6670A=HC/Vqu2fs)",H6670A,Vqu2mp,H6670A,Vqu2fs
+Jer,50,44,11,אֲרִיצֵ/ם֙,"K= 'a.ru.tze/m (אֲרוּצֵ/ם) ""I will run/ them"" (H7323G/H9038=HVqi1cs/Sp3mp)",H7323G H9038,HVhi1cs Sp3mp,H7323G H9038,HVqi1cs Sp3mp
+Jer,52,21,5,קוֹמַת֙,"K= ko.mah (קוֹמָה) ""height"" (H6967=HNcfsa)",H6967,HNcfsc,H6967,HNcfsa
+Jer,52,31,30,הַ/כְּלֽוּא\׃,"K= ha./ke.li' (הַ/כְּלִיא\׃) ""<the>/ imprisonment"" (H9009/H3628\H9016=HTd/Ncbsa)",H3628 H9016,HTd Ncmsa,H3628 H9016,HTd Ncbsa
+Jer,52,32,9,הַ/מְּלָכִ֛ים,"K= me.la.khim (מְלָכִים) ""kings"" (H4428G=HNcmpa)",H4428G,HTd Ncmpa,H4428G,HNcmpa
+Lam,1,18,10,הָֽ/עַמִּ֗ים,"K= a.mim (עַמִּים) ""peoples"" (H5971A=HNcmpa)",H5971A,HTd Ncmpa,H5971A,HNcmpa
+Lam,2,2,3,וְ/לֹ֣א,"K= lo' (לֹא) ""not"" (H3808=HTn)",H3808,Tn,H3808,HTn
+Lam,2,19,3,בַ/לַּ֗יְלָה,"K= va./la.yil (בַ/לַּיִל) ""in the/ night"" (H9003/H3915=HRd/Ncbsa)",H9003 H3915,HRd Ncmsa,H9003 H3915,HRd Ncbsa
+Lam,3,25,3,לְ/קוָֹ֔י/ו,"K= le./ko.Va/v (לְ/קוָ֔/וֹ) ""to/ [him who] wait for/ him"" (H9005/H6960A/H9033=HR/Vqrmsc/Sp3ms)",H9005 H6960A H9033,HR Vqrmpc Sp3ms,H9005 H6960A H9033,HR Vqrmsc Sp3ms
+Lam,3,32,6,חֲסָדָֽי/ו\׃,"K= chas.do/v (חַסְדּ/וֹ\׃) ""covenant loyalty/ his"" (H2617A/H9023\H9016=HNcbsc/Sp3ms)",H2617A H9023 H9016,HNcmpc Sp3ms,H2617A H9023 H9016,HNcbsc Sp3ms
+Lam,4,12,5,כֹּ֖ל,"K= ve./khol (וְ/כֹל) ""and/ all"" (H9002/H3605=HC/Ncbsc)",H3605,HNcmsc,H3605,Ncbsc
+Lam,4,16,11,וּ/זְקֵנִ֖ים,"K= ze.ke.nim (זְקֵנִים) ""elders"" (H2205G=HAampa)",H2205G,Aampa,H2205G,HAampa
+Lam,4,21,5,יוֹשֶׁ֖בֶת,"K= yo.shav.ti (יוֹשַׁבְתִּי) ""[who] dwells"" (H3427=HVqrfsc)",H3427,HVqrfsa,H3427,HVqrfsc
+Lam,5,3,3,וְ/אֵ֣ין,"K= 'ein (אֵין) ""there not"" (H0369=HNcbsc)",H0369,Ncmsc,H0369,HNcbsc
+Lam,5,5,5,וְ/לֹ֥א,"K= lo' (לֹא) ""not"" (H3808=HTn)",H3808,Tn,H3808,HTn
+Lam,5,7,3,וְ/אֵינָ֔/ם,"K= 'ei.na/m (אֵינָ/ם) ""not [are]/ they"" (H0369/H9048=HNcbsc/Sp3mp)",H0369 H9048,Ncmsc Sp3mp,H0369 H9048,HNcbsc Sp3mp
+Lam,5,7,4,וַ/אֲנַ֖חְנוּ,"K= 'a.nach.nu (אֲנַחְנוּ) ""we"" (H0587=HPp1bp)",H0587,Pp1bp,H0587,HPp1bp
+Lam,5,21,4,וְֽ/נָשׁ֔וּבָה,"K= ve./na.shuv (וְ/נָשׁוּב) ""so/ we may return"" (H9002/H7725H=HC/Vqu1cp)",H7725H,Vqc1cp,H7725H,Vqu1cp
+Ezk,3,20,18,צִדְקֹתָי/ו֙,"K= tzid.ko.Ta/v (צִדְקָת/וֹ) ""righteousness/ his"" (H6666/H9023=HNcfsc/Sp3ms)",H6666 H9023,HNcfpc Sp3ms,H6666 H9023,HNcfsc Sp3ms
+Ezk,7,2,14,אַרְבַּ֖ע,"K= 'ar.ba.'at (אַרְבַּעַת) ""[the] four"" (H0702=HAcfsc)",H0702,HAcbsc,H0702,HAcfsc
+Ezk,9,5,10,עֵינְ/כֶ֖ם,"K= ei.nei./khem (עֵינֵי/כֶם) ""eyes/ your"" (H5869A/H9026=HNcfpc/Sp2mp)",H5869A H9026,HNcfsc Sp2mp,H5869A H9026,HNcfpc Sp2mp
+Ezk,12,14,4,עֶזְר֛/וֹ,"K= ez.ro/h (עֶזְרֹ/ה) ""help/ his"" (H5828/H9023=HNcbsc/Sp3ms)",H5828 H9023,HNcmsc Sp3ms,H5828 H9023,HNcbsc Sp3ms
+Ezk,16,13,5,שֵׁ֤שׁ,"K= she.shi (שֵׁשִׁי) ""[was] fine linen"" (H8336B=HNcbsa)",H8336B,HNcmsa,H8336B,HNcbsa
+Ezk,16,20,13,מִ/תַּזְנוּתָֽיִ/ךְ\׃,"K= mi./taz.nu.te/kh (מִ/תַּזְנֻתֵ/ךְ\׃) ""from/ prostitution/ your"" (H9006/H8457/H9022\H9016=HR/Ncbsc/Sp2fs)",H9006 H8457 H9022 H9016,HR Ncmpc Sp2fs,H9006 H8457 H9022 H9016,HR Ncbsc Sp2fs
+Ezk,16,25,17,תַּזְנוּתָֽיִ/ךְ\׃,"K= taz.nu.te/kh (תַּזְנֻתֵ/ךְ\׃) ""prostitution/ your"" (H8457/H9022\H9016=HNcfsc/Sp2fs)",H8457 H9022 H9016,HNcmpc Sp2fs,H8457 H9022 H9016,HNcfsc Sp2fs
+Ezk,16,51,12,אֲחוֹתַ֔יִ/ךְ,"K= 'a.cho.te/kh (אֲחוֹתֵ/ךְ) ""sister/ your"" (H0269/H9022=HNcfsc/Sp2fs)",H0269 H9022,HNcfpc Sp2fs,H0269 H9022,HNcfsc Sp2fs
+Ezk,16,59,6,וְ/עָשִׂ֥יתִי,"K= ve./'a.sit (וְ/עָשִׂית) ""and/ you will do"" (H9001/H6213A=Hc/Vqq2fs)",H6213A,Vqq1cs,H6213A,Vqq2fs
+Ezk,17,21,3,מִבְרָחָ֤י/ו,"K= miv.ra.cho/v (מִבְרָח/וֹ) ""fugitive/ his"" (H4015/H9023=HNcmsc/Sp3ms)",H4015 H9023,HNcmpc Sp3ms,H4015 H9023,HNcmsc Sp3ms
+Ezk,18,20,20,הָ/רָשָׁ֖ע,"K= ra.sha' (רָשָׁע) ""a wicked [person]"" (H7563=HNcbsa)",H7563,HTd Ncmsa,H7563,HNcbsa
+Ezk,18,21,5,חַטֹּאתָי/ו֙,"K= cha.ta.to/v (חַטָּאת/וֹ) ""sin/ his"" (H2403B/H9023=HNcfsc/Sp3ms)",H2403B H9023,HNcfpc Sp3ms,H2403B H9023,HNcfsc Sp3ms
+Ezk,18,24,14,צִדְקֹתָ֤י/ו,"K= tzid.ka.to/v (צִדְקָת/וֹ) ""righteousness/ his"" (H6666/H9023=HNcfsc/Sp3ms)",H6666 H9023,HNcfpc Sp3ms,H6666 H9023,HNcfsc Sp3ms
+Ezk,22,18,7,לְ/סִ֑יג,"K= le./sug (לְ/סוּג) ""<into>/ dross"" (H9005/H5509=HR/Ncbsa)",H9005 H5509,HR Ncmsa,H9005 H5509,HR Ncbsa
+Ezk,23,43,5,יִזְנ֥וּ,"K= yiz.nuh (יִזְנֻה) ""he will act as a prostitute"" (H2181=HVqi3ms)",H2181,HVqi3mp,H2181,HVqi3ms
+Ezk,27,3,3,הַ/יֹּשֶׁ֙בֶת֙,"K= hai./yo.she.vo.tei (הַ/יֹּשַׁבְתִּי) ""that/ sits"" (H9009/H3427=HTd/Vqrfsc)",H3427,HTd Vqrfsa,H3427,HTd Vqrfsc
+Ezk,31,5,11,פֹארֹתָ֛י/ו,"K= fo.ro.to/v (פֹארָת/וֹ) ""branch/ its"" (H6288A/H9023=HNcfsc/Sp3ms)",H6288A H9023,HNcfpc Sp3ms,H6288A H9023,HNcfsc Sp3ms
+Ezk,31,18,25,הֲמונ֔/וֹ,"K= ha.mo.No/h (הֲמוֹנֹ֔/ה) ""multitude/ his"" (H1995A/H9023=HNcbsc/Sp3ms)",H1995A H9023,HNcmsc Sp3ms,H1995A H9023,HNcbsc Sp3ms
+Ezk,32,31,7,הֲמוֹנ֑/וֹ,"K= ha.mo.no/h (הֲמוֹנֹ/ה) ""multitude/ his"" (H1995A/H9023=HNcbsc/Sp3ms)",H1995A H9023,HNcmsc Sp3ms,H1995A H9023,HNcbsc Sp3ms
+Ezk,32,32,15,הֲמונ֔/וֹ,"K= ha.mo.No/h (הֲמוֹנֹ֔/ה) ""multitude/ his"" (H1995A/H9023=HNcbsc/Sp3ms)",H1995A H9023,HNcmsc Sp3ms,H1995A H9023,HNcbsc Sp3ms
+Ezk,33,13,12,צִדְקֹתָי/ו֙,"K= tzid.ka.to/v (צִדְקָת/וֹ) ""righteousness/ his"" (H6666/H9023=HNcfsc/Sp3ms)",H6666 H9023,HNcfpc Sp3ms,H6666 H9023,HNcfsc Sp3ms
+Ezk,33,16,2,חַטֹּאתָי/ו֙,"K= cha.ta.to/v (חַטָּאת/וֹ) ""sin/ his"" (H2403B/H9023=HNcfsc/Sp3ms)",H2403B H9023,HNcfpc Sp3ms,H2403B H9023,HNcfsc Sp3ms
+Ezk,35,12,15,שָׁמֵ֑מוּ,"K= sha.Me.mah (שָׁמֵמָה) ""it has been desolated"" (H8074G=HVqp3fs)",H8074G,HVqp3cp,H8074G,HVqp3fs
+Ezk,36,13,12,גּוֹיַ֖יִ/ךְ,"K= go.ye/kh (גּוֹיֵ/ךְ) ""nation/ your"" (H1471A/H9022=HNcmsc/Sp2fs)",H1471A H9022,HNcmpc Sp2fs,H1471A H9022,HNcmsc Sp2fs
+Ezk,36,14,6,וְ/גוֹיַ֖יִ/ךְ,"K= ve./go.ye/kh (וְ/גוֹיֵ/ךְ) ""and/ nation/ your"" (H9002/H1471A/H9022=HC/Ncmsc/Sp2fs)",H1471A H9022,Ncmpc Sp2fs,H1471A H9022,Ncmsc Sp2fs
+Ezk,36,15,12,וְ/גוֹיַ֙יִ/ךְ֙,"K= ve./go.ye/kh (וְ/גוֹיֵ/ךְ) ""and/ nation/ your"" (H9002/H1471A/H9022=HC/Ncmsc/Sp2fs)",H1471A H9022,Ncmpc Sp2fs,H1471A H9022,Ncmsc Sp2fs
+Ezk,37,16,13,חֲבֵרָ֑י/ו,"K= cha.ve.ro/v (חֲבֵר/וֹ) ""associate/ its"" (H2270/H9023=HNcmsc/Sp3ms)",H2270 H9023,HNcmpc Sp3ms,H2270 H9023,HNcmsc Sp3ms
+Ezk,37,16,25,חֲבֵרָֽי/ו\׃,"K= cha.ve.ro/v (חֲבֵר/וֹ\׃) ""associate/ its"" (H2270/H9023\H9016=HNcmsc/Sp3ms)",H2270 H9023 H9016,HNcmpc Sp3ms,H2270 H9023 H9016,HNcmsc Sp3ms
+Ezk,37,19,18,חֲבֵרָ֑י/ו,"K= chev.ro/v (חֲבֵר/וֹ) ""associate/ its"" (H2270/H9023=HNcmsc/Sp3ms)",H2270 H9023,HNcmpc Sp3ms,H2270 H9023,HNcmsc Sp3ms
+Ezk,37,22,14,יִֽהְיוּ,"K= yih.yeh- (יִהְיֶה) ""it will become"" (H1961=HVqi3ms)",H1961,HVqi3mp,H1961,HVqi3ms
+Ezk,39,11,24,הֲמוֹנ֔/וֹ,"K= ha.mo.No/h (הֲמוֹנֹ֔/ה) ""multitude/ his"" (H1995A/H9023=HNcbsc/Sp3ms)",H1995A H9023,HNcmsc Sp3ms,H1995A H9023,HNcbsc Sp3ms
+Ezk,40,6,9,בְּ/מַֽעֲלוֹתָ֑י/ו,"K= be./ma.'a.lo.to/v (בְּ/מַעֲלוֹת/וֹ) ""on/ step/ its"" (H9003/H4609B/H9023=HR/Ncfsc/Sp3ms)",H9003 H4609B H9023,HR Ncfpc Sp3ms,H9003 H4609B H9023,HR Ncfsc Sp3ms
+Ezk,40,9,7,וְ/אֵילָ֖י/ו,"K= ve./'ei.lo/v (וְ/אֵיל/וֹ) ""and/ pillar/ its"" (H9002/H0352B/H9023=HC/Ncmsc/Sp3ms)",H0352B H9023,Ncmpc Sp3ms,H0352B H9023,Ncmsc Sp3ms
+Ezk,40,15,4,הָֽ/אִית֔וֹן,"K= hai./yo.ton (הַ/יֹּאתוֹן) ""the/ entrance"" (H9009/H2978=HTd/Ncbsa)",H2978,HTd Ncmsa,H2978,HTd Ncbsa
+Ezk,40,21,1,וְ/תָאָ֗י/ו,"K= ve./ta.'o/v (וְ/תָא/וֹ) ""and/ chamber/ its"" (H9002/H8372/H9023=HC/Ncmsc/Sp3ms)",H8372 H9023,Ncmpc Sp3ms,H8372 H9023,Ncmsc Sp3ms
+Ezk,40,21,6,וְ/אֵילָ֤י/ו,"K= ve./'ei.lo/v (וְ/אֵיל/וֹ) ""and/ pillar/ its"" (H9002/H0352B/H9023=HC/Ncmsc/Sp3ms)",H0352B H9023,Ncmpc Sp3ms,H0352B H9023,Ncmsc Sp3ms
+Ezk,40,21,7,וְ/אֵֽלַמָּי/ו֙,"K= ve./'e.la.mo/v (וְ/אֵלַמּ/וֹ) ""and/ porch/ its"" (H9002/H0361/H9023=HC/Ncmsc/Sp3ms)",H0361 H9023,Ncmpc Sp3ms,H0361 H9023,Ncmsc Sp3ms
+Ezk,40,22,1,וְ/חַלּוֹנָ֤י/ו,"K= ve./cha.lo.no/v (וְ/חַלּוֹנ/וֹ) ""and/ window/ its"" (H9002/H2474/H9023=HC/Ncmsc/Sp3ms)",H2474 H9023,Ncmpc Sp3ms,H2474 H9023,Ncmsc Sp3ms
+Ezk,40,22,2,וְ/אֵֽלַמָּי/ו֙,"K= ve./'e.la.mo/v (וְ/אֵלַמּ/וֹ) ""and/ porch/ its"" (H9002/H0361/H9023=HC/Ncmsc/Sp3ms)",H0361 H9023,Ncmpc Sp3ms,H0361 H9023,Ncmsc Sp3ms
+Ezk,40,22,3,וְ/תִ֣מֹרָ֔י/ו,"K= ve./ti.mo.ro/v (וְ/תִמֹר/וֹ) ""and/ palm tree/ its"" (H9002/H8561/H9023=HC/Ncmsc/Sp3ms)",H8561 H9023,Ncmpc Sp3ms,H8561 H9023,Ncmsc Sp3ms
+Ezk,40,22,14,וְ/אֵֽילַמָּ֖י/ו,"K= ve./'ei.la.mo/v (וְ/אֵילַמּ/וֹ) ""and/ porch/ its"" (H9002/H0361/H9023=HC/Ncmsc/Sp3ms)",H0361 H9023,Ncmpc Sp3ms,H0361 H9023,Ncmsc Sp3ms
+Ezk,40,24,9,אֵילָי/ו֙,"K= 'ei.lo/v (אֵיל/וֹ) ""pillar/ its"" (H0352B/H9023=HNcmsc/Sp3ms)",H0352B H9023,HNcmpc Sp3ms,H0352B H9023,HNcmsc Sp3ms
+Ezk,40,24,10,וְ/אֵ֣ילַמָּ֔י/ו,"K= ve./'ei.la.mo/v (וְ/אֵילַמּ/וֹ) ""and/ porch/ its"" (H9002/H0361/H9023=HC/Ncmsc/Sp3ms)",H0361 H9023,Ncmpc Sp3ms,H0361 H9023,Ncmsc Sp3ms
+Ezk,40,25,3,וּ/לְ/אֵֽילַמָּי/ו֙,"K= u./le./'ei.la.mo/v (וּ/לְ/אֵילַמּ/וֹ) ""and/ to/ porch/ its"" (H9002/H9005/H0361/H9023=HC/R/Ncmsc/Sp3ms)",H9005 H0361 H9023,R Ncmpc Sp3ms,H9005 H0361 H9023,R Ncmsc Sp3ms
+Ezk,40,26,3,עֹֽלוֹתָ֔י/ו,"K= o.lo.to/v (עֹלוֹת/וֹ) ""stairway/ its"" (H5930B/H9023=HVqrfsc/Sp3ms)",H5930B H9023,HVqrfpc Sp3ms,H5930B H9023,HVqrfsc Sp3ms
+Ezk,40,26,4,וְ/אֵֽלַמָּ֖י/ו,"K= ve./'e.la.mo/v (וְ/אֵלַמּ/וֹ) ""and/ porch/ its"" (H9002/H0361/H9023=HC/Ncmsc/Sp3ms)",H0361 H9023,Ncmpc Sp3ms,H0361 H9023,Ncmsc Sp3ms
+Ezk,40,26,13,אֵילָֽי/ו\׃,"K= 'ei.lo/v (אֵיל/וֹ\׃) ""pillar/ its"" (H0352B/H9023\H9016=HNcmsc/Sp3ms)",H0352B H9023 H9016,HNcmpc Sp3ms,H0352B H9023 H9016,HNcmsc Sp3ms
+Ezk,40,29,1,וְ/תָאָ֞י/ו,"K= ve./ta.'o/v (וְ/תָא/וֹ) ""and/ chamber/ its"" (H9002/H8372/H9023=HC/Ncmsc/Sp3ms)",H8372 H9023,Ncmpc Sp3ms,H8372 H9023,Ncmsc Sp3ms
+Ezk,40,29,2,וְ/אֵילָ֤י/ו,"K= ve./'ei.lo/v (וְ/אֵיל/וֹ) ""and/ pillar/ its"" (H9002/H0352B/H9023=HC/Ncmsc/Sp3ms)",H0352B H9023,Ncmpc Sp3ms,H0352B H9023,Ncmsc Sp3ms
+Ezk,40,29,3,וְ/אֵֽלַמָּי/ו֙,"K= ve./'e.la.mo/v (וְ/אֵלַמּ/וֹ) ""and/ porch/ its"" (H9002/H0361/H9023=HC/Ncmsc/Sp3ms)",H0361 H9023,Ncmpc Sp3ms,H0361 H9023,Ncmsc Sp3ms
+Ezk,40,29,8,וּ/לְ/אֵלַמָּ֖י/ו,"K= u./le./'e.la.mo/v (וּ/לְ/אֵלַמּ/וֹ) ""and/ to/ porch/ its"" (H9002/H9005/H0361/H9023=HC/R/Ncmsc/Sp3ms)",H9005 H0361 H9023,R Ncmpc Sp3ms,H9005 H0361 H9023,R Ncmsc Sp3ms
+Ezk,40,31,1,וְ/אֵלַמָּ֗י/ו,"K= ve./'e.la.Ma/v (וְ/אֵלַמּ/וֹ) ""and/ porch/ its"" (H9002/H0361/H9023=HC/Ncmsc/Sp3ms)",H0361 H9023,Ncmpc Sp3ms,H0361 H9023,Ncmsc Sp3ms
+Ezk,40,31,7,אֵילָ֑י/ו,"K= 'ei.lo/v (אֵיל/וֹ) ""pillar/ its"" (H0352B/H9023=HNcmsc/Sp3ms)",H0352B H9023,HNcmpc Sp3ms,H0352B H9023,HNcmsc Sp3ms
+Ezk,40,31,10,מַעֲלָֽי/ו\׃,"K= ma.'a.lo/v (מַעֲל/וֹ\׃) ""ascent/ its"" (H4608/H9023\H9016=HNcmsc/Sp3ms)",H4608 H9023 H9016,HNcmpc Sp3ms,H4608 H9023 H9016,HNcmsc Sp3ms
+Ezk,40,33,1,וְ/תָאָ֞י/ו,"K= ve./ta.'o/v (וְ/תָא/וֹ) ""and/ chamber/ its"" (H9002/H8372/H9023=HC/Ncmsc/Sp3ms)",H8372 H9023,Ncmpc Sp3ms,H8372 H9023,Ncmsc Sp3ms
+Ezk,40,33,2,וְ/אֵלָ֤י/ו,"K= ve./'e.lo/v (וְ/אֵל/וֹ) ""and/ pillar/ its"" (H9002/H0352B/H9023=HC/Ncmsc/Sp3ms)",H0352B H9023,Ncmpc Sp3ms,H0352B H9023,Ncmsc Sp3ms
+Ezk,40,33,3,וְ/אֵֽלַמָּי/ו֙,"K= ve./'e.la.mo/v (וְ/אֵלַמּ/וֹ) ""and/ porch/ its"" (H9002/H0361/H9023=HC/Ncmsc/Sp3ms)",H0361 H9023,Ncmpc Sp3ms,H0361 H9023,Ncmsc Sp3ms
+Ezk,40,33,8,וּ/לְ/אֵלַמָּ֖י/ו,"K= u./le./'e.la.mo/v (וּ/לְ/אֵלַמּ/וֹ) ""and/ to/ porch/ its"" (H9002/H9005/H0361/H9023=HC/R/Ncmsc/Sp3ms)",H9005 H0361 H9023,R Ncmpc Sp3ms,H9005 H0361 H9023,R Ncmsc Sp3ms
+Ezk,40,34,1,וְ/אֵלַמָּ֗י/ו,"K= ve./'e.la.mo/v (וְ/אֵלַמּ/וֹ) ""and/ porch/ its"" (H9002/H0361/H9023=HC/Ncmsc/Sp3ms)",H0361 H9023,Ncmpc Sp3ms,H0361 H9023,Ncmsc Sp3ms
+Ezk,40,34,11,מַעֲלָֽי/ו\׃,"K= ma.'a.lo/v (מַעֲל/וֹ\׃) ""ascent/ its"" (H4608/H9023\H9016=HNcmsc/Sp3ms)",H4608 H9023 H9016,HNcmpc Sp3ms,H4608 H9023 H9016,HNcmsc Sp3ms
+Ezk,40,36,1,תָּאָי/ו֙,"K= ta.'o/v (תָּא/וֹ) ""chamber/ its"" (H8372/H9023=HNcmsc/Sp3ms)",H8372 H9023,HNcmpc Sp3ms,H8372 H9023,HNcmsc Sp3ms
+Ezk,40,36,3,וְ/אֵֽלַמָּ֔י/ו,"K= ve./'e.la.mo/v (וְ/אֵלַמּ/וֹ) ""and/ porch/ its"" (H9002/H0361/H9023=HC/Ncmsc/Sp3ms)",H0361 H9023,Ncmpc Sp3ms,H0361 H9023,Ncmsc Sp3ms
+Ezk,40,37,1,וְ/אֵילָ֗י/ו,"K= ve./'ei.lo/v (וְ/אֵיל/וֹ) ""and/ pillar/ its"" (H9002/H0352B/H9023=HC/Ncmsc/Sp3ms)",H0352B H9023,Ncmpc Sp3ms,H0352B H9023,Ncmsc Sp3ms
+Ezk,40,37,6,אֵילָ֖י/ו,"K= 'ei.lo/v (אֵיל/וֹ) ""pillar/ its"" (H0352B/H9023=HNcmsc/Sp3ms)",H0352B H9023,HNcmpc Sp3ms,H0352B H9023,HNcmsc Sp3ms
+Ezk,40,37,11,מַעֲלָֽי/ו\׃,"K= ma.'a.lo/v (מַעֲל/וֹ\׃) ""ascent/ its"" (H4608/H9023\H9016=HNcmsc/Sp3ms)",H4608 H9023 H9016,HNcmpc Sp3ms,H4608 H9023 H9016,HNcmsc Sp3ms
+Ezk,42,9,2,הַ/לְּשָׁכ֣וֹת,"K= le.sha.khot (לְּשָׁכוֹת) ""rooms"" (H3957=HNcfpa)",H3957,HTd Ncfpa,H3957,HNcfpa
+Ezk,42,14,18,וְ/לָבְשׁוּ֙,"K= yil.be.shu (יִלְבְּשׁוּ) ""they will put on"" (H3847=HVqi3mp)",H3847,Vqq3cp,H3847,HVqi3mp
+Ezk,43,11,12,צֽוּרֹתָ֡י/ו,"K= tzu.ro.Ta/v (צוּרָת/וֹ) ""design/ its"" (H6699/H9023=HNcfsc/Sp3ms)",H6699 H9023,HNcfpc Sp3ms,H6699 H9023,HNcfsc Sp3ms
+Ezk,43,11,19,תּוֹרֹתָי/ו֙,"K= to.ro.to/v (תּוֹרֹת/וֹ) ""law/ its"" (H8451/H9023=HNcfsc/Sp3ms)",H8451 H9023,HNcfpc Sp3ms,H8451 H9023,HNcfsc Sp3ms
+Ezk,43,15,4,וּ/מֵ/הָ/אֲרִיאֵ֣ל,"K= u./me./ha./'a.ri.'eil (וּ/מֵ/הָ/אֲרִאֵ֣יל) ""and/ [are] from/ the/ altar hearth"" (H9002/H9006/H9009/H0741=HC/R/Td/Ncbsa)",H9006  H0741,R Td Ncmsa,H9006  H0741,R Td Ncbsa
+Ezk,43,16,1,וְ/הָ/אֲרִיאֵ֗ל,"K= ve./ha./'a.ri.'eil (וְ/הָ/אֲרִאֵיל) ""and/ the/ altar hearth"" (H9002/H9009/H0741=HC/Td/Ncbsa)",H0741,Td Ncmsa,H0741,Td Ncbsa
+Ezk,43,26,9,יָדָֽי/ו\׃,"K= ya.do/v (יָד/וֹ\׃) ""hand/ its"" (H3027R/H9023\H9016=HNcbsc/Sp3ms)",H3027R H9023 H9016,HNcbdc Sp3ms,H3027R H9023 H9016,HNcbsc Sp3ms
+Ezk,44,5,23,תּֽוֹרֹתָ֑י/ו,"K= to.ro.to/v (תּוֹרֹת/וֹ) ""law/ its"" (H8451/H9023=HNcfsc/Sp3ms)",H8451 H9023,HNcfpc Sp3ms,H8451 H9023,HNcfsc Sp3ms
+Ezk,44,24,7,יִשְׁפְּט֑וּ/הוּ,"K= u./sha.fe.tu./hu (וְ/שָׁפְטֻ/הוּ) ""and/ they will judge/ it"" (H9001/H8199/H9033=Hc/Vqq3cp/Sp3ms)",H8199 H9033,HVqi3mp Sp3ms,H8199 H9033,Vqq3cp Sp3ms
+Ezk,45,3,6,חֲמִשָּׁ֤ה,"K= cha.mesh (חֲמֵשׁ) ""five"" (H2568=HAcbsc)",H2568,HAcbsa,H2568,HAcbsc
+Ezk,45,5,8,וְֽ/הָיָ֡ה,"K= yih.yeh (יִהְיֶה) ""it will belong"" (H1961=HVqi3ms)",H1961,Vqq3ms,H1961,HVqi3ms
+Ezk,46,9,33,יֵצֵֽא\׃,"K= ye.tze.'u (יֵצְאוּ\׃) ""they will go out"" (H3318G\H9016=HVqi3mp)",H3318G H9016,HVqi3ms,H3318G H9016,HVqi3mp
+Ezk,46,15,1,יַעֲשׂ֨וּ,"K= va./'a.su (וְ/עָשׂוּ) ""and/ they will offer"" (H9001/H6213I=Hc/Vqq3cp)",H6213I,HVqi3mp,H6213I,Vqq3cp
+Ezk,47,10,2,עָמְד֨וּ,"K= ya.'am.du (יַעַמְדוּ) ""they will stand"" (H5975G=HVqi3mp)",H5975G,HVqp3cp,H5975G,HVqi3mp
+Ezk,47,11,1,בִּצֹּאתָ֧י/ו,"K= bi.tzo.to/v (בִּצֹּאת/וֹ) ""swamp/ its"" (H1207/H9023=HNcfsc/Sp3ms)",H1207 H9023,HNcfpc Sp3ms,H1207 H9023,HNcfsc Sp3ms
+Ezk,47,12,25,וְ/הָיָ֤ה,"K= ve./ha.yu (וְ/הָיוּ) ""and/ they will be"" (H9001/H1961=Hc/Vqq3cp)",H1961,Vqq3ms,H1961,Vqq3cp
+Ezk,48,14,7,יַעֲבִ֖יר,"K= ya.'a.vur (יַעֲבוּר) ""it will pass over|"" (H5674A=HVqi3ms)",H5674A,HVhi3ms,H5674A,HVqi3ms
+Ezk,48,15,17,בְּ/תוֹכֽ/וֹ\׃,"K= be./to.kho/h (בְּ/תוֹכֹ/ה\׃) ""in/ [the] middle of/ it"" (H9003/H8432/H9023\H9016=HR/Ncbsc/Sp3ms)",H9003 H8432 H9023 H9016,HR Ncmsc Sp3ms,H9003 H8432 H9023 H9016,HR Ncbsc Sp3ms
+Ezk,48,21,35,בְּ/תוֹכֽ/וֹ\׃,"K= be./to.kho/h (בְּ/תוֹכֹ/ה\׃) ""in/ [the] middle of/ it"" (H9003/H8432/H9023\H9016=HR/Ncbsc/Sp3ms)",H9003 H8432 H9023 H9016,HR Ncmsc Sp3ms,H9003 H8432 H9023 H9016,HR Ncbsc Sp3ms
+Dan,1,4,6,מוּם֩,"K= me.'um (מְאוּם) ""blemish"" (H3971A=HNcbsa)",H3971A,HNcmsa,H3971A,HNcbsa
+Dan,2,4,10,לְ/עַבְדָ֖/ךְ,"K= le./'av.da.yi/kh (לְ/עַבְדַּיִ/ךְ) ""to/ servants/ your"" (H9005/H5649/H9021=AR/Ncmpc/Sp2ms)",H9005 H5649 H9021,AR Ncbsc Sp2ms,H9005 H5649 H9021,AR Ncmpc Sp2ms
+Dan,2,9,12,הִזְדְּמִנְתּוּן֙,"K= haz.min.tun (הַזְמִנְתּוּן) ""you have decided"" (H2164=AVpp2mp)",H2164,AVup2mp,H2164,AVpp2mp
+Dan,2,43,1,וְ/דִ֣י,"K= di (דִי) ""that"" (H1768=AC)",H1768,AC C,H1768,AC
+Dan,3,12,22,לֵֽ/אלָהָ/ךְ֙,"K= le./la.ha.yi/kh (לֵ/אלָהַיִ/ךְ) ""to/ gods/ your"" (H9005/H0426/H9021=AR/Ncmpc/Sp2ms)",H9005 H0426 H9021,AR Ncbsc Sp2ms,H9005 H0426 H9021,AR Ncmpc Sp2ms
+Dan,3,18,8,לֵֽ/אלָהָ/ךְ֙,"K= le./la.ha.yi/Kh (לֵֽ/אלָהָיִ/ךְ֙) ""to/ gods/ your"" (H9005/H0426/H9021=AR/Ncmpc/Sp2ms)",H9005 H0426 H9021,AR Ncbsc Sp2ms,H9005 H0426 H9021,AR Ncmpc Sp2ms
+Dan,3,19,7,אֶשְׁתַּנִּ֔י,"K= 'esh.ta.nu (אֶשְׁתַּנּוּ) ""they were changed"" (H8133=AVPp3mp)",H8133,AVPp3ms,H8133,AVPp3mp
+Dan,3,28,23,גֶשְׁמְ/ה֗וֹן,"K= gesh.mei./hon (גֶשְׁמֵי/הוֹן) ""bodies/ their"" (H1655/H9028=ANcmpc/Sp3mp)",H1655 H9028,ANcbsc Sp3mp,H1655 H9028,ANcmpc Sp3mp
+Dan,4,12(4,13,יְדוּרָן֙,"K= ye.du.run (יְדֻרוּן) ""they nested"" (H1753=AVqi3mp)",H1753,AVqi3fp,H1753,AVqi3mp
+Dan,4,27(4,6,וַ/חֲטָאָ/ךְ֙,"K= va./cha.ta.ya/kh (וַ/חֲטָיָ/ךְ) ""and/ sins/ your"" (H9002/H2408/H9021=AC/Ncmpc/Sp2ms)",H2408 H9021,AC Ncbsc Sp2ms,H2408 H9021,AC Ncmpc Sp2ms
+Dan,5,5,3,נְפַ֙קָה֙,"K= ne.fa.ku (נְפַקוּ) ""they went forth"" (H5312=AVqp3mp)",H5312,AVqp3fp,H5312,AVqp3mp
+Dan,5,21,8,שַׁוִּ֗יְו,"K= she.vi (שְׁוִי) ""it was made"" (H7739A=AVQp3ms)",H7739A,AVpp3mp,H7739A,AVQp3ms
+Dan,5,21,32,עֲלַֽ/הּ\׃,"K= a.la.ye/h (עֲלַיֵ/הּ\׃) ""over/ it"" (H5922/H9034\H9016=AR/Sp3ms)",H5922 H9034 H9016,AR Sp3fs,H5922 H9034 H9016,AR Sp3ms
+Dan,7,5,14,שִׁנַּ֑/הּ,"K= shi.nai.ya/h (שִׁנַּיַּ/הּ) ""teeth/ its"" (H8128/H9024=ANcfpc/Sp3fs)",H8128 H9024,ANcbsc Sp3fs,H8128 H9024,ANcfpc Sp3fs
+Dan,7,7,22,בְּ/רַגְלַ֣/הּ,"K= be./rag.lai.ya/h (בְּ/רַגְלַיַּ/הּ) ""with/ feet/ its"" (H9003/H7271/H9024=AR/Ncmpc/Sp3fs)",H9003 H7271 H9024,AR Ncbsc Sp3fs,H9003 H7271 H9024,AR Ncmpc Sp3fs
+Dan,7,8,14,אֶתְעֲקַ֖רָה,"K= 'et.'a.ka.ru (אֶתְעֲקַרוּ) ""they were uprooted"" (H6132=AVip3mp)",H6132,AVip3fp,H6132,AVip3mp
+Dan,7,19,14,שִׁנַּ֤/הּ,"K= shi.nai.ya/h (שִׁנַּיַּ/הּ) ""teeth/ its"" (H8128/H9024=ANcfpc/Sp3fs)",H8128 H9024,ANcbsc Sp3fs,H8128 H9024,ANcfpc Sp3fs
+Dan,7,20,9,וּ/נְפַ֥לָה,"K= u./ne.fa.lu (וּ/נְפַלוּ) ""and/ they fell"" (H9002/H5308=AC/Vqp3mp)",H5308,AC Vqp3fp,H5308,AC Vqp3mp
+Dan,8,11,6,הוּרַ֣ם,"K= he.rim (הֵרִים) ""it removed"" (H7311A=HVhp3ms)",H7311A,HVHp3ms,H7311A,HVhp3ms
+Dan,9,5,3,הִרְשַׁ֣עְנוּ,"K= ve./hir.sha'.nu (וְ/הִרְשַׁעְנוּ) ""and/ we have acted wickedly"" (H9002/H7561=HC/Vhp1cp)",H7561,HVhp1cp,H7561,Vhp1cp
+Dan,9,12,3,דְּבָר֣/וֹ,"K= de.va.ra/v (דְּבָרָי/ו) ""words/ his"" (H1697G/H9023=HNcmpc/Sp3ms)",H1697G H9023,HNcmsc Sp3ms,H1697G H9023,HNcmpc Sp3ms
+Dan,9,24,12,חַטָּאת֙,"K= cha.ta.'ot (חַטָּאוֹת) ""sins"" (H2403B=HNcfpa)",H2403B,HNcfsa,H2403B,HNcfpa
+Dan,11,10,1,וּ/בָנָ֣י/ו,"K= u/v.no/vo (וּ/בְנ/וֹ) ""and/ son/ his"" (H9002/H1121A/H9023=HC/Ncmsc/Sp3ms)",H1121A H9023,Ncmpc Sp3ms,H1121A H9023,Ncmsc Sp3ms
+Dan,11,10,12,וְ/יִתְגָּרֶ֖ה,"K= ve./yit.ga.ru (וְ/יִתְגָּרוּ) ""so/ they may wage war"" (H9002/H1624=HC/Vtu3mp)",H1624,Vtu3ms,H1624,Vtu3mp
+Dan,11,10,14,מָעֻזּֽ/וֹ\׃,"K= ma.'u.za/h (מָעֻזָּ/ה\׃) ""stronghold/ his"" (H4581/H9023\H9016=HNcbsc/Sp3ms)",H4581 H9023 H9016,HNcmsc Sp3ms,H4581 H9023 H9016,HNcbsc Sp3ms
+Dan,11,12,3,וְ/רָ֣ם,"K= ya.rum (יָרוּם) ""it will be lifted up"" (H7311A=HVqi3ms)",H7311A,Vqrmsa,H7311A,HVqi3ms
+Dan,11,39,8,יַכִּ֖יר,"K= hi.kir (הִכִּיר) ""he acknowledged"" (H5234A=HVhp3ms)",H5234A,HVhi3ms,H5234A,HVhp3ms
+Jol,3,1(4,8,אָשִׁ֛יב,"K= 'a.shuv (אָשׁוּב) ""I will turn back"" (H7725G=HVqi1cs)",H7725G,HVhi1cs,H7725G,HVqi1cs
+Amo,9,6,3,מַעֲלוֹתָ֔י/ו,"K= ma.'a.lo.to/v (מַעֲלוֹת/וֹ) ""stair/ his"" (H4609B/H9023=HNcfsc/Sp3ms)",H4609B H9023,HNcfpc Sp3ms,H4609B H9023,HNcfsc Sp3ms
+Oba,1,11,10,שְׁעָרָ֗י/ו,"K= sha.'a.ro/v (שַׁעֲר/וֹ) ""gate/ his"" (H8179G/H9023=HNcmsc/Sp3ms)",H8179G H9023,HNcmpc Sp3ms,H8179G H9023,HNcmsc Sp3ms
+Mic,1,8,6,שׁוֹלָ֖ל,"K= shi.lal (שֵׁילָל) ""barefoot"" (H7758=HAabsa)",H7758,HAamsa,H7758,HAabsa
+Mic,1,10,10,הִתְפַּלָּֽשִׁי\׃,"K= hit.pa.la.she.ti (הִתְפַּלָּשְׁתִּי\׃) ""I have rolled myself"" (H6428\H9016=HVtp1cs)",H6428 H9016,HVtv2fs,H6428 H9016,HVtp1cs
+Mic,3,2,4,רָ֑ע,"K= ra.'ah (רָעָה) ""evil"" (H7451B=HAafsa)",H7451B,HAamsa,H7451B,HAafsa
+Nam,1,3,4,וּ/גְדָל,"K= u./ge.dol- (וּ/גְדוֹל) ""and/ great of"" (H9002/H1419A=HC/Aabsc)",H1419A,Aamsc,H1419A,Aabsc
+Nam,2,5(2,4,בַּ/הֲלִֽיכָתָ֑/ם,"K= va./ha.li.kho.ta/m (בַ/הֲלִכוֹתָ/ם) ""on/ journeys/ their"" (H9003/H1979/H9028=HR/Ncfpc/Sp3mp)",H9003 H1979 H9028,HR Ncfsc Sp3mp,H9003 H1979 H9028,HR Ncfpc Sp3mp
+Nam,3,3,14,וְ/כָשְׁל֖וּ,"K= yikh.she.lu (יִכְשְׁלוּ) ""people will stumble"" (H3782=HVqi3mp)",H3782,Vqq3cp,H3782,HVqi3mp
+Hab,3,4,9,עֻזּֽ/וֹ\׃,"K= 'u.Zo/h (עֻזֹּֽ/ה\׃) ""strength/ his"" (H5797/H9023\H9016=HNcbsc/Sp3ms)",H5797 H9023 H9016,HNcmsc Sp3ms,H5797 H9023 H9016,HNcbsc Sp3ms
+Hab,3,14,4,פְּרָזָ֔י/ו,"K= pe.ra.zo/v (פְּרָז/וֹ) ""warrior/ his"" (H6518/H9023=HNcmsc/Sp3ms)",H6518 H9023,HNcmpc Sp3ms,H6518 H9023,HNcmsc Sp3ms
+Hag,1,8,9,וְ/אֶכָּבְדָ֖ה,"K= ve./'e.ka.ved (וְ/אֶכָּבֵד) ""so/ I may be honored"" (H9002/H3513G=HC/VNu1cs)",H3513G,VNc1cs,H3513G,VNu1cs
+Zec,4,2,6,וָ/אֹמַ֡ר,"K= va/i.yo.mer (וַ/יֹּאמֶר) ""and/ he said"" (H9001/H0559=Hc/Vqw3ms)",H0559,Vqw1cs,H0559,Vqw3ms
