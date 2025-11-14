@@ -82,3 +82,13 @@ tessela/
     ```
 
     The process will start, and you will see progress bars for each source file. The script will log its progress to `normalization.log`. Once finished, the normalized files (`masoretic_normalised.csv`, etc.) will be available in your `output/` directory.
+
+    
+# Data sources
+
+The data sources are:
+
+* LXX: Tov's CATSS project (https://ccat.sas.upenn.edu/rak/catss.html) and Brenton's Septuagint (Vaticanus)
+* Masoretic text: JPS 1917
+* Vulgate: Douay–Rheims Bible
+* Qere-Ketiv: TAHOT dataset from STEP-Bible (https://github.com/STEPBible/STEPBible-Data/tree/master/Translators%20Amalgamated%20OT%2BNT, https://stepbible.github.io/STEPBible-Data/)
