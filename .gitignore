@@ -1,3 +1,10 @@
+
+manual_datasets/qere_ketiv/TAHOT Gen-Deu - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt
+manual_datasets/qere_ketiv/TAHOT Isa-Mal - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt
+manual_datasets/qere_ketiv/TAHOT Job-Sng - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt
+manual_datasets/qere_ketiv/TAHOT Jos-Est - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
