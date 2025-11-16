@@ -1,5 +1,6 @@
 pandas
 requests
 PyMuPDF
+Pillow
 google-generativeai
 tqdm
