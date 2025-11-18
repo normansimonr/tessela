@@ -12,6 +12,8 @@ df = df.drop_duplicates(subset = ["book", "chapter", "verse", "type"])
 
 df = df.groupby(["book", "chapter", "verse"])["type"].apply(lambda x: ''.join(x)).reset_index()
 
+df = df.drop_duplicates(subset = ["book", "chapter", "verse", "type"])
+
 df.to_csv("qere_ketiv_verses.csv", index=False)
 
 print(df)
