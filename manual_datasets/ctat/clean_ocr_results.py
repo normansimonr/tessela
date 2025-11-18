@@ -90,6 +90,15 @@ def remove_hyphen_last(text):
 
 df["value"] = df["value"].apply(remove_hyphen_last)
 
+def add_obadiah_chapter(row):
+    if row["book"] == "Ab":
+        return "1:" + str(row["value"])
+    else:
+        return str(row["value"])
+
+df["value"] = df[["book", "value"]].apply(add_obadiah_chapter, axis=1)
+
+
 df.to_csv("ocr_clean.csv", index=False)
 
 print(df)
