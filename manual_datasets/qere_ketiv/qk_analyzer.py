@@ -10,6 +10,7 @@ qk.columns = ["Coordinates", "Qere", "Ketiv", "Strongs Q", "Parsing Q"]
 
 qk["Coordinates"] = qk["Coordinates"].str.replace("=Q(K)", "")
 book_and_verse = qk["Coordinates"].str.split("#", expand=True)[0]
+book_and_verse = book_and_verse.str.replace(r"\([^)]*\)", "", regex=True)
 word_series = qk["Coordinates"].str.split("#", expand=True)[1].astype(int)
 book = book_and_verse.str.split(".", expand=True)[0]
 chapter = book_and_verse.str.split(".", expand=True)[1].astype(int)
