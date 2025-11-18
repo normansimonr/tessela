@@ -50,8 +50,45 @@ df['text'] = df["text"].str.replace('‘', '')\
     .str.replace('MI ', 'Mal ')\
     .str.replace(r"\(.*?\)", "", regex=True).str.strip()
 
+df['text'] = df["text"].str.replace('II Ch', '2Ch')\
+    .str.replace('I Ch', '1Ch')\
+    .str.replace('II R', '2R')\
+    .str.replace('I R', '1R')\
+    .str.replace('II S', '2S')\
+    .str.replace('I S', '1S')\
+    .str.replace(',', ':')
 
 df = df.drop_duplicates(subset='text', keep='first')
+
+a = df["text"].str.split(" ", n=1, expand=True)
+a.columns = ["book", "verses"]
+df = pd.concat([df, a], axis=1)
+del a
+
+df["verses"] = df["verses"].str.replace(r"[A-Za-z]", "", regex=True)
+
+b = df["verses"].str.split("/", expand=True)
+b.columns = ["v1", "v2"]
+df = pd.concat([df, b], axis=1)
+del b
+
+df = df.drop(columns=["text", "page", "verses"])
+
+df = df.melt(id_vars=["volume", "pagina", "book"])
+
+df = df.dropna(subset=["value"])
+
+df = df.drop(columns=["variable"])
+
+df = df.drop_duplicates(subset=["book", "value"], keep='first')
+
+def remove_hyphen_last(text):
+    if text[-1] == "-":
+        return text[:-1].strip()
+    else:
+        return text.strip()
+
+df["value"] = df["value"].apply(remove_hyphen_last)
 
 df.to_csv("ocr_clean.csv", index=False)
 
