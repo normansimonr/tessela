@@ -29,6 +29,13 @@ def normalize_text(book_name: str, chapter: int, verse: int, verse_text: str, pr
         Returns an empty list if an error occurs.
     """
     try:
+    
+        verse_text = str(verse_text)
+        
+        if verse_text == "nan":
+            print(verse_text, "EMPTY VERSE")
+            return ""
+        
         configure_api_key()
         
         with open(prompt_path, 'r') as f:
@@ -45,7 +52,6 @@ def normalize_text(book_name: str, chapter: int, verse: int, verse_text: str, pr
         print(f"Cleaned response text: {cleaned_response_text}")
 
         propositions = json.loads(cleaned_response_text)
-        print(f"Propositions after json.loads: {propositions}")
         print(verse_text)
         print(propositions)
         return propositions
