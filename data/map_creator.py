@@ -3,14 +3,9 @@ import re
 import sys
 
 # ==========================================
-# CONFIGURATION
+# BOOK NAME MAPPINGS
 # ==========================================
-INPUT_FILENAME = "TVTMS - Translators Versification Traditions with Methodology for Standardisation for Eng+Heb+Lat+Grk+Others - STEPBible.org CC BY.txt"
-OUTPUT_FILENAME = "bible_versification_mapping_atomic.csv"
 
-# ==========================================
-# MAPPINGS (USFM -> USER FORMAT)
-# ==========================================
 USFM_TO_JPS = {
     'Gen': 'GEN', 'Exo': 'EXO', 'Lev': 'LEV', 'Num': 'NUM', 'Deu': 'DEU',
     'Jos': 'JOS', 'Jdg': 'JDG', 'Rut': 'RUT', 
@@ -45,178 +40,279 @@ USFM_TO_LXX = {
     'Nah': 'Nahum', 'Hab': 'Habacuc', 'Zep': 'Zephaniah', 'Hag': 'Haggai', 'Zec': 'Zechariah', 'Mal': 'Malachi'
 }
 
+# Standard Book Order for Sorting (USFM)
+USFM_ORDER = [
+    'Gen', 'Exo', 'Lev', 'Num', 'Deu', 'Jos', 'Jdg', 'Rut', 
+    '1Sa', '2Sa', '1Ki', '2Ki', '1Ch', '2Ch', 'Ezr', 'Neh', 'Est',
+    'Job', 'Psa', 'Pro', 'Ecc', 'Sng', 'Isa', 'Jer', 'Lam', 'Ezk', 
+    'Dan', 'Hos', 'Jol', 'Amo', 'Oba', 'Jon', 'Mic', 'Nah', 'Hab', 
+    'Zep', 'Hag', 'Zec', 'Mal'
+]
+BOOK_INDICES = {bk: i for i, bk in enumerate(USFM_ORDER)}
+
 # ==========================================
-# PARSING LOGIC
+# PARSING UTILITIES
 # ==========================================
 
-def explode_standard_ref(ref_str):
+def parse_single_ref(ref_str, default_book=None, default_chapter=None):
     """
-    Takes a Standard Ref like 'Gen.2:25-3:1' or 'Gen.5:32; 6:1'
-    and returns a LIST of atomic refs: ['Gen.2:25', 'Gen.3:1']
+    Parses 'Book.Ch:V', 'Ch:V', or 'V' into a dict {book, chapter, verse}.
     """
-    clean_ref = ref_str.split('!')[0]
-    atomic_refs = []
+    ref_str = ref_str.strip()
     
-    # 1. Split disjoint lists (semicolons)
-    parts = re.split(r'[;,]\s*', clean_ref)
-    
-    for part in parts:
-        if not part.strip(): continue
-        
-        # 2. Handle Ranges (Hyphens)
-        if '-' in part:
-            subparts = part.split('-')
-            start = subparts[0]
-            end = subparts[1]
-            
-            # Regex: Book.Chapter:Verse
-            base_match = re.match(r'([1-3]?[A-Za-z]+\.\d+:)', start)
-            if not base_match:
-                atomic_refs.append(start)
-                continue
-                
-            base_prefix = base_match.group(1) # e.g. "Gen.32:"
-            
-            start_v_match = re.search(r':(\d+)', start)
-            end_v_match = re.search(r'(\d+)', end)
-            
-            # Expand atomic range if it is within same chapter (e.g. 1:1-5)
-            if start_v_match and end_v_match and ':' not in end:
-                s_num = int(start_v_match.group(1))
-                e_num = int(end_v_match.group(1))
-                for v in range(s_num, e_num + 1):
-                    atomic_refs.append(f"{base_prefix}{v}")
-            else:
-                # Cross-chapter or complex range: Keep endpoints to ensure coverage
-                atomic_refs.append(start)
-                if not re.match(r'[1-3]?[A-Za-z]+\.', end):
-                     book_code = start.split('.')[0]
-                     atomic_refs.append(f"{book_code}.{end}")
-                else:
-                    atomic_refs.append(end)
-        else:
-            # Single ref handling
-            if not re.match(r'[1-3]?[A-Za-z]+\.', part):
-                # Attempt to recover book code from context (previous part)
-                if parts[0] != part:
-                     prev_book = parts[0].split('.')[0]
-                     atomic_refs.append(f"{prev_book}.{part}")
-                else:
-                     atomic_refs.append(part)
-            else:
-                atomic_refs.append(part)
-                
-    return atomic_refs
-
-def parse_dataset(filename):
-    data = {}
-    data_started = False
-
-    with open(filename, 'r', encoding='utf-8', errors='replace') as f:
-        reader = csv.reader(f, delimiter='\t')
-        
-        for row in reader:
-            if not data_started:
-                if row and "#DataStart(Expanded)" in row[0]:
-                    data_started = True
-                continue
-            
-            if not row or row[0].startswith("'") or row[0].startswith("SourceType") or len(row) < 3:
-                continue
-
-            source_type = row[0]
-            source_ref = row[1]
-            std_ref_raw = row[2]
-
-            # UNROLL: Get list of atomic Standard IDs
-            std_ids = explode_standard_ref(std_ref_raw)
-
-            for std_ref in std_ids:
-                if std_ref not in data:
-                    data[std_ref] = {}
-
-                if "Hebrew" in source_type:
-                    data[std_ref]['Hebrew'] = source_ref
-                elif "Eng-KJV" in source_type and "Latin" not in source_type and "Greek" not in source_type:
-                    data[std_ref]['Hebrew'] = source_ref
-
-                if "Latin" in source_type:
-                    data[std_ref]['Latin'] = source_ref
-
-                if "Greek" in source_type:
-                    data[std_ref]['Greek'] = source_ref
-    return data
-
-def clean_ref_output(ref_string, book_map):
-    """
-    Cleans up internal formatting to User Format.
-    Returns (Book, Verse) or (None, None) if invalid/absent.
-    """
-    if not ref_string or "Absent" in ref_string:
-        return "ABSENT", "ABSENT"
-
-    clean = ref_string.split('[')[0].split('!')[0].strip()
-    
-    match = re.match(r"([1-3]?[A-Za-z]+)\.(\d+:\d+.*)", clean)
+    # 1. Full Format: Book.Chapter:Verse (e.g. Gen.1:1)
+    match = re.match(r"^([^\.]+)\.(\d+|Title):(.+)$", ref_str)
     if match:
-        book_code = match.group(1)
-        verse_part = match.group(2)
-        book_name = book_map.get(book_code)
-        
-        # Return None if book exists in data (like Mat) but not in user map
-        if not book_name:
-            return None, None
-            
-        return book_name, verse_part
-        
-    return "Unknown", clean
+        return {'book': match.group(1), 'chapter': match.group(2), 'verse': match.group(3)}
 
-def generate_csv(data, output_file):
-    print(f"Generating atomic CSV...")
+    # 2. Short Format: Chapter:Verse (e.g. 1:1)
+    match = re.match(r"^(\d+):(.+)$", ref_str)
+    if match:
+        return {'book': default_book, 'chapter': match.group(1), 'verse': match.group(2)}
+
+    # 3. Verse Only (e.g. 1 or 1a)
+    return {'book': default_book, 'chapter': default_chapter, 'verse': ref_str}
+
+def expand_ref_range(ref_str, last_book_context=None):
+    """
+    Expands a reference string (semicolons, ranges) into a list of atomic reference dicts.
+    E.g. "Jos.4:23-24" -> [{'book':'Jos', 'ch':'4', 'v':'23'}, {'book':'Jos', 'ch':'4', 'v':'24'}]
+    """
+    if not ref_str: return []
     
+    # Handle semicolon lists "Gen.5:32; 6:1"
+    if ';' in ref_str:
+        atoms = []
+        parts = ref_str.split(';')
+        ctx_book = last_book_context
+        for p in parts:
+            sub_atoms = expand_ref_range(p, ctx_book)
+            if sub_atoms:
+                atoms.extend(sub_atoms)
+                ctx_book = sub_atoms[-1]['book']
+        return atoms
+
+    # Handle Ranges "Gen.5:31-32" or "23-24"
+    if '-' in ref_str:
+        parts = ref_str.split('-')
+        start_str, end_str = parts[0].strip(), parts[1].strip()
+        
+        start = parse_single_ref(start_str, default_book=last_book_context)
+        # End ref inherits from Start ref
+        end = parse_single_ref(end_str, default_book=start['book'], default_chapter=start['chapter'])
+        
+        results = []
+        
+        # Range expansion logic
+        # Only unfold if book and chapter are the same
+        if start['book'] == end['book'] and start['chapter'] == end['chapter']:
+            try:
+                # Try to expand integers
+                s_v_match = re.search(r"(\d+)", start['verse'])
+                e_v_match = re.search(r"(\d+)", end['verse'])
+                
+                if s_v_match and e_v_match:
+                    s_v = int(s_v_match.group(1))
+                    e_v = int(e_v_match.group(1))
+                    if e_v >= s_v:
+                        for v in range(s_v, e_v + 1):
+                            results.append({'book': start['book'], 'chapter': start['chapter'], 'verse': str(v)})
+                    else:
+                        results.append(start)
+                else:
+                    # Non-integer verses, just return endpoints
+                    results.append(start)
+                    if start['verse'] != end['verse']:
+                        results.append(end)
+            except:
+                results.append(start)
+                results.append(end)
+        else:
+            # Cross-chapter/book: Return endpoints only (cannot fill gap reliably)
+            results.append(start)
+            results.append(end)
+        return results
+
+    # Single Ref
+    return [parse_single_ref(ref_str, default_book=last_book_context)]
+
+def get_sort_key(ref):
+    """Helper to sort rows by standard reference book order."""
+    bk_idx = BOOK_INDICES.get(ref['book'], 999)
+    try:
+        ch_num = int(ref['chapter']) if ref['chapter'] and ref['chapter'].isdigit() else 0
+    except: ch_num = 0
+    
+    # Verse sorting
+    v_str = str(ref['verse'])
+    if v_str == 'Title':
+        v_num = 0
+    else:
+        v_match = re.search(r"(\d+)", v_str)
+        v_num = int(v_match.group(1)) if v_match else 0
+        
+    return (bk_idx, ch_num, v_num, v_str)
+
+# ==========================================
+# MAIN PROCESS
+# ==========================================
+
+def process_file(input_file, output_file):
+    print(f"Reading {input_file}...")
+    
+    # Data Aggregation
+    # Key: (StandardBook, StandardChapter, StandardVerse)
+    # Value: Dict with keys 'std', 'JPS', 'LXX', 'Vulgate'
+    # The values for traditions are now LISTS/SETS of verses to handle 1-to-many
+    aggregated_rows = {}
+    
+    data_section_started = False
+    
+    with open(input_file, 'r', encoding='utf-8') as f:
+        for line_num, line in enumerate(f):
+            line = line.strip()
+            
+            # Documentation skipping logic
+            if not data_section_started:
+                if line.startswith("SourceType"):
+                    data_section_started = True
+                    continue 
+                elif line.startswith("#DataStart"):
+                    continue
+                else:
+                    continue 
+            
+            if not line or line.startswith('#') or line.startswith("'") or line.startswith("="):
+                continue
+            
+            cols = line.split('\t')
+            if len(cols) < 3: continue
+            
+            source_types_raw = cols[0]
+            source_ref_raw = cols[1]
+            std_ref_raw = cols[2]
+            
+            # Filter for specific traditions
+            types = [t.strip() for t in source_types_raw.split('+')]
+            categories = {} 
+            for t in types:
+                if 'Hebrew' in t: categories['JPS'] = t
+                elif 'Latin' in t: categories['Vulgate'] = t
+                elif 'Greek' in t: categories['LXX'] = t
+            
+            if not categories: continue # Skip if no relevant tradition
+            
+            # 1. Expand Standard Refs (Rows)
+            std_refs = expand_ref_range(std_ref_raw)
+            if not std_refs: continue
+            
+            # 2. Expand Source Refs (Values)
+            # Use the first standard ref as the default context for the source
+            # (e.g. if Source is just "23-24", it implies the book/chap of the Std ref)
+            src_ctx_book = std_refs[0]['book']
+            src_refs = expand_ref_range(source_ref_raw, last_book_context=src_ctx_book)
+            
+            # 3. Pivot Data
+            for std in std_refs:
+                key = (std['book'], std['chapter'], std['verse'])
+                
+                if key not in aggregated_rows:
+                    aggregated_rows[key] = {
+                        'std': std, 
+                        'JPS': [], 
+                        'LXX': [], 
+                        'Vulgate': []
+                    }
+                
+                # Assign expanded source verses to the appropriate tradition lists
+                for cat_key in categories.keys():
+                    for src in src_refs:
+                        # Translate Book Name
+                        usfm_book = src['book']
+                        trans_book = usfm_book
+                        if cat_key == 'JPS':
+                            trans_book = USFM_TO_JPS.get(usfm_book, usfm_book)
+                        elif cat_key == 'LXX':
+                            trans_book = USFM_TO_LXX.get(usfm_book, usfm_book)
+                        elif cat_key == 'Vulgate':
+                            trans_book = USFM_TO_VULGATE.get(usfm_book, usfm_book)
+                        
+                        src_data = {
+                            'book': trans_book,
+                            'chapter': src['chapter'],
+                            'verse': src['verse']
+                        }
+                        
+                        # Add to list if not already present (avoid duplicates from overlapping source lines)
+                        if src_data not in aggregated_rows[key][cat_key]:
+                            aggregated_rows[key][cat_key].append(src_data)
+
+    # 4. Flatten and Unfold to Rows
+    final_rows = []
+    
+    # Sort keys for processing
+    sorted_keys = sorted(aggregated_rows.keys(), key=lambda k: get_sort_key(aggregated_rows[k]['std']))
+    
+    for key in sorted_keys:
+        data = aggregated_rows[key]
+        std = data['std']
+        
+        jps_list = data['JPS']
+        lxx_list = data['LXX']
+        vul_list = data['Vulgate']
+        
+        # Determine how many rows this Standard Verse expands to.
+        # This is the max length of the source mappings.
+        # usually 1, but if Vulgate has 2 verses (23, 24) for this std verse, we make 2 rows.
+        max_len = max(len(jps_list), len(lxx_list), len(vul_list), 1)
+        
+        for i in range(max_len):
+            # Helper to get item at index i, or repeat last item, or empty?
+            # Standard mapping practice for splitting ranges: 
+            # If Std maps to Src 23, 24 -> Row 1 has 23, Row 2 has 24.
+            # If another column has only 1 item (e.g. JPS 23), should it repeat? 
+            # Yes, because JPS 23 aligns with the whole chunk of Vulgate 23-24.
+            
+            def get_cell(lst, idx):
+                if not lst: return ['', '', '']
+                # If list has items, but fewer than max_len, repeat the last item (or wrap?)
+                # Contextually, repeating the single mapping is safest for alignment.
+                if idx >= len(lst):
+                    d = lst[-1] # Repeat last known mapping
+                else:
+                    d = lst[idx]
+                return [d['book'], d['chapter'], d['verse']]
+
+            jps_vals = get_cell(jps_list, i)
+            lxx_vals = get_cell(lxx_list, i)
+            vul_vals = get_cell(vul_list, i)
+            
+            final_rows.append([
+                std['book'], std['chapter'], std['verse'],
+                *jps_vals,
+                *lxx_vals,
+                *vul_vals
+            ])
+
+    # 5. Write to CSV
     headers = [
-        'Standard_ID',
-        'JPS_Book', 'JPS_Ref',
-        'Vulgate_Book', 'Vulgate_Ref',
-        'LXX_Book', 'LXX_Ref'
+        'Standard_Book', 'Standard_Chapter', 'Standard_Verse',
+        'JPS_Book', 'JPS_Chapter', 'JPS_Verse',
+        'LXX_Book', 'LXX_Chapter', 'LXX_Verse',
+        'Vulgate_Book', 'Vulgate_Chapter', 'Vulgate_Verse'
     ]
+    
+    print(f"Writing {len(final_rows)} atomic rows to {output_file}...")
     
     with open(output_file, 'w', newline='', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(headers)
-        
-        sorted_keys = sorted(data.keys()) 
-        
-        for std_id in sorted_keys:
-            traditions = data[std_id]
+        writer.writerows(final_rows)
             
-            raw_hebrew = traditions.get('Hebrew', std_id)
-            raw_latin = traditions.get('Latin', std_id)
-            raw_greek = traditions.get('Greek', std_id)
-
-            # --- JPS Processing ---
-            jps_book, jps_vers = clean_ref_output(raw_hebrew, USFM_TO_JPS)
-            
-            # --- FILTERING ---
-            # 1. None: Book not in your JPS list (e.g. NT books)
-            # 2. "Unknown": Regex parsing failed
-            # 3. "ABSENT": The verse does not exist in JPS
-            if jps_book is None or jps_book == "Unknown" or jps_book == "ABSENT":
-                continue
-
-            # --- Target Processing ---
-            vul_book, vul_vers = clean_ref_output(raw_latin, USFM_TO_VULGATE)
-            lxx_book, lxx_vers = clean_ref_output(raw_greek, USFM_TO_LXX)
-
-            writer.writerow([
-                std_id,
-                jps_book, jps_vers,
-                vul_book, vul_vers,
-                lxx_book, lxx_vers
-            ])
-
-    print(f"Success. File saved to: {output_file}")
+    print("Processing complete.")
 
 if __name__ == "__main__":
-    mapped_data = parse_dataset(INPUT_FILENAME)
-    generate_csv(mapped_data, OUTPUT_FILENAME)
+    input_filename = "TVTMS - Translators Versification Traditions with Methodology for Standardisation for Eng+Heb+Lat+Grk+Others - STEPBible.org CC BY.txt"
+    output_filename = "bible_versification_mapping_atomic.csv"
+    
+    process_file(input_filename, output_filename)
