@@ -62,3 +62,42 @@ def normalize_text(book_name: str, chapter: int, verse: int, verse_text: str, pr
         print(f"Configuration Error: {e}")
         return []
 
+@retry_with_exponential_backoff()
+def compare_verses(jps_norm: str, lxx_norm: str, prompt_path: str) -> list:
+    """
+    Compares two normalized verses using a generative AI model.
+
+    Args:
+        jps_norm: The normalized JPS verse.
+        lxx_norm: The normalized LXX verse.
+        prompt_path: The path to the file containing the prompt template.
+
+    Returns:
+        A list containing a boolean and a justification string.
+        Returns an empty list if an error occurs.
+    """
+    try:
+        if not jps_norm or jps_norm == '[]' or not lxx_norm or lxx_norm == '[]':
+            return []
+
+        configure_api_key()
+
+        with open(prompt_path, 'r') as f:
+            prompt_template = f.read()
+
+        model = genai.GenerativeModel(model_name="gemini-2.0-flash")
+
+        final_prompt = prompt_template + f"\n\nSource 1: JPS:\n\n{jps_norm}\n\nSource 2: LXX:\n\n{lxx_norm}"
+
+        response = model.generate_content(final_prompt)
+
+        cleaned_response_text = response.text.strip().replace('```json', '').replace('```', '').strip()
+        
+        comparison = json.loads(cleaned_response_text)
+        return comparison
+    except FileNotFoundError:
+        print(f"Error: Prompt file not found at {prompt_path}")
+        return []
+    except Exception as e:
+        print(f"An error occurred during comparison: {e}")
+        return []
