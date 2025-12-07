@@ -48,19 +48,65 @@ book_renaming_map = {
     "Malachias": "MAL"
 }
 
-#vulgate_df['book_name'] = vulgate_df['book_name'].map(book_renaming_map)
 
-verse_map = verse_map[["Standard_Book", "Standard_Chapter", "Standard_Verse", "JPS_Book", "JPS_Chapter", "JPS_Verse", "Vulgate_Book", "Vulgate_Chapter", "Vulgate_Verse"]]
+# Prepare verse_map
 
-verse_map['Standard_Verse'] = verse_map['Standard_Verse'].str.replace("!a", "").str.replace("!b", "").str.replace("!c", "").str.replace("!d", "")
+verse_map = verse_map[["JPS_Book", "JPS_Chapter", "JPS_Verse", "Vulgate_Book", "Vulgate_Chapter", "Vulgate_Verse"]]
+
+
 verse_map['JPS_Verse'] = verse_map['JPS_Verse'].str.replace("!a", "").str.replace("!b", "").str.replace("!c", "").str.replace("!d", "")
 verse_map['Vulgate_Verse'] = verse_map['Vulgate_Verse'].str.replace("!a", "").str.replace("!b", "").str.replace("!c", "").str.replace("!d", "")
 
-masoretic_and_atomic = pd.merge(masoretic_df, verse_map, left_on=["book_name", "chapter", "verse"], right_on=["JPS_Book", "JPS_Chapter", "JPS_Verse"], how="outer", suffixes=["_JPS", "_VUL"])
+verse_map["match"] = (
+    (verse_map["JPS_Chapter"] == verse_map["Vulgate_Chapter"]) &
+    (verse_map["JPS_Verse"] == verse_map["Vulgate_Verse"])
+)
 
-print(masoretic_and_atomic)
+verse_map = verse_map[~verse_map["match"]]
 
-masoretic_vulgate = pd.merge(masoretic_and_atomic, vulgate_df, left_on=["JPS_Book", "Vulgate_Chapter", "Vulgate_Verse"], right_on = ["book_name", "chapter", "verse"], how="inner", suffixes=["_JPS", "_VUL"])
+# Prepare masoretic and vulgate
+
+masoretic_df = masoretic_df.rename(columns={"book_name":"JPS_Book", "chapter":"JPS_Chapter", "verse":"JPS_Verse"})
+vulgate_df = vulgate_df.rename(columns={"book_name":"Vulgate_Book", "chapter":"Vulgate_Chapter", "verse":"Vulgate_Verse"})
+
+# Merge masoretic and mapping
+
+masoretic_and_atomic = pd.merge(masoretic_df, verse_map, on=["JPS_Book", "JPS_Chapter", "JPS_Verse"], how="outer")
+
+# Inner join with Vulgate
+
+masoretic_vulgate_inner = pd.merge(masoretic_and_atomic, vulgate_df, on=["Vulgate_Book", "Vulgate_Chapter", "Vulgate_Verse"], how="inner", suffixes=["_JPS", "_VUL"])
+
+# Joining the remaining verses (which are the same coordinates with JPS)
+
+missing = vulgate_df.merge(
+    masoretic_vulgate_inner[["Vulgate_Book", "Vulgate_Chapter", "Vulgate_Verse"]],
+    on=["Vulgate_Book", "Vulgate_Chapter", "Vulgate_Verse"],
+    how="left",
+    indicator=True
+)
+
+missing = missing[missing["_merge"] == "left_only"].drop(columns="_merge")
+missing["Vulgate_Book"] = missing["Vulgate_Book"].map(book_renaming_map)
+missing = missing.rename(columns={"Vulgate_Book":"JPS_Book", "Vulgate_Chapter":"JPS_Chapter", "Vulgate_Verse":"JPS_Verse"})
+
+masoretic_vulgate_missing = pd.merge(masoretic_and_atomic, missing, on=["JPS_Book", "JPS_Chapter", "JPS_Verse"], how="outer", suffixes=["_JPS", "_VUL"])
+
+# Concatenating both merges
+
+masoretic_vulgate = pd.concat([masoretic_vulgate_inner, masoretic_vulgate_missing])
+masoretic_vulgate["JPS_Chapter"] = masoretic_vulgate["JPS_Chapter"].astype(float)
+masoretic_vulgate["JPS_Verse"] = masoretic_vulgate["JPS_Verse"].astype(float)
+masoretic_vulgate = masoretic_vulgate.sort_values(by=["JPS_Book", "JPS_Chapter", "JPS_Verse"], ascending=True)
+
+# Removing duplicates
+
+masoretic_vulgate["duplicated"] = masoretic_vulgate.duplicated(subset=["JPS_Book", "JPS_Chapter", "JPS_Verse"], keep=False)
+masoretic_vulgate = masoretic_vulgate[~((masoretic_vulgate["duplicated"]) & (masoretic_vulgate["text_VUL"].isna()))]
+masoretic_vulgate = masoretic_vulgate.drop_duplicates()
+masoretic_vulgate = masoretic_vulgate.drop(columns=["match", "duplicated"])
+
+print(masoretic_vulgate)
 
 print(f"Matched Rows: {len(masoretic_vulgate)}")
 masoretic_vulgate.to_csv("masoretic_vulgate.csv", index=False)
