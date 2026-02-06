@@ -12,6 +12,10 @@ with open("annotation_equivalences_greek.json", "r") as file:
     # Parse the JSON data into a dictionary
     annotation_equivalences_greek = json.load(file)
 
+with open("tov_ebible_equivalences.json", "r") as file:
+    # Parse the JSON data into a dictionary
+    # Structure is "Tov": "EBIBLE"
+    tov_ebible_equivalences = json.load(file)
 
 def convert_to_dataframe(file_path):
     """
@@ -472,6 +476,15 @@ def run_tov_conversion():
         # Replace double quotes with two double quotes (CSV standard for escaping quotes)
         final_df[col] = final_df[col].str.replace('"', '""', regex=False)
 
+    # Replace book IDs with ebible compatible IDs
+    
+    final_df['book'] = final_df['book'].replace(tov_ebible_equivalences)
+    
+    # Removing Vaticanus (Joshua and Judges) and Theodotion
+    
+    final_df = final_df[~final_df['book'].isin(['JoshA', 'JudgA', 'DanTh'])]
+    
+    
     # Define the output CSV file path
     output_csv_path = "../../data/intermediate_datasets/tov.csv"
 
