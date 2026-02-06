@@ -4,11 +4,11 @@ import json
 import os
 import csv
 
-with open("scripts/annotation_equivalences_hebrew.json", "r") as file:
+with open("annotation_equivalences_hebrew.json", "r") as file:
     # Parse the JSON data into a dictionary
     annotation_equivalences_hebrew = json.load(file)
 
-with open("scripts/annotation_equivalences_greek.json", "r") as file:
+with open("annotation_equivalences_greek.json", "r") as file:
     # Parse the JSON data into a dictionary
     annotation_equivalences_greek = json.load(file)
 
@@ -260,7 +260,7 @@ def protect_annotations(parallel):
 
 def convert_hebrew_to_unicode(parallel):
     # Open the JSON file for reading
-    with open("scripts/hebrew_equivalences.json", "r") as file:
+    with open("hebrew_equivalences.json", "r") as file:
         # Parse the JSON data into a dictionary
         hebrew_equivalences = json.load(file)
 
@@ -313,7 +313,7 @@ def convert_hebrew_to_unicode(parallel):
 
 def convert_greek_to_unicode(parallel):
     # Open the JSON file for reading
-    with open("scripts/greek_equivalences.json", "r") as file:
+    with open("greek_equivalences.json", "r") as file:
         # Parse the JSON data into a dictionary
         greek_equivalences = json.load(file)
 
@@ -408,51 +408,49 @@ def convert_to_csv_unicode(file_path):
 
 def run_tov_conversion():
     files_to_convert = [
-        ["data/raw/LXX_Tov/01.Genesis.par", "Genesis"],
-        ["data/raw/LXX_Tov/02.Exodus.par", "Exodus"],
-        ["data/raw/LXX_Tov/03.Lev.par", "Leviticus"],
-        ["data/raw/LXX_Tov/04.Num.par", "Numbers"],
-        ["data/raw/LXX_Tov/05.Deut.par", "Deuteronomy"],
-        ["data/raw/LXX_Tov/06.JoshB.par", "Joshua (Vaticanus)"],
-        ["data/raw/LXX_Tov/07.JoshA.par", "Joshua (Alexandrinus)"],
-        ["data/raw/LXX_Tov/08.JudgesB.par", "Judges (Vaticanus)"],
-        ["data/raw/LXX_Tov/09.JudgesA.par", "Judges (Alexandrinus)"],
-        ["data/raw/LXX_Tov/10.Ruth.par", "Ruth"],
-        ["data/raw/LXX_Tov/11.1Sam.par", "1 Samuel"],
-        ["data/raw/LXX_Tov/12.2Sam.par", "2 Samuel"],
-        ["data/raw/LXX_Tov/13.1Kings.par", "1 Kings"],
-        ["data/raw/LXX_Tov/14.2Kings.par", "2 Kings"],
-        ["data/raw/LXX_Tov/15.1Chron.par", "1 Chronicles"],
-        ["data/raw/LXX_Tov/16.2Chron.par", "2 Chronicles"],
-        ["data/raw/LXX_Tov/18.Esther.par", "Esther"],
-        ["data/raw/LXX_Tov/18.Ezra.par", "Ezra"],
-        ["data/raw/LXX_Tov/19.Neh.par", "Nehemiah"],
-        ["data/raw/LXX_Tov/20.Psalms.par", "Psalms"],
-        ["data/raw/LXX_Tov/23.Prov.par", "Proverbs"],
-        ["data/raw/LXX_Tov/24.Qoh.par", "Ecclesiastes"],
-        ["data/raw/LXX_Tov/25.Cant.par", "Song of Songs"],
-        ["data/raw/LXX_Tov/26.Job.par", "Job"],
-        ["data/raw/LXX_Tov/28.Hosea.par", "Hosea"],
-        ["data/raw/LXX_Tov/29.Micah.par", "Micah"],
-        ["data/raw/LXX_Tov/30.Amos.par", "Amos"],
-        ["data/raw/LXX_Tov/31.Joel.par", "Joel"],
-        ["data/raw/LXX_Tov/32.Jonah.par", "Jonah"],
-        ["data/raw/LXX_Tov/33.Obadiah.par", "Obadiah"],
-        ["data/raw/LXX_Tov/34.Nahum.par", "Nahum"],
-        ["data/raw/LXX_Tov/35.Hab.par", "Habakkuk"],
-        ["data/raw/LXX_Tov/36.Zeph.par", "Zephaniah"],
-        ["data/raw/LXX_Tov/37.Haggai.par", "Haggai"],
-        ["data/raw/LXX_Tov/38.Zech.par", "Zechariah"],
-        ["data/raw/LXX_Tov/39.Malachi.par", "Malachi"],
-        ["data/raw/LXX_Tov/40.Isaiah.par", "Isaiah"],
-        ["data/raw/LXX_Tov/41.Jer.par", "Jeremiah"],
-        ["data/raw/LXX_Tov/43.Lam.par", "Lamentations"],
-        ["data/raw/LXX_Tov/44.Ezekiel.par", "Ezekiel"],
-        ["data/raw/LXX_Tov/45.DanielOG.par", "Daniel (Old Greek)"],
-        ["data/raw/LXX_Tov/46.DanielTh.par", "Daniel (Theodotion)"],
+        ["../../data/raw/LXX_Tov/01.Genesis.par", "Genesis"],
+        ["../../data/raw/LXX_Tov/02.Exodus.par", "Exodus"],
+        ["../../data/raw/LXX_Tov/03.Lev.par", "Leviticus"],
+        ["../../data/raw/LXX_Tov/04.Num.par", "Numbers"],
+        ["../../data/raw/LXX_Tov/05.Deut.par", "Deuteronomy"],
+        ["../../data/raw/LXX_Tov/06.JoshB.par", "Joshua (Vaticanus)"],
+        ["../../data/raw/LXX_Tov/07.JoshA.par", "Joshua (Alexandrinus)"],
+        ["../../data/raw/LXX_Tov/08.JudgesB.par", "Judges (Vaticanus)"],
+        ["../../data/raw/LXX_Tov/09.JudgesA.par", "Judges (Alexandrinus)"],
+        ["../../data/raw/LXX_Tov/10.Ruth.par", "Ruth"],
+        ["../../data/raw/LXX_Tov/11.1Sam.par", "1 Samuel"],
+        ["../../data/raw/LXX_Tov/12.2Sam.par", "2 Samuel"],
+        ["../../data/raw/LXX_Tov/13.1Kings.par", "1 Kings"],
+        ["../../data/raw/LXX_Tov/14.2Kings.par", "2 Kings"],
+        ["../../data/raw/LXX_Tov/15.1Chron.par", "1 Chronicles"],
+        ["../../data/raw/LXX_Tov/16.2Chron.par", "2 Chronicles"],
+        ["../../data/raw/LXX_Tov/18.Esther.par", "Esther"],
+        ["../../data/raw/LXX_Tov/18.Ezra.par", "Ezra"],
+        ["../../data/raw/LXX_Tov/19.Neh.par", "Nehemiah"],
+        ["../../data/raw/LXX_Tov/20.Psalms.par", "Psalms"],
+        ["../../data/raw/LXX_Tov/23.Prov.par", "Proverbs"],
+        ["../../data/raw/LXX_Tov/24.Qoh.par", "Ecclesiastes"],
+        ["../../data/raw/LXX_Tov/25.Cant.par", "Song of Songs"],
+        ["../../data/raw/LXX_Tov/26.Job.par", "Job"],
+        ["../../data/raw/LXX_Tov/28.Hosea.par", "Hosea"],
+        ["../../data/raw/LXX_Tov/29.Micah.par", "Micah"],
+        ["../../data/raw/LXX_Tov/30.Amos.par", "Amos"],
+        ["../../data/raw/LXX_Tov/31.Joel.par", "Joel"],
+        ["../../data/raw/LXX_Tov/32.Jonah.par", "Jonah"],
+        ["../../data/raw/LXX_Tov/33.Obadiah.par", "Obadiah"],
+        ["../../data/raw/LXX_Tov/34.Nahum.par", "Nahum"],
+        ["../../data/raw/LXX_Tov/35.Hab.par", "Habakkuk"],
+        ["../../data/raw/LXX_Tov/36.Zeph.par", "Zephaniah"],
+        ["../../data/raw/LXX_Tov/37.Haggai.par", "Haggai"],
+        ["../../data/raw/LXX_Tov/38.Zech.par", "Zechariah"],
+        ["../../data/raw/LXX_Tov/39.Malachi.par", "Malachi"],
+        ["../../data/raw/LXX_Tov/40.Isaiah.par", "Isaiah"],
+        ["../../data/raw/LXX_Tov/41.Jer.par", "Jeremiah"],
+        ["../../data/raw/LXX_Tov/43.Lam.par", "Lamentations"],
+        ["../../data/raw/LXX_Tov/44.Ezekiel.par", "Ezekiel"],
+        ["../../data/raw/LXX_Tov/45.DanielOG.par", "Daniel (Old Greek)"],
+        ["../../data/raw/LXX_Tov/46.DanielTh.par", "Daniel (Theodotion)"],
     ]
-
-    #files_to_convert = [ ["../data/raw/LXX_Tov/32.Jonah.par", "Jonah"], ]
 
 
     all_books_data = []
@@ -475,7 +473,7 @@ def run_tov_conversion():
         final_df[col] = final_df[col].str.replace('"', '""', regex=False)
 
     # Define the output CSV file path
-    output_csv_path = "data/intermediate_datasets/tov.csv"
+    output_csv_path = "../../data/intermediate_datasets/tov.csv"
 
     # Ensure the output directory exists
     os.makedirs(os.path.dirname(output_csv_path), exist_ok=True)
