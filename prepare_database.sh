@@ -15,13 +15,13 @@ echo "Existing bible.db file removed";
 # Processing TOV
 
 echo "Processing Tov's raw data files";
-source .venv/bin/activate
-export PYTHONPATH=$PYTHONPATH:$PWD
+#source .venv/bin/activate
+#export PYTHONPATH=$PYTHONPATH:$PWD
 
-pushd src/tov_processor
-python3 convert_lxx_tov_to_csv_unicode.py
-python3 distill_tov.py
-popd
+#pushd src/tov_processor
+#python3 convert_lxx_tov_to_csv_unicode.py
+#python3 distill_tov.py
+#popd
 
 echo "Tov's retroversion successfully distilled";
 
