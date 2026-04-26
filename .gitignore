@@ -1,8 +1,8 @@
-
-manual_datasets/qere_ketiv/TAHOT Gen-Deu - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt
-manual_datasets/qere_ketiv/TAHOT Isa-Mal - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt
-manual_datasets/qere_ketiv/TAHOT Job-Sng - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt
-manual_datasets/qere_ketiv/TAHOT Jos-Est - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt
+pipeline/original_data/manual_datasets/ctat/
+pipeline/original_data/manual_datasets/qere_ketiv/TAHOT Gen-Deu - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt
+pipeline/original_data/manual_datasets/qere_ketiv/TAHOT Isa-Mal - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt
+pipeline/original_data/manual_datasets/qere_ketiv/TAHOT Job-Sng - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt
+pipeline/original_data/manual_datasets/qere_ketiv/TAHOT Jos-Est - Translators Amalgamated Hebrew OT - STEPBible.org CC BY.txt
 
 # Tov's par files, which are not in the public domain
 *.par

@@ -3,6 +3,7 @@
 ## Phase 1: Foundation (Current)
 - [x] Initial data ingestion for Masoretic, LXX, and Vulgate.
 - [ ] Integration of Qumran (Dead Sea Scrolls) textual data.
+- [ ] Integration of Samaritan Pentateuch data.
 - [x] Implementation of semantic normalization (decomposition).
 - [x] Implementation of semantic comparison logic.
 - [x] Integration of Qere-Ketiv and CTAT OCR results.
@@ -11,7 +12,7 @@
 Transition the current disorganized scripts into a strict sequence of stages. Each stage will produce its own SQLite database to allow for modularity and easy re-runs of specific parts of the process.
 
 - **Stage 0: Ingestion** (`pipeline/stage_0/`)
-  - Input: `pipeline/original_data/`
+  - Input: `pipeline/original_data/` (MT, LXX, Vulgate, Qumran, Samaritan).
   - Output: `pipeline/stage_0/tessela_0_raw.db`
 - **Stage 1: Alignment** (`pipeline/stage_1/`)
   - Input: `pipeline/stage_0/tessela_0_raw.db`

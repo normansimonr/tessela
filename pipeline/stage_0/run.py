@@ -54,6 +54,13 @@ def ingest_stage_0():
         df_qk = pd.read_csv(qk_path)
         df_qk.to_sql("raw_qere_ketiv", conn, index=False)
 
+    # Samaritan Pentateuch from manual_datasets
+    samaritan_path = os.path.join(orig_data_dir, "manual_datasets", "samaritan", "samaritan.csv")
+    if os.path.exists(samaritan_path):
+        print("Ingesting Samaritan Pentateuch...")
+        df_samaritan = pd.read_csv(samaritan_path)
+        df_samaritan.to_sql("raw_samaritan", conn, index=False)
+
     conn.close()
     print(f"Stage 0 Ingestion complete. Output: {db_path}")
 
