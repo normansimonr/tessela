@@ -10,18 +10,18 @@
 ## Phase 2: Pipeline Refactoring (Immediate Priority)
 Transition the current disorganized scripts into a strict sequence of stages. Each stage will produce its own SQLite database to allow for modularity and easy re-runs of specific parts of the process.
 
-- **Stage 0: Ingestion**
-  - Input: Raw CSVs/SQLs from `data/raw` (MT, LXX, Vulgate, Qumran).
-  - Output: `tessela_0_raw.db`
-- **Stage 1: Alignment**
-  - Input: `tessela_0_raw.db` + mapping scripts.
-  - Output: `tessela_1_aligned.db` (versification mapping completed).
-- **Stage 2: Normalization**
-  - Input: `tessela_1_aligned.db` + Gemini 3.1 Flash Lite API.
-  - Output: `tessela_2_normalised.db` (atomic propositions added).
-- **Stage 3: Comparison**
-  - Input: `tessela_2_normalised.db` + Gemini 3.1 Flash Lite API.
-  - Output: `tessela_3_compared.db` (semantic differences flagged).
+- **Stage 0: Ingestion** (`pipeline/stage_0/`)
+  - Input: `pipeline/original_data/`
+  - Output: `pipeline/stage_0/tessela_0_raw.db`
+- **Stage 1: Alignment** (`pipeline/stage_1/`)
+  - Input: `pipeline/stage_0/tessela_0_raw.db`
+  - Output: `pipeline/stage_1/tessela_1_aligned.db` (versification mapping completed).
+- **Stage 2: Normalization** (`pipeline/stage_2/`)
+  - Input: `pipeline/stage_1/tessela_1_aligned.db`
+  - Output: `pipeline/stage_2/tessela_2_normalised.db` (atomic propositions added).
+- **Stage 3: Comparison** (`pipeline/stage_3/`)
+  - Input: `pipeline/stage_2/tessela_2_normalised.db`
+  - Output: `pipeline/stage_3/tessela_3_compared.db` (semantic differences flagged).
 
 ## Phase 3: Validation & Tooling
 - [ ] Automated testing for normalization accuracy.
