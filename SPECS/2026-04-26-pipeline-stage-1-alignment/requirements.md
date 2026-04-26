@@ -9,10 +9,13 @@ Resolve versification differences across MT, LXX, Vulgate, Qumran, and Samaritan
 - Align Qumran and Samaritan data to the MT using Hebrew versification mapping.
 
 ## Decisions
-- **Join Keys (LXX/Vulgate):** Use `verseID` (e.g., `GN1_1`) to align JPS with Brenton and Vulgate, as established in the original SQL views.
-- **Join Keys (Qumran/Samaritan):** Aligned via Hebrew versification columns (`hebrew_chapter`, `hebrew_startVerse`).
-- **Book Mapping:** Implement mapping from long book names (e.g., "Genesis") to MT codes (e.g., "GEN") for Samaritan and Qumran ingestion.
-- **Output:** A single SQLite database `pipeline/stage_1/tessela_1_aligned.db` containing the `aligned_verses` table.
+- **Implementation Method:** Use SQLite **Views** instead of in-memory Python joins to ensure transparency and ease of debugging.
+- **Views to Implement:**
+    1. `view_mt_lxx_vul`: Aligns JPS, Brenton, and Vulgate via `verseID`.
+    2. `view_mt_qum_sam`: Aligns JPS, Qumran, and Samaritan via Hebrew versification.
+    3. `view_master_alignment`: Consolidates the above views + TOV data into the final master set.
+- **Book Mapping:** A dedicated `book_mapping` table will be created in the database to handle SQL joins between long names and MT codes.
+- **Output:** `pipeline/stage_1/tessela_1_aligned.db`.
 
 ## Context
 The alignment is the backbone of the comparative analysis. By normalizing all traditions to the MT base, we can identify translationally significant variants in a structured way.

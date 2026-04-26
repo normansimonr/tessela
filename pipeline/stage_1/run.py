@@ -1,5 +1,4 @@
 import sqlite3
-import pandas as pd
 import os
 
 def align_stage_1():
@@ -10,113 +9,100 @@ def align_stage_1():
     if os.path.exists(output_db_path):
         os.remove(output_db_path)
     
-    conn_in = sqlite3.connect(input_db_path)
-    conn_out = sqlite3.connect(output_db_path)
+    # 1. Source Migration: Copy tables from Stage 0 to Stage 1
+    # We use ATTACH DATABASE for efficient cross-db copying
+    conn = sqlite3.connect(output_db_path)
+    conn.execute(f"ATTACH DATABASE '{input_db_path}' AS stage0;")
     
-    print("Loading raw tables...")
-    df_mt = pd.read_sql_query("SELECT * FROM raw_masoretic", conn_in)
-    df_lxx = pd.read_sql_query("SELECT * FROM raw_septuagint", conn_in)
-    df_vul = pd.read_sql_query("SELECT * FROM raw_vulgate", conn_in)
+    tables = [
+        "raw_masoretic", "raw_septuagint", "raw_vulgate", 
+        "raw_qumran", "raw_samaritan", "raw_tov_distilled"
+    ]
     
-    try: df_sam = pd.read_sql_query("SELECT * FROM raw_samaritan", conn_in)
-    except: df_sam = pd.DataFrame(columns=['book_name', 'chapter', 'verse'])
-        
-    try: df_qum = pd.read_sql_query("SELECT * FROM raw_qumran", conn_in)
-    except: df_qum = pd.DataFrame(columns=['book_name', 'chapter', 'verse', 'text'])
-
-    try: df_tov = pd.read_sql_query("SELECT * FROM raw_tov_distilled", conn_in)
-    except: df_tov = pd.DataFrame(columns=['book', 'chapter', 'verse', 'potential_difference_verse'])
+    for table in tables:
+        print(f"Migrating {table}...")
+        conn.execute(f"CREATE TABLE {table} AS SELECT * FROM stage0.{table};")
     
-    print("Aligning MT, LXX, and Vulgate via verseID...")
+    # 2. Setup Book Mapping
+    print("Setting up book_mapping table...")
+    conn.execute("CREATE TABLE book_mapping (code TEXT, name TEXT);")
+    book_data = [
+        ("GEN", "Genesis"), ("EXO", "Exodus"), ("LEV", "Leviticus"), ("NUM", "Numbers"), ("DEU", "Deuteronomy"),
+        ("JOS", "Joshua"), ("JDG", "Judges"), ("RUT", "Ruth"), ("1SA", "1 Samuel"), ("2SA", "2 Samuel"),
+        ("1KI", "1 Kings"), ("2KI", "2 Kings"), ("1CH", "1 Chronicles"), ("2CH", "2 Chronicles"),
+        ("EZR", "Ezra"), ("NEH", "Nehemiah"), ("EST", "Esther"), ("JOB", "Job"), ("PSA", "Psalms"),
+        ("PRO", "Proverbs"), ("ECC", "Ecclesiastes"), ("SNG", "Song of Solomon"), ("ISA", "Isaiah"),
+        ("JER", "Jeremiah"), ("LAM", "Lamentations"), ("EZK", "Ezekiel"), ("DAN", "Daniel"),
+        ("HOS", "Hosea"), ("JOL", "Joel"), ("AMO", "Amos"), ("OBA", "Obadiah"), ("JON", "Jonah"),
+        ("MIC", "Micah"), ("NAM", "Nahum"), ("HAB", "Habakkuk"), ("ZEP", "Zephaniah"), ("HAG", "Haggai"),
+        ("ZEC", "Zechariah"), ("MAL", "Malachi")
+    ]
+    conn.executemany("INSERT INTO book_mapping VALUES (?, ?);", book_data)
     
-    df_mt = df_mt.rename(columns={'verseText': 'mt_text'})
-    df_lxx = df_lxx.rename(columns={'verseText': 'lxx_text'})
-    df_vul = df_vul.rename(columns={'verseText': 'vulgate_text'})
+    # 3. View 1: MT, LXX, Vulgate (verseID alignment)
+    print("Creating view_mt_lxx_vul...")
+    conn.execute("""
+    CREATE VIEW view_mt_lxx_vul AS
+    SELECT 
+        m.verseID, m.book, m.chapter, m.startVerse, m.endVerse,
+        m.verseText as mt_text,
+        m.hebrew_chapter, m.hebrew_startVerse, m.hebrew_endVerse,
+        l.verseText as lxx_text,
+        v.verseText as vul_text
+    FROM raw_masoretic m
+    LEFT JOIN raw_septuagint l ON m.verseID = l.verseID
+    LEFT JOIN raw_vulgate v ON m.verseID = v.verseID
     
-    # Outer join MT, LXX, Vulgate
-    master = pd.merge(df_mt, df_lxx[['verseID', 'lxx_text']], on='verseID', how='outer')
-    master = pd.merge(master, df_vul[['verseID', 'vulgate_text']], on='verseID', how='outer')
+    UNION ALL
     
-    book_map = {
-        "Genesis": "GEN", "Exodus": "EXO", "Leviticus": "LEV", "Numbers": "NUM", "Deuteronomy": "DEU",
-        "Joshua": "JOS", "Judges": "JDG", "Ruth": "RUT", "1 Samuel": "1SA", "2 Samuel": "2SA",
-        "1 Kings": "1KI", "2 Kings": "2KI", "1 Chronicles": "1CH", "2 Chronicles": "2CH",
-        "Ezra": "EZR", "Nehemiah": "NEH", "Esther": "EST", "Job": "JOB", "Psalms": "PSA",
-        "Proverbs": "PRO", "Ecclesiastes": "ECC", "Song of Solomon": "SNG", "Isaiah": "ISA",
-        "Jeremiah": "JER", "Lamentations": "LAM", "Ezekiel": "EZK", "Daniel": "DAN",
-        "Hosea": "HOS", "Joel": "JOL", "Amos": "AMO", "Obadiah": "OBA", "Jonah": "JON",
-        "Micah": "MIC", "Nahum": "NAM", "Habakkuk": "HAB", "Zephaniah": "ZEP", "Haggai": "HAG",
-        "Zechariah": "ZEC", "Malachi": "MAL"
-    }
+    SELECT 
+        l.verseID, l.book, l.chapter, l.startVerse, l.endVerse,
+        NULL as mt_text, NULL, NULL, NULL,
+        l.verseText as lxx_text,
+        v.verseText as vul_text
+    FROM raw_septuagint l
+    LEFT JOIN raw_masoretic m ON l.verseID = m.verseID
+    LEFT JOIN raw_vulgate v ON l.verseID = v.verseID
+    WHERE m.verseID IS NULL;
+    """)
     
-    print("Aligning Samaritan and Qumran via Hebrew versification...")
+    # 4. View 2: MT, Qumran, Samaritan (Hebrew versification alignment)
+    print("Creating view_mt_qum_sam...")
+    conn.execute("""
+    CREATE VIEW view_mt_qum_sam AS
+    SELECT 
+        m.verseID,
+        q.text as qumran_text,
+        CASE WHEN s.verse IS NOT NULL THEN 1 ELSE 0 END as samaritan_present
+    FROM raw_masoretic m
+    LEFT JOIN book_mapping bm ON m.book = bm.code
+    LEFT JOIN raw_qumran q ON bm.name = q.book_name 
+         AND CAST(m.hebrew_chapter AS TEXT) = CAST(q.chapter AS TEXT) 
+         AND CAST(m.hebrew_startVerse AS TEXT) = CAST(q.verse AS TEXT)
+    LEFT JOIN raw_samaritan s ON bm.name = s.book_name 
+         AND CAST(m.hebrew_chapter AS TEXT) = CAST(s.chapter AS TEXT) 
+         AND CAST(m.hebrew_startVerse AS TEXT) = CAST(s.verse AS TEXT);
+    """)
     
-    master['hebrew_chapter'] = master['hebrew_chapter'].fillna('').astype(str)
-    master['hebrew_startVerse'] = master['hebrew_startVerse'].fillna('').astype(str)
+    # 5. View 3: Master Alignment
+    print("Creating view_master_alignment...")
+    conn.execute("""
+    CREATE VIEW view_master_alignment AS
+    SELECT 
+        v1.*,
+        v2.qumran_text,
+        v2.samaritan_present,
+        t.potential_difference_verse
+    FROM view_mt_lxx_vul v1
+    LEFT JOIN view_mt_qum_sam v2 ON v1.verseID = v2.verseID
+    LEFT JOIN raw_tov_distilled t ON v1.book = t.book 
+         AND CAST(v1.hebrew_chapter AS TEXT) = CAST(t.chapter AS TEXT) 
+         AND CAST(v1.hebrew_startVerse AS TEXT) = CAST(CAST(t.verse AS REAL) AS INTEGER);
+    """)
     
-    if not df_sam.empty:
-        df_sam['book_code'] = df_sam['book_name'].map(book_map)
-        df_sam['chapter'] = df_sam['chapter'].astype(str)
-        df_sam['verse'] = df_sam['verse'].astype(str)
-        
-        # Merge Samaritan
-        master = pd.merge(
-            master, 
-            df_sam[['book_code', 'chapter', 'verse']].assign(samaritan_present=1),
-            left_on=['book', 'hebrew_chapter', 'hebrew_startVerse'],
-            right_on=['book_code', 'chapter', 'verse'],
-            how='left',
-            suffixes=('', '_sam')
-        )
-        # Drop join keys if they exist in the new columns
-        for col in ['book_code', 'chapter_sam', 'verse_sam']:
-            if col in master.columns: master = master.drop(columns=[col])
-    else:
-        master['samaritan_present'] = 0
-
-    if not df_qum.empty:
-        df_qum['book_code'] = df_qum['book_name'].map(book_map)
-        df_qum['chapter'] = df_qum['chapter'].astype(str)
-        df_qum['verse'] = df_qum['verse'].astype(str)
-        
-        # Merge Qumran
-        master = pd.merge(
-            master, 
-            df_qum[['book_code', 'chapter', 'verse', 'text']].rename(columns={'text': 'qumran_text'}),
-            left_on=['book', 'hebrew_chapter', 'hebrew_startVerse'],
-            right_on=['book_code', 'chapter', 'verse'],
-            how='left',
-            suffixes=('', '_qum')
-        )
-        for col in ['book_code', 'chapter_qum', 'verse_qum']:
-            if col in master.columns: master = master.drop(columns=[col])
-    else:
-        master['qumran_text'] = None
-    
-    print("Integrating TOV differences...")
-    if not df_tov.empty:
-        df_tov['chapter'] = df_tov['chapter'].astype(str)
-        df_tov['verse'] = df_tov['verse'].apply(lambda x: str(int(float(x))) if pd.notnull(x) and x != '' else "")
-        
-        master = pd.merge(
-            master,
-            df_tov[['book', 'chapter', 'verse', 'potential_difference_verse']],
-            left_on=['book', 'hebrew_chapter', 'hebrew_startVerse'],
-            right_on=['book', 'chapter', 'verse'],
-            how='left',
-            suffixes=('', '_tov')
-        )
-        for col in ['book_tov', 'chapter_tov', 'verse_tov']:
-            if col in master.columns: master = master.drop(columns=[col])
-    else:
-        master['potential_difference_verse'] = None
-    
-    master.to_sql("aligned_verses", conn_out, index=False)
-    
-    conn_in.close()
-    conn_out.close()
+    conn.commit()
+    conn.close()
     print(f"Stage 1 Alignment complete. Output: {output_db_path}")
-    print(f"Total aligned rows: {len(master)}")
 
 if __name__ == "__main__":
     align_stage_1()
