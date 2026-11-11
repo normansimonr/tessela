@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# scripts/tessela — run the Tessela CLI from any directory.
+set -euo pipefail
+
+REPO_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
+exec env PYTHONPATH="$REPO_ROOT${PYTHONPATH:+:$PYTHONPATH}" \
+    "${TESSELA_PYTHON:-python3}" -m src.cli "$@"

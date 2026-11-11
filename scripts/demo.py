@@ -49,7 +49,13 @@ def main(argv: list[str] | None = None) -> int:
             if not changes:
                 print(f"  {reading.witness} {reading.detail}: identical")
             for left, right in changes:
-                print(f"  {reading.witness} {reading.detail}: MT {left!r} -> {right!r}")
+                if not left:
+                    change = f"added {right!r}"
+                elif not right:
+                    change = f"omitted {left!r}"
+                else:
+                    change = f"MT {left!r} -> {right!r}"
+                print(f"  {reading.witness} {reading.detail}: {change}")
     return 0
 
 

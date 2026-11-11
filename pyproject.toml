@@ -22,7 +22,9 @@ check_untyped_defs = true
 files = ["src"]
 
 [tool.pytest.ini_options]
+pythonpath = ["."]
 testpaths = [
+    "tests",
     "scripts/lxx/tests",
     "scripts/ctat/tests",
     "scripts/qere_ketiv/tests",

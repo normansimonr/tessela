@@ -2,7 +2,11 @@ import random
 import time
 from functools import wraps
 
-from google.api_core.exceptions import ResourceExhausted
+try:
+    from google.api_core.exceptions import ResourceExhausted
+except ImportError:  # pragma: no cover - google-generativeai is optional for tests
+    class ResourceExhausted(Exception):  # type: ignore[no-redef]
+        """Fallback when google-api-core is not installed."""
 
 
 def retry_with_exponential_backoff(

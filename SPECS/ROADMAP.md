@@ -62,24 +62,27 @@ The repo currently has strong data and docs but a thin code layer. A small,
 working end-to-end feature changes the story from “ambitious vision” to
 “working system”.
 
-- [ ] Implement a `tessela` CLI with a `dossier` command:
+- [x] Implement a `tessela` CLI with a `dossier` command (`src/cli.py`,
+      `scripts/tessela`):
   - load MT (`data/reference/versification/leningrad_codex.csv`), SP
     (`data/derived/samaritan.csv`) and DSS (`data/derived/qumran.csv`) for a
     reference (with a clear hint when `make data` has not been run);
   - normalise (remove points/cantillation, maqaf → space, punctuation);
-  - print a side-by-side comparison with the differences highlighted;
-  - emit a Markdown dossier with provenance and a short assessment.
-- [ ] Add `examples/` with 2–3 rendered dossiers (Gen 2:2, Deut 27:4,
-      Deut 32:8) so a reviewer can see the output without running anything.
-- [ ] Add tests for the slice: happy path, missing verse, multi-scroll DSS,
-      and a lacuna.
-- [ ] Refactor the core AI code:
+  - print a side-by-side comparison with word-aligned differences;
+  - emit a Markdown dossier with provenance.
+- [x] Add `examples/README.md` and `make examples`; the rendered dossiers are
+      generated into `data/derived/examples/` (git-ignored, because they contain
+      the non-commercial readings).
+- [x] Add tests for the slice (`tests/test_witnesses.py`, `tests/test_cli.py`):
+      parsing, normalisation, word-division handling, additions/omissions,
+      Markdown/text output, file output, and unknown books.
+- [x] Refactor the core AI code (`src/normalization_service.py`):
   - replace `print()` with structured logging;
-  - fix the `gemini-2.0-flash` mismatch (TECH.md specifies Gemini 3.1 Flash
-    Lite; make the model configurable);
+  - make the model configurable (`GEMINI_MODEL`, default Gemini 3.1 Flash Lite);
   - remove bare `except Exception: return []` paths;
-  - add type hints and a typed response model;
-  - inject the model client so it can be tested with a fake.
+  - add type hints and response validation;
+  - inject the model client so it can be tested with a fake
+    (`tests/test_normalization_service.py`).
 
 ## P2 — Show engineering judgment
 

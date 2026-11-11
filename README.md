@@ -133,6 +133,15 @@ python3 scripts/demo.py "Genesis 2:2"       # SP reads "the sixth" for MT "the s
 python3 scripts/demo.py "Deuteronomy 27:4"  # SP reads Mount Gerizim for MT Mount Ebal
 ```
 
+Render a full Markdown dossier:
+
+```bash
+./scripts/tessela dossier "DEU 32:8"
+./scripts/tessela dossier "GEN 2:2" --format text
+./scripts/tessela dossier "DEU 27:4" --out /tmp/deu-27-4.md
+make examples      # render DEU 32:8, GEN 2:2 and DEU 27:4 into data/derived/examples/
+```
+
 ## Development
 
 ```bash

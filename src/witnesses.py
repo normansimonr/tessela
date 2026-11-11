@@ -160,15 +160,56 @@ def readings(reference: str) -> tuple[str, list[Reading]]:
     return book_id, result
 
 
+def _word_bounds(text: str, start: int, end: int) -> tuple[int, int]:
+    """Expand a character range to the surrounding word boundaries."""
+    left = text.rfind(" ", 0, start) + 1
+    right = text.find(" ", end)
+    if right == -1:
+        right = len(text)
+    return left, right
+
+
 def diff_segments(base: str, other: str) -> list[tuple[str, str]]:
-    """Return the non-whitespace substitutions between two normalised texts."""
+    """Return word-aligned substitutions between two normalised texts.
+
+    The underlying diff is character-level (robust to different word division),
+    but each changed run is expanded to whole words so the result is readable:
+    ``השביעי`` -> ``הששי`` rather than ``ביע`` -> ``ש``.
+    """
     matcher = difflib.SequenceMatcher(None, base, other)
-    changes: list[tuple[str, str]] = []
+    ranges: list[tuple[int, int, int, int]] = []
     for tag, i1, i2, j1, j2 in matcher.get_opcodes():
         if tag == "equal":
             continue
-        left, right = base[i1:i2], other[j1:j2]
-        if not left.strip() and not right.strip():
+        li1, li2 = _word_bounds(base, i1, i2)
+        rj1, rj2 = _word_bounds(other, j1, j2)
+        ranges.append((li1, li2, rj1, rj2))
+
+    merged: list[tuple[int, int, int, int]] = []
+    for current in ranges:
+        if merged and (
+            current[0] <= merged[-1][1] or current[2] <= merged[-1][3]
+        ):
+            previous = merged[-1]
+            merged[-1] = (
+                min(previous[0], current[0]),
+                max(previous[1], current[1]),
+                min(previous[2], current[2]),
+                max(previous[3], current[3]),
+            )
+        else:
+            merged.append(current)
+
+    changes: list[tuple[str, str]] = []
+    for li1, li2, rj1, rj2 in merged:
+        left = base[li1:li2].strip()
+        right = other[rj1:rj2].strip()
+        if left == right or (not left and not right):
             continue
-        changes.append((left, right))
+        # A difference in word division alone (e.g. DSS "ו יען" vs MT "ויען")
+        # is not a textual variant.
+        if left.replace(" ", "") == right.replace(" ", ""):
+            continue
+        if (left, right) not in changes:
+            changes.append((left, right))
     return changes

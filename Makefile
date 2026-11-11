@@ -1,4 +1,4 @@
-.PHONY: help install install-dev test lint format check data data-samaritan data-dss data-septuagint demo
+.PHONY: help install install-dev test lint format check data data-samaritan data-dss data-septuagint examples demo
 
 help:
 	@echo "Tessela development targets:"
@@ -12,6 +12,7 @@ help:
 	@echo "  make data-samaritan  fetch the Samaritan Hebrew text"
 	@echo "  make data-dss        fetch the Dead Sea Scrolls readings (~2.5 GB clone)"
 	@echo "  make data-septuagint rebuild the Tov corpus from local .par files"
+	@echo "  make examples      render example dossiers into data/derived/examples/"
 	@echo "  make demo          print the MT / SP / DSS comparison for DEU 32:8"
 
 install:
@@ -44,6 +45,12 @@ data-dss:
 
 data-septuagint:
 	python3 scripts/fetch_data.py septuagint
+
+examples:
+	mkdir -p data/derived/examples
+	./scripts/tessela dossier "DEU 32:8" --out data/derived/examples/DEU-32-8.md
+	./scripts/tessela dossier "GEN 2:2" --out data/derived/examples/GEN-2-2.md
+	./scripts/tessela dossier "DEU 27:4" --out data/derived/examples/DEU-27-4.md
 
 demo:
 	python3 scripts/demo.py "DEU 32:8"
