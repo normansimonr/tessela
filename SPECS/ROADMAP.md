@@ -1,10 +1,143 @@
 # Project Roadmap: Tessela
 
-This roadmap tracks delivery against `SPECS/MISSION.md`. Phases are ordered by
-dependency: a reliable, source-aware dataset and alignment come before semantic
-evaluation, which comes before hypothesis generation and adversarial analysis.
+This roadmap tracks delivery against `SPECS/MISSION.md`. It has two cycles:
+
+1. **Current cycle — repository readiness (immediate priority).** Make the repo
+   legible, demonstrable, and visibly rigorous so a reviewer can understand and
+   trust it in minutes.
+2. **Next dev cycle — research roadmap (deferred).** The full research and
+   pipeline programme. Nothing here is abandoned; it is intentionally deferred
+   until the readiness cycle is complete.
 
 ---
+
+# Current cycle: Repository readiness (IMMEDIATE PRIORITY)
+
+## Goal
+
+Make the repository reviewer-ready: a five-minute reviewer experience, a working
+vertical slice, visible engineering rigor, and clear evidence of engineering
+judgment. This cycle takes precedence over all research-roadmap work.
+
+## Target five-minute reviewer experience
+
+1. **README** that says what it is, shows a screenshot/GIF, gives a three-command
+   quickstart, and includes a Mermaid architecture diagram and a status table.
+2. **A working vertical slice**: `tessela dossier "DEU 32:8"` prints the MT, SP
+   and DSS readings and the differences.
+3. **Green CI badge** (ruff + mypy + pytest) and a real test suite.
+4. **Recent commits, open issues, a project board, and 1–2 PRs** — evidence of
+   active development.
+5. **`docs/decisions/`** with short ADRs showing engineering trade-offs.
+
+## P0 — Fix the first impression (do first)
+
+- [ ] Make the repo public (or grant the reviewer access); verify description,
+      topics and social preview.
+- [ ] README overhaul:
+  - one-sentence pitch and a concrete example (e.g. Deut 32:8: MT “sons of
+    Israel” vs 4Q37 “sons of God”);
+  - terminal screenshot/GIF of the demo;
+  - Mermaid architecture diagram (Stage 0 → 7);
+  - “Current status” table (works end-to-end vs. planned);
+  - three-command quickstart;
+  - “Why this is hard” section (versification, fragmentary DSS, provenance,
+    attested vs. reconstructed).
+- [ ] Add CI (`.github/workflows/ci.yml`) running `ruff`, `mypy` and `pytest`;
+      add the badge to the README.
+- [ ] Add `pyproject.toml` with `[tool.ruff]`, `[tool.mypy]` and
+      `[tool.pytest.ini_options]`.
+- [ ] Add a `Makefile` (`make install`, `make test`, `make lint`, `make demo`).
+- [ ] Add GitHub topics (`biblical-studies`, `textual-criticism`, `nlp`,
+      `python`, `ai`).
+
+## P1 — Build the vertical slice (the single most compelling thing)
+
+The repo currently has strong data and docs but a thin code layer. A small,
+working end-to-end feature changes the story from “ambitious vision” to
+“working system”.
+
+- [ ] Implement a `tessela` CLI with a `dossier` command:
+  - load MT (`data/reference/versification/leningrad_codex.csv`), SP
+    (`samaritan.csv`) and DSS (`qumran.csv`) for a reference;
+  - normalise (remove points/cantillation, maqaf → space, punctuation);
+  - print a side-by-side comparison with the differences highlighted;
+  - emit a Markdown dossier with provenance and a short assessment.
+- [ ] Add `examples/` with 2–3 rendered dossiers (Gen 2:2, Deut 27:4,
+      Deut 32:8) so a reviewer can see the output without running anything.
+- [ ] Add tests for the slice: happy path, missing verse, multi-scroll DSS,
+      and a lacuna.
+- [ ] Refactor the core AI code:
+  - replace `print()` with structured logging;
+  - fix the `gemini-2.0-flash` mismatch (TECH.md specifies Gemini 3.1 Flash
+    Lite; make the model configurable);
+  - remove bare `except Exception: return []` paths;
+  - add type hints and a typed response model;
+  - inject the model client so it can be tested with a fake.
+
+## P2 — Show engineering judgment
+
+- [ ] Add 3–5 short ADRs under `docs/decisions/`:
+  - `0001-sqlite-stage-pipeline.md` (why stage-gated SQLite and immutable
+    outputs);
+  - `0002-provenance-and-attested-vs-reconstructed.md`;
+  - `0003-ai-model-choice-and-evaluation.md`;
+  - `0004-data-licensing-and-distribution.md`;
+  - `0005-why-not-a-graph-database-yet.md`.
+- [ ] Create 8–10 well-scoped issues from this roadmap (“Implement Stage 0
+      ingestion”, “Add `dossier` CLI”, “Add CI”, “Fix model mismatch”, “Add
+      Peshitta ingestion”, “Add evaluation harness”, etc.) with labels
+      (`good first issue`, `enhancement`, `data`, `ai`) and a project board.
+- [ ] Work on feature branches and open PRs (even self-merged) rather than
+      committing directly to `master`.
+- [ ] Add `docs/ai-workflow.md` explaining the spec-driven, agent-assisted loop
+      (plan → implement → review → verify), Red/Green TDD, and how AI responses
+      are evaluated.
+- [ ] Add an evaluation harness: a small labelled set of variants (significant
+      vs. not) and a script that reports agreement (even a simple confusion
+      matrix).
+
+## P3 — Polish
+
+- [ ] Add `CITATION.cff`, `CONTRIBUTING.md`, `SECURITY.md`,
+      `CODE_OF_CONDUCT.md`.
+- [ ] Add `DATA_LICENSES.md` clarifying that the code is MIT while the imported
+      data has separate licences (STEPBible SP, ETCBC/dss CC BY-NC 4.0, CTAT
+      page references, etc.).
+- [ ] Tag a release (`v0.1.0`) with release notes.
+- [ ] Address repo size: consider Git LFS or a `make data` download script for
+      the large datasets (`bible.db`, `tov_flagged.csv`, etc.).
+
+## Risks to address in this cycle
+
+- **Licensing mismatch:** the code is MIT, but the Samaritan text is
+  “Copyrighted; Free non-commercial distribution” and the DSS dataset is
+  CC BY-NC 4.0. Decide deliberately: keep restricted texts out of a public
+  repo, add `DATA_LICENSES.md`, or keep the repo private with reviewer access.
+- **Private repo:** ensure the reviewer can access it.
+- **Overclaiming:** the mission is ambitious; the README must show a credible
+  working slice and a clear “what’s next”, not just a grand vision.
+- **Stale scripts:** `run.sh`, `compare.sh` and `src/normalization_service.py`
+  still reflect the old CSV flow and model. Refactor or mark them clearly as
+  legacy.
+
+## Seven-day plan
+
+| Day | Focus |
+|---|---|
+| 1 | Make repo public; README overhaul; CI + `pyproject.toml` + `Makefile` |
+| 2–3 | Build `tessela dossier` vertical slice; add `examples/` |
+| 4 | Tests for the slice; refactor AI client (logging, model config, typed responses) |
+| 5 | ADRs; create issues + project board; open 1–2 PRs |
+| 6 | Screenshots/GIF; `docs/ai-workflow.md`; data licensing note |
+| 7 | Tag `v0.1.0`; final README polish; release notes |
+
+---
+
+# Next dev cycle: Research roadmap (DEFERRED)
+
+> **Deferred until the repository-readiness cycle is complete.** The phases below
+> are the next development cycle, not the current priority.
 
 ## Phase 0: Constitution & tooling (Done)
 
@@ -43,7 +176,7 @@ evaluation, which comes before hypothesis generation and adversarial analysis.
 
 ---
 
-## Phase 2: Pipeline refactoring (Immediate priority)
+## Phase 2: Pipeline refactoring
 
 Transition the current disorganized scripts into a strict sequence of stages.
 Each stage produces its own SQLite database for modularity and easy re-runs.
