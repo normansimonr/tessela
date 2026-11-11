@@ -1,7 +1,9 @@
-import time
 import random
+import time
 from functools import wraps
+
 from google.api_core.exceptions import ResourceExhausted
+
 
 def retry_with_exponential_backoff(
     initial_delay: float = 1,
@@ -26,7 +28,7 @@ def retry_with_exponential_backoff(
                         raise Exception(
                             f"Maximum number of retries ({max_retries}) exceeded."
                         ) from e
-                    
+
                     delay *= exponential_base * (1 + jitter * random.random())
                     print(f"Rate limit exceeded. Retrying in {delay:.2f} seconds...")
                     time.sleep(delay)

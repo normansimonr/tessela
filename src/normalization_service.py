@@ -1,12 +1,15 @@
-import google.generativeai as genai
-import os
 import json
+import os
+
+import google.generativeai as genai
+
 from src.utils import retry_with_exponential_backoff
+
 
 def configure_api_key():
     """
     Configures the Google Generative AI API key from an environment variable.
-    
+
     Raises:
         ValueError: If the GOOGLE_API_KEY environment variable is not set.
     """
@@ -29,24 +32,24 @@ def normalize_text(book_name: str, chapter: int, verse: int, verse_text: str, pr
         Returns an empty list if an error occurs.
     """
     try:
-    
+
         verse_text = str(verse_text)
-        
+
         if verse_text == "nan":
             print(verse_text, "EMPTY VERSE")
-            return ""
-        
+            return []
+
         configure_api_key()
-        
-        with open(prompt_path, 'r') as f:
+
+        with open(prompt_path) as f:
             prompt_template = f.read()
-            
+
         model = genai.GenerativeModel(model_name="gemini-2.0-flash")
-        
+
         final_prompt = prompt_template.format(verse_text=verse_text)
-        
+
         response = model.generate_content(final_prompt)
-        
+
         # The response text might be enclosed in markdown backticks for JSON
         cleaned_response_text = response.text.strip().replace('```json', '').replace('```', '').strip()
         print(f"Cleaned response text: {cleaned_response_text}")
@@ -82,7 +85,7 @@ def compare_verses(jps_norm: str, lxx_norm: str, prompt_path: str) -> list:
 
         configure_api_key()
 
-        with open(prompt_path, 'r') as f:
+        with open(prompt_path) as f:
             prompt_template = f.read()
 
         model = genai.GenerativeModel(model_name="gemini-2.0-flash")
@@ -92,7 +95,7 @@ def compare_verses(jps_norm: str, lxx_norm: str, prompt_path: str) -> list:
         response = model.generate_content(final_prompt)
 
         cleaned_response_text = response.text.strip().replace('```json', '').replace('```', '').strip()
-        
+
         comparison = json.loads(cleaned_response_text)
         return comparison
     except FileNotFoundError:

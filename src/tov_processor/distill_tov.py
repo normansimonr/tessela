@@ -1,5 +1,7 @@
-import pandas as pd
 import os
+
+import pandas as pd
+
 
 def distill_tov_csv():
     """
@@ -10,8 +12,7 @@ def distill_tov_csv():
     indicating if any word in that verse has a potential difference.
     """
     # Define relative paths based on the script's location
-    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    input_path = "../../data/intermediate_datasets/tov.csv" #os.path.join(project_root, 'data', 'intermediate_datasets', 'tov.csv')
+    input_path = "../../data/intermediate_datasets/tov.csv"
     output_path = "../../data/intermediate_datasets/tov_distilled.csv" #os.path.join(project_root, 'data', 'intermediate_datasets', 'tov_distilled.csv')
 
     print(f"Reading detailed TOV data from {input_path}...")

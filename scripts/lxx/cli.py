@@ -35,7 +35,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
 from lxx import align, tov  # noqa: E402
-from lxx.dataset import build_dataset, write_dataset, check_dataset  # noqa: E402
+from lxx.dataset import build_dataset, check_dataset, write_dataset  # noqa: E402
 from lxx.normalise import normalise, write_missing  # noqa: E402
 
 DATA_DIR = REPO_ROOT / "data" / "intermediate_datasets" / "septuagint"

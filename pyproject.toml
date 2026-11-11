@@ -1,0 +1,30 @@
+# Tool configuration for Tessela.
+#
+# The project is intentionally not packaged yet: the pipeline is a set of
+# scripts and modules, and the data is the deliverable. This file configures the
+# development tools used locally and in CI.
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["data", "output", "comparisons", ".venv"]
+
+[tool.ruff.lint]
+# Start with a focused, high-signal rule set. More rules can be enabled as the
+# codebase matures.
+select = ["E", "F", "I", "UP", "W"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+check_untyped_defs = true
+files = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = [
+    "scripts/lxx/tests",
+    "scripts/ctat/tests",
+    "scripts/qere_ketiv/tests",
+]
+addopts = "-q"

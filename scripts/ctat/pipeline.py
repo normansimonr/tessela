@@ -36,9 +36,8 @@ DATA_DIR = REPO_ROOT / "data" / "manual_datasets" / "ctat"
 
 def download(urls_csv: Path, out_dir: Path) -> list[Path]:
     """Fetch the volume PDFs listed in urls.csv."""
-    import requests
-
     import pandas as pd
+    import requests
 
     out_dir.mkdir(parents=True, exist_ok=True)
     written = []
@@ -65,11 +64,12 @@ def extract(pdfs_dir: Path, out_csv: Path, coordinates_csv: Path = DATA_DIR / "h
     `volumes` and `pages` narrow the run (useful for a quick check); by default
     every page of every volume is processed.
     """
+    import io
+
     import fitz  # PyMuPDF
+    import pandas as pd
     import pytesseract
     from PIL import Image
-    import io
-    import pandas as pd
 
     boxes = {row["volume"]: row for row in csv.DictReader(coordinates_csv.open(newline=""))}
     rows: list[dict[str, object]] = []
@@ -139,7 +139,7 @@ FINAL_CORRECTIONS = [
 ]
 
 
-def clean(ocr_csv: Path, out_csv: Path) -> "object":
+def clean(ocr_csv: Path, out_csv: Path) -> object:
     """Turn the OCR page texts into one row per CTAT verse (ocr_clean.csv)."""
     import pandas as pd
 
@@ -173,7 +173,7 @@ def clean(ocr_csv: Path, out_csv: Path) -> "object":
     def strip_hyphen(value: str) -> str:
         return value[:-1].strip() if value.endswith("-") else value.strip()
 
-    def add_obadiah_chapter(row: "pd.Series") -> str:
+    def add_obadiah_chapter(row: pd.Series) -> str:
         return f"1:{row['value']}" if row["book"] == "Ab" else str(row["value"])
 
     df["value"] = df["value"].apply(strip_hyphen)

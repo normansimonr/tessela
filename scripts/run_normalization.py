@@ -1,13 +1,14 @@
-import json
 import argparse
+import concurrent.futures
+import json
+import logging
 import os
+
 import pandas as pd
 from tqdm import tqdm
-import logging
-import concurrent.futures
 
 # Assuming the script is run from the root of the project
-from src.data_loader import load_data, filter_septuagint
+from src.data_loader import filter_septuagint, load_data
 from src.normalization_service import normalize_text
 
 # Define the maximum number of concurrent workers for API calls

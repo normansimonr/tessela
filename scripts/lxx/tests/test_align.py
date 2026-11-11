@@ -5,9 +5,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from lxx import align  # noqa: E402
-from lxx import diff  # noqa: E402
-from lxx import tov  # noqa: E402
+from lxx import (
+    align,  # noqa: E402
+    diff,  # noqa: E402
+    tov,  # noqa: E402
+)
 
 
 def test_jps_annotations_map_hebrew_to_english() -> None:

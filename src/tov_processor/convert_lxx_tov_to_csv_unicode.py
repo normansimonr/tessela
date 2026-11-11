@@ -1,18 +1,19 @@
-import pandas as pd
-import re
+import csv
 import json
 import os
-import csv
+import re
 
-with open("annotation_equivalences_hebrew.json", "r") as file:
+import pandas as pd
+
+with open("annotation_equivalences_hebrew.json") as file:
     # Parse the JSON data into a dictionary
     annotation_equivalences_hebrew = json.load(file)
 
-with open("annotation_equivalences_greek.json", "r") as file:
+with open("annotation_equivalences_greek.json") as file:
     # Parse the JSON data into a dictionary
     annotation_equivalences_greek = json.load(file)
 
-with open("tov_ebible_equivalences.json", "r") as file:
+with open("tov_ebible_equivalences.json") as file:
     # Parse the JSON data into a dictionary
     # Structure is "Tov": "EBIBLE"
     tov_ebible_equivalences = json.load(file)
@@ -23,22 +24,22 @@ def convert_to_dataframe(file_path):
     """
 
     # Open the file for reading
-    with open(file_path, "r") as file:
+    with open(file_path) as file:
         # Read the contents of the file into a string variable
         parallel_raw = file.read()
 
     # Correcting wrong input syntax
     parallel_raw = parallel_raw.replace(
-        "W/)T H/GRG$Y ^ =W/)T W/H/)MRY KAI\ TO\\N AMORRAI=ON",
-        "W/)T H/GRG$Y ^ =W/)T W/H/)MRY 	KAI\ TO\\N AMORRAI=ON",
+        "W/)T H/GRG$Y ^ =W/)T W/H/)MRY KAI\\ TO\\N AMORRAI=ON",
+        "W/)T H/GRG$Y ^ =W/)T W/H/)MRY 	KAI\\ TO\\N AMORRAI=ON",
     )  # JoshB 3:10
     parallel_raw = parallel_raw.replace(
-        "W/H/KHNYM =W/H/)BNYM .m .kb # KAI\ OI( LI/QOI ",
-        "W/H/KHNYM =W/H/)BNYM .m .kb 	KAI\ OI( LI/QOI ",
+        r"W/H/KHNYM =W/H/)BNYM .m .kb # KAI\ OI( LI/QOI ",
+        r"W/H/KHNYM =W/H/)BNYM .m .kb 	KAI\ OI( LI/QOI ",
     )  # JoshB 4:11
     parallel_raw = parallel_raw.replace(
-        "W/YC+YRW =;W/YC+YDW .rd <9.12 E)PESITI/SANTO {d} KAI\ H(TOIMA/SANTO ",
-        "W/YC+YRW =;W/YC+YDW .rd <9.12 	E)PESITI/SANTO {d} KAI\ H(TOIMA/SANTO ",
+        r"W/YC+YRW =;W/YC+YDW .rd <9.12 E)PESITI/SANTO {d} KAI\ H(TOIMA/SANTO ",
+        r"W/YC+YRW =;W/YC+YDW .rd <9.12 	E)PESITI/SANTO {d} KAI\ H(TOIMA/SANTO ",
     )  # JoshB 9:4
     parallel_raw = parallel_raw.replace(
         "--+ '' =;L/GBWLWT/YHM <19.49> E)N TOI=S O(RI/OIS AU)TW=N ",
@@ -51,8 +52,8 @@ def convert_to_dataframe(file_path):
         """E)NNAKO/SIOI PENTH/KONTA \nE(/C""", "E)NNAKO/SIOI PENTH/KONTA E(/C"
     )  # 1Chr 9:9
     parallel_raw = parallel_raw.replace(
-        """TOU= E)PONOMA/SAI TO\ O)/NOMA/ \nMOU""",
-        "TOU= E)PONOMA/SAI TO\ O)/NOMA/ \nMOU",
+        """TOU= E)PONOMA/SAI TO\\ O)/NOMA/ \nMOU""",
+        "TOU= E)PONOMA/SAI TO\\ O)/NOMA/ \nMOU",
     )  # 1Chr 28:3
     parallel_raw = parallel_raw.replace("""[96.7]\n\nPSL""", "[96.7]\nPSL")  # Psa. 97:7
     parallel_raw = parallel_raw.replace("""[11.2]\n\nPSW""", "[11.2]\nPSW")  # Psa. 12:2
@@ -81,15 +82,15 @@ def convert_to_dataframe(file_path):
         "{...?AU)TOU=} MDBR =v	LALOU=NTOS", "MDBR =v	{...?AU)TOU=} LALOU=NTOS"
     )  # Ez 2:2
     parallel_raw = parallel_raw.replace(
-        "W/MR$Y(=?W/B/R$(Y .mb	KAI\ E)N A(MARTI/AIS",
-        "W/MR$Y( = ?W/B/R$(Y .mb	KAI\ E)N A(MARTI/AIS",
+        r"W/MR$Y(=?W/B/R$(Y .mb	KAI\ E)N A(MARTI/AIS",
+        r"W/MR$Y( = ?W/B/R$(Y .mb	KAI\ E)N A(MARTI/AIS",
     )  # DanOG 11:32
 
     parallel_raw = parallel_raw.replace(
         "{...K/}{...)$R}	O(\\N TRO/PON O(/TAN", "{...K/} {...)$R}	O(\\N TRO/PON O(/TAN"
     )  # Zec 4:1 - Not an input error, but program breaks if two curly patterns are in the same word
     parallel_raw = parallel_raw.replace(
-        "{...W/}{...)L}	KAI\ MH\\", "{...W/} {...)L}	KAI\ MH\\"
+        "{...W/}{...)L}	KAI\\ MH\\", "{...W/} {...)L}	KAI\\ MH\\"
     )  # Jer 7:16 - Not an input error, but program breaks if two curly patterns are in the same word
 
     # Splits the text into verses or 'paragraphs' (separated in the raw files by empty lines)
@@ -111,7 +112,7 @@ def convert_to_dataframe(file_path):
 
     parallel = pd.concat(parallels_dataframe_list)
     # parallel.to_csv('aver.csv')
-    
+
     # Splitting the text so that we have the Masoretic and the LXX columns
     parallel[["masoretic", "lxx"]] = parallel["words"].str.split("\t", n=1, expand=True)
     parallel = parallel.drop(columns=["words"])
@@ -171,7 +172,7 @@ def convert_to_dataframe(file_path):
     parallel[["masoretic", "retroverted"]] = parallel["masoretic"].str.split(
         new_separator, n=1, expand=True
     )
-    
+
     # Reordering the columns
     parallel = parallel[
         ["book", "chapter", "verse", "orderby", "masoretic", "retroverted", "lxx"]
@@ -264,7 +265,7 @@ def protect_annotations(parallel):
 
 def convert_hebrew_to_unicode(parallel):
     # Open the JSON file for reading
-    with open("hebrew_equivalences.json", "r") as file:
+    with open("hebrew_equivalences.json") as file:
         # Parse the JSON data into a dictionary
         hebrew_equivalences = json.load(file)
 
@@ -317,7 +318,7 @@ def convert_hebrew_to_unicode(parallel):
 
 def convert_greek_to_unicode(parallel):
     # Open the JSON file for reading
-    with open("greek_equivalences.json", "r") as file:
+    with open("greek_equivalences.json") as file:
         # Parse the JSON data into a dictionary
         greek_equivalences = json.load(file)
 
@@ -361,12 +362,12 @@ def replace_annotations(parallel):
 
     # Detecting potential differences in Hebrew Vorlage
     selected_markers = ['--- {x}', '--+ {x}', '---', '--+', "''", '{v}', 'G', '=+', '=r', '.']
-    
+
     parallel['potential_difference'] = parallel['masoretic'].apply(lambda x: any('!' + marker + '!' in x for marker in selected_markers)) | parallel['lxx'].apply(lambda x: any('!' + marker + '!' in x for marker in selected_markers))
-    
+
     # Adding a potential difference where there is a retroversion
     parallel['potential_difference'] = parallel['potential_difference'] | parallel['retroverted'].apply(lambda x: x != '')
-    
+
     def replace_these_annotations(text, language):
         words = text.split()
 
@@ -477,14 +478,14 @@ def run_tov_conversion():
         final_df[col] = final_df[col].str.replace('"', '""', regex=False)
 
     # Replace book IDs with ebible compatible IDs
-    
+
     final_df['book'] = final_df['book'].replace(tov_ebible_equivalences)
-    
+
     # Removing Vaticanus (Joshua and Judges) and Theodotion
-    
+
     final_df = final_df[~final_df['book'].isin(['JoshA', 'JudgA', 'DanTh'])]
-    
-    
+
+
     # Define the output CSV file path
     output_csv_path = "../../data/intermediate_datasets/tov.csv"
 

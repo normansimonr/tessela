@@ -1,228 +1,189 @@
-# ⚠️ Work in Progress (WIP)
+# Tessela
 
-> **This project is under active development.** The codebase, data model, and
-> pipeline are being refactored to align with the expanded mission in
-> `SPECS/MISSION.md`. APIs, scripts, and database schemas may change without
-> notice. See `SPECS/ROADMAP.md` for the current delivery plan.
+**A research assistant for Old Testament textual criticism.** Tessela brings the
+Masoretic Text, Samaritan Pentateuch, Dead Sea Scrolls, Septuagint and Vulgate
+into one source-aware dataset, surfaces translationally significant variants,
+and (progressively) builds the evidence trail a translator needs: provenance,
+uncertainty, scholarly discussion, competing hypotheses, and a reasoned
+assessment.
 
-# Tessela — Biblical Text Normalizer & Textual Criticism Research Assistant
+[![CI](https://github.com/normansimonr/tessela/actions/workflows/ci.yml/badge.svg)](https://github.com/normansimonr/tessela/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](pyproject.toml)
 
-Tessela is a research and decision-support system for the textual criticism of
-the Hebrew Bible. It helps a translator or researcher evaluate a large body of
-textual evidence efficiently, transparently, and consistently.
+> **Status:** active development. The data layer is substantial; the pipeline and
+> dossier tooling are being built. The current cycle is repository readiness —
+> see [`SPECS/ROADMAP.md`](SPECS/ROADMAP.md).
 
-Its purpose is to automate a substantial part of the work involved in
-identifying, organizing, comparing, and evaluating textually significant
-variants — while keeping scholarly judgment, uncertainty, and traceability at
-the centre of the process.
+---
 
-## Overview
+## Why this exists
 
-Tessela brings together readings from the Masoretic Text and other ancient
-witnesses (Qere/Ketiv, Samaritan Pentateuch, Dead Sea Scrolls, Septuagint,
-Vulgate, Peshitta), relevant scholarly discussion (Barthélemy's CTAT and
-open-access papers), explicit hypotheses about the development of the text, and
-structured AI-assisted analysis. It helps the researcher understand what the
-evidence may indicate, why competing explanations are plausible, and how
-strongly each conclusion is supported.
+A translator working through the Hebrew Bible must evaluate thousands of
+textual variants spread across manuscripts, ancient translations, scholarly
+editions, and secondary literature. Many differences are orthographic or
+morphological and do not affect meaning; a much smaller set can change how a
+passage is understood or translated.
 
-Tessela is a **research assistant, not an autonomous textual critic**. It must
-not conceal uncertainty, manufacture evidence, or present an AI-generated
-reconstruction as an attested reading.
+Tessela is built to make that evaluation **efficient, transparent, and
+reproducible**: it keeps every reading tied to its witness and source, marks
+what is attested versus reconstructed, and preserves uncertainty instead of
+flattening it into a verdict. It is a research assistant, not an autonomous
+textual critic.
 
-## Current state
+## A concrete example: Deuteronomy 32:8
 
-The project is in an early stage. What exists today:
+The Masoretic Text reads “the sons of **Israel**”; 4Q37 (Deuteronomyᵇ) reads
+“the sons of **God**”. Tessela stores both readings with their manuscript
+sigla and the ETCBC transcription, and prints the comparison:
 
-- **Data ingestion**: Masoretic Text (JPS 1917 English), Septuagint (Brenton
-  English + Tov's Hebrew retroversions), Vulgate (Douay–Rheims English),
-  Qere/Ketiv extraction from STEP-Bible TAHOT, CTAT OCR pipeline.
-- **Textual-criticism datasets**: Dead Sea Scrolls (125
-  variant references), Samaritan Pentateuch (33 variant references), Masoretic
-  minority readings (1), enriched Qere/Ketiv (1,013 words / 837 verses with
-  morphology and roots), CTAT/HOTTP references (3,348 verses), and the Tov
-  Septuagint corpus (`tov_flagged.csv`, 12,951 variants + 42 raw CATSS `.par`
-  files + normalisation tables).
-- **Reference data**: Leningrad codex verse text (23,213 verses) and a
-  machine-readable book catalog (66 books).
-- **Semantic normalization**: Gemini-based decomposition of verses into atomic
-  propositions.
-- **Semantic comparison**: verse-by-verse comparison of normalized propositions
-  (MT vs. LXX).
-- **SQLite database** (`data/sqlite/bible.db`): English translations with
-  alignment views.
+```text
+$ make demo
+DEU 32:8  (DEU)
+========================================================================
+MT   Leningrad Codex: בהנחל עליון גוים בהפרידו בני אדם יצב גבלת עמים למספר בני ישראל
+DSS  4Q37: ב הנחיל עליון גוים ב הפרידו בני אדם יצב גבלת עמים ל מספר בני אלוהים
+DSS  4Q45: ב הנחל עליון גוים ב הפרידו בני אדם יצב גבלת עמים
 
-See `data/README.md` for the dataset inventory, sources, and provenance. See
-`SPECS/ROADMAP.md` for what is planned and `SPECS/MISSION.md` for the full
-vision.
+Differences vs MT (normalised consonantal comparison):
+  DSS 4Q37: MT '' -> 'י'
+  DSS 4Q37: MT 'ישר' -> ''
+  DSS 4Q37: MT '' -> 'והים'
+  DSS 4Q45: MT ' למספר בני ישראל' -> ''
+```
+
+The comparison is consonantal: vowel points, cantillation, maqaf and
+punctuation are normalised away. DSS editorial markers (reconstruction,
+uncertainty, damage, lacunae) are preserved in the `transcription` column of
+`qumran.csv` and documented in
+[`data/manual_datasets/qumran/README.md`](data/manual_datasets/qumran/README.md).
+
+## What it does — and what is planned
+
+**Works today**
+
+- A curated, source-aware dataset of textual variants across MT, SP, DSS,
+  Qere/Ketiv, the Tov Septuagint corpus, and CTAT/HOTTP references.
+- Hebrew text for the curated Samaritan and DSS variant passages, with
+  manuscript attribution and ETCBC editorial notation.
+- A consonantal comparison demo (`scripts/demo.py` / `make demo`).
+- Reproducible generator scripts for the Qere/Ketiv, CTAT and Tov datasets
+  (`scripts/qere-ketiv`, `scripts/ctat-refs`, `scripts/lxx-refs`), with tests.
+
+**In progress / planned** (see the roadmap)
+
+- A stage-gated SQLite pipeline (ingestion → alignment → normalisation →
+  comparison → scholarly retrieval → hypotheses → adversarial analysis →
+  dossiers).
+- A `tessela` CLI and Markdown/PDF research dossiers.
+- Structured semantic evaluation with three levels of significance (formal,
+  semantic, interpretive).
+- Textual-development hypotheses as directed graphs with evidence and
+  probabilities.
+- The Monica / Tomás / Ernesto adversarial analysis workflow.
 
 ## Architecture
 
-The project follows a **pipeline-driven** architecture (see `SPECS/TECH.md`).
-Each stage takes a SQLite database from the previous stage and produces a new
-one:
+Tessela is designed as a linear, stage-gated pipeline. Each stage consumes the
+previous stage's SQLite database and writes a new one, so any stage can be
+re-run in isolation.
 
+```mermaid
+flowchart LR
+    A["Raw sources<br/>MT · SP · DSS · LXX · Vulgate · CTAT"] --> B["Stage 0<br/>Ingestion"]
+    B --> C["Stage 1<br/>Alignment"]
+    C --> D["Stage 2<br/>Normalisation"]
+    D --> E["Stage 3<br/>Comparison"]
+    E --> F["Stage 4<br/>Scholarly retrieval"]
+    F --> G["Stage 5<br/>Hypotheses"]
+    G --> H["Stage 6<br/>Adversarial analysis"]
+    H --> I["Stage 7<br/>Dossiers"]
 ```
-Stage 0: Ingestion    → tessela_0_raw.db
-Stage 1: Alignment    → tessela_1_aligned.db
-Stage 2: Normalization → tessela_2_normalised.db
-Stage 3: Comparison   → tessela_3_compared.db
-Stage 4: Scholarly    → tessela_4_sourced.db
-Stage 5: Hypotheses   → tessela_5_hypotheses.db
-Stage 6: Adversarial  → tessela_6_assessed.db
-Stage 7: Dossiers     → research dossiers (Markdown/PDF)
+
+The design is documented in [`SPECS/TECH.md`](SPECS/TECH.md); the full research
+vision is in [`SPECS/MISSION.md`](SPECS/MISSION.md).
+
+## Quickstart
+
+```bash
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+make demo                 # print the MT / SP / DSS comparison for DEU 32:8
 ```
 
-> **Note:** The pipeline is currently being refactored. The existing scripts
-> operate on CSV files and a single `bible.db`. Stage-gated SQLite outputs are
-> planned but not yet implemented.
+Try other curated references:
 
-## Project structure
+```bash
+python3 scripts/demo.py "Genesis 2:2"   # SP reads "the sixth" for MT "the seventh"
+python3 scripts/demo.py "Deuteronomy 27:4"  # SP reads Mount Gerizim for MT Mount Ebal
+```
+
+## Development
+
+```bash
+make install-dev   # runtime + ruff, mypy, pytest
+make lint          # ruff + mypy
+make test          # pytest
+make check         # lint + test
+```
+
+CI runs the same checks on every push and pull request (`.github/workflows/ci.yml`).
+
+The project is developed **spec-first**: `SPECS/MISSION.md` is the product
+contract, `SPECS/TECH.md` the technical contract, and `SPECS/ROADMAP.md` the
+delivery plan. Features are specified before they are implemented, and the
+current cycle is tracked in the roadmap.
+
+## Repository layout
 
 ```
 tessela/
-├── data/                  # Input/raw/intermediate datasets
-│   ├── raw/               # Raw source files (ebible.org SQL, Tov's data)
-│   ├── intermediate_datasets/  # Processed datasets (tov_distilled.csv, etc.)
-│   ├── manual_datasets/   # Qere/Ketiv, Samaritan, CTAT OCR
-│   └── sqlite/            # SQLite database (bible.db) and SQL views
-├── output/                # Normalized CSV output (generated)
-├── comparisons/           # Comparison CSV output (generated)
+├── data/                  # Curated datasets, raw sources, SQLite, reference tables
+│   ├── manual_datasets/   # Qere/Ketiv, Samaritan, DSS, CTAT
+│   ├── intermediate_datasets/  # Septuagint corpus and normalisations
+│   ├── reference/         # Book catalog, Leningrad versification
+│   ├── raw/               # ebible sources, Tov CATSS files (git-ignored)
+│   └── sqlite/            # bible.db and alignment views
+├── scripts/               # Pipeline and generator scripts (+ tests)
+├── src/                   # Application modules (data loading, witnesses, AI service)
 ├── prompts/               # AI prompt templates
-│   ├── normalization_prompt.txt
-│   └── comparison_prompt.txt
-├── src/                   # Python source code
-│   ├── data_loader.py
-│   ├── normalization_service.py
-│   ├── utils.py
-│   └── tov_processor/     # Tov LXX retroversion processing
-├── scripts/               # Executable pipeline scripts
-│   ├── run_normalization.py
-│   └── run_comparison.py
 ├── SPECS/                 # Mission, tech spec, roadmap, feature specs
-├── run.sh                 # Run normalization pipeline
-├── compare.sh             # Run comparison pipeline
-├── prepare_database.sh    # Build bible.db from raw data
-└── requirements.txt       # Python dependencies
+├── .github/workflows/     # CI
+├── Makefile
+├── pyproject.toml         # ruff, mypy, pytest configuration
+└── requirements*.txt
 ```
 
-## Prerequisites
+See [`data/README.md`](data/README.md) for the dataset inventory, provenance and
+the mapping from the original import layout.
 
-- Python 3.11+
-- A Google AI API key with access to the Gemini model.
-- `sqlite3` (for database preparation)
+## Data and licensing
 
-## Setup
+The **code is MIT** (see [`LICENSE`](LICENSE)). The **data has separate
+licences**; the full details are in [`DATA_LICENSES.md`](DATA_LICENSES.md).
+The most important ones:
 
-1. **Create a Python virtual environment:**
+- **Samaritan Pentateuch text:** STEPBible SP / CrossWire, “Copyrighted; Free
+  non-commercial distribution”, digitized by Aleksandr Sigalov.
+- **Dead Sea Scrolls readings:** ETCBC/dss, **CC BY-NC 4.0**, based on Martin
+  Abegg’s data.
+- **Qere/Ketiv:** STEPBible TAHOT, CC BY 4.0.
+- **Septuagint:** Tov CATSS `.par` files are **not tracked**; derived tables and
+  public-domain English texts are included.
+- **CTAT/HOTTP:** page references only; the copyrighted CTAT PDFs are not
+  tracked.
 
-   ```bash
-   python3 -m venv .venv
-   ```
+If you plan to reuse the data, check `DATA_LICENSES.md` first. If you are a
+commercial user, the non-commercial datasets need separate permission from their
+providers.
 
-2. **Activate the virtual environment:**
+## Contributing
 
-   ```bash
-   source .venv/bin/activate
-   ```
+Issues and pull requests are welcome. The current priorities are in
+[`SPECS/ROADMAP.md`](SPECS/ROADMAP.md). For anything non-trivial, open an issue
+first so the scope can be agreed.
 
-3. **Install the required dependencies:**
+## Citation
 
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-## How to run
-
-### Normalization
-
-1. Place source CSV files (`masoretic.csv`, `vulgate.csv`, `septuagint.csv`)
-   into the `data/` directory. The files must have the following columns:
-   - **masoretic.csv / vulgate.csv**: `book_name`, `chapter`, `verse`, `text`
-   - **septuagint.csv**: `book_name`, `chapter`, `verse`, `potential_difference_verse`, `text`
-
-2. Set your Google AI API key:
-
-   ```bash
-   export GOOGLE_API_KEY="YOUR_API_KEY_HERE"
-   ```
-
-3. Run:
-
-   ```bash
-   ./run.sh
-   ```
-
-   Normalized files (`masoretic_normalised.csv`, etc.) are saved in `output/`.
-
-### Comparison
-
-```bash
-./compare.sh
-```
-
-Compares normalized JPS vs. LXX verses and saves results in `comparisons/`.
-
-### Database preparation
-
-```bash
-./prepare_database.sh
-```
-
-Builds `data/sqlite/bible.db` from raw ebible.org data and Tov's distilled
-dataset, creating alignment views.
-
-### Rebuilding the textual-criticism datasets
-
-The textual-criticism datasets can be regenerated with the imported generator
-scripts (see `data/README.md` for inputs and provenance):
-
-```bash
-./scripts/lxx-refs build      # Tov Septuagint corpus -> data/intermediate_datasets/septuagint/tov_flagged.csv
-./scripts/ctat-refs refs      # CTAT/HOTTP references -> data/manual_datasets/ctat/refs.csv
-./scripts/qere-ketiv <tahot-dir>  # Qere/Ketiv -> data/manual_datasets/qere_ketiv/
-```
-
-`lxx-refs` and `ctat-refs` also support `check`, `normalise`/`missing`, and the
-OCR stages respectively. The Qere/Ketiv rebuild needs the STEPBible TAHOT source
-files, which are not tracked (see `data/manual_datasets/qere_ketiv/README.md`).
-
-## Data sources
-
-- **LXX**: Tov's CATSS project (https://ccat.sas.upenn.edu/rak/catss.html) and
-  Brenton's Septuagint (Vaticanus)
-- **Masoretic text**: JPS 1917
-- **Vulgate**: Douay–Rheims Bible
-- **Qere-Ketiv**: TAHOT dataset from STEP-Bible
-  (https://github.com/STEPBible/STEPBible-Data)
-- **CTAT**: Dominique Barthélemy's *Critique Textuelle de l'Ancien Testament*
-  (references in `data/manual_datasets/ctat/`)
-- **Samaritan Pentateuch**: curated variant list
-  (`data/manual_datasets/samaritan/samaritan.csv`) from Florentin & Tal, *The
-  Samaritan Pentateuch* (Open Book Publishers, 2025); the same CSV's
-  `hebrew_text` column gives the SP Hebrew text from the STEPBible SP version
-  (<https://www.stepbible.org/version.jsp?version=SP>), a CrossWire SWORD
-  module digitized by Aleksandr Sigalov (see `data/manual_datasets/samaritan/README.md`)
-- **Dead Sea Scrolls**: curated variant list (`data/manual_datasets/qumran/qumran.csv`)
-  from Abegg, Flint & Ulrich, *The Dead Sea Scrolls Bible* (HarperOne, 1999);
-  Hebrew readings (one row per passage and scroll) from the CACCHT Dead Sea
-  Scrolls dataset (<https://github.com/ETCBC/dss>), Text-Fabric 2.0.5, based on
-  Martin Abegg's data, CC BY-NC 4.0 (see `data/manual_datasets/qumran/README.md`)
-- **Masoretic minority readings**: curated list
-  (`data/manual_datasets/masoretic_minority/`)
-- **Leningrad codex**: verse text for versification/alignment
-  (`data/reference/versification/leningrad_codex.csv`)
-
-See `data/README.md` for the full inventory, provenance, and licensing notes.
-
-## Constitution
-
-The project's constitution (mission, tech spec, roadmap) lives in `SPECS/`:
-
-- `SPECS/MISSION.md` — mission and vision
-- `SPECS/TECH.md` — technical specification
-- `SPECS/ROADMAP.md` — delivery roadmap
-
-## License
-
-See `LICENSE`.
+If you use Tessela in research, please cite the repository and the underlying
+datasets listed in `DATA_LICENSES.md`. A `CITATION.cff` is planned.

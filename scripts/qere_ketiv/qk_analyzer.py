@@ -53,9 +53,8 @@ import sys
 from dataclasses import dataclass
 from pathlib import Path
 
-import pandas as pd
-
 import morphology
+import pandas as pd
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_DIR = REPO_ROOT / "data" / "manual_datasets" / "qere_ketiv"

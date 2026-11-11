@@ -222,9 +222,6 @@ def split_hebrew(field: str) -> tuple[str, str, set[str]]:
         before, _, after = field.partition("=")
         mt_raw, retro_raw = before, "=" + after
 
-    for marker in ("=+", "=r"):
-        if marker in field:
-            found_marker = marker
     retro_raw = RETRO_PREFIX.sub("", retro_raw)
     mt, mt_markers = strip_marker(mt_raw)
     retro, retro_markers = strip_marker(retro_raw)
