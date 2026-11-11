@@ -1,18 +1,20 @@
 # Samaritan Pentateuch variants
 
-The curated list of Samaritan Pentateuch (SP) variant passages, together with
-the SP Hebrew text of those verses.
+The curated list of Samaritan Pentateuch (SP) variant passages, with the SP
+Hebrew text of those verses in the same file.
 
-## Files
+## File
 
 | File | Contents |
 |---|---|
-| `samaritan.csv` | 33 variant passages (references only) |
-| `samaritan_hebrew.csv` | The SP Hebrew text for those 33 verses |
+| `samaritan.csv` | 33 variant passages (`book`, `chapter`, `verse`) with their SP Hebrew text (`hebrew_text`) |
+
+One row per variant passage; the reference list and its Hebrew text share a
+single source of truth.
 
 ## Source and credit
 
-The SP Hebrew text in `samaritan_hebrew.csv` comes from the **STEPBible SP
+The SP Hebrew text in the `hebrew_text` column comes from the **STEPBible SP
 version**:
 
 - STEPBible: <https://www.stepbible.org/version.jsp?version=SP>
@@ -29,8 +31,8 @@ version**:
   commercially.
 
 The `hebrew_text` column is the clean, unpointed Hebrew text as read from the
-module. The `osis` column preserves the raw OSIS markup (Strong's numbers,
-glosses and transliteration) for provenance and auditability.
+module. The module's raw OSIS markup (Strong's numbers, glosses and
+transliteration) can be read with `pysword` if needed, but is not stored here.
 
 ## Rebuilding
 
@@ -39,8 +41,8 @@ python3 scripts/fetch_samaritan_sp.py
 ```
 
 The script downloads the SP SWORD module from CrossWire (or uses a cached
-`--zip`), reads the references in `samaritan.csv`, and rewrites
-`samaritan_hebrew.csv`. It requires `pysword` (see `requirements.txt`).
+`--zip`), reads the references in `samaritan.csv`, and updates the
+`hebrew_text` column in place. It requires `pysword` (see `requirements.txt`).
 
 ## Note on the variant list
 

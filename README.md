@@ -199,8 +199,8 @@ files, which are not tracked (see `data/manual_datasets/qere_ketiv/README.md`).
   (references in `data/manual_datasets/ctat/`)
 - **Samaritan Pentateuch**: curated variant list
   (`data/manual_datasets/samaritan/samaritan.csv`) from Florentin & Tal, *The
-  Samaritan Pentateuch* (Open Book Publishers, 2025); Hebrew text of the 33
-  verses (`samaritan_hebrew.csv`) from the STEPBible SP version
+  Samaritan Pentateuch* (Open Book Publishers, 2025); the same CSV's
+  `hebrew_text` column gives the SP Hebrew text from the STEPBible SP version
   (<https://www.stepbible.org/version.jsp?version=SP>), a CrossWire SWORD
   module digitized by Aleksandr Sigalov (see `data/manual_datasets/samaritan/README.md`)
 - **Dead Sea Scrolls**: curated variant list (`data/manual_datasets/qumran/`),

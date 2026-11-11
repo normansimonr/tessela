@@ -24,7 +24,7 @@ evaluation, which comes before hypothesis generation and adversarial analysis.
 - [x] Import textual-criticism datasets: Qumran (125 DSS references), Samaritan Pentateuch (33 references), Masoretic minority (1), enriched Qere/Ketiv (1,013 words / 837 verses with morphology, roots, readings), CTAT/HOTTP `refs.csv` (3,348 verses), Tov Septuagint corpus (`tov_flagged.csv`, 12,951 variants; 42 raw `.par` files, git-ignored per licensing policy; normalisation tables), Leningrad codex versification (23,213 verses), and book catalog (66 books) — see `data/README.md`
 - [x] Import and adapt the textual-criticism generator scripts: `scripts/qere-ketiv` (+ `scripts/qere_ketiv/`), `scripts/ctat-refs` (+ `scripts/ctat/`), `scripts/lxx-refs` (+ `scripts/lxx/`), with their tests; verified to reproduce the imported datasets (`./scripts/lxx-refs build`, `./scripts/ctat-refs refs`, Qere/Ketiv analyser)
 - [ ] Integrate the imported DSS/SP/CTAT/Septuagint data into the stage-gated pipeline (data is imported; pipeline wiring pending)
-- [x] Samaritan Pentateuch Hebrew text imported for the 33 curated variants (`data/manual_datasets/samaritan/samaritan_hebrew.csv`, STEPBible SP; credited in `samaritan/README.md`)
+- [x] Samaritan Pentateuch Hebrew text imported for the 33 curated variants (the `hebrew_text` column of `data/manual_datasets/samaritan/samaritan.csv`, STEPBible SP; credited in `samaritan/README.md`)
 - [ ] Samaritan Pentateuch enrichment beyond the Hebrew text: variant descriptions, alignment notes, and integration into the variant dataset
 - [ ] Dead Sea Scrolls enrichment (Hebrew text for the 125 variants; currently references only)
 - [ ] Peshitta data ingestion

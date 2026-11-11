@@ -4,8 +4,8 @@ The translation is made from the Masoretic Text. Where another textual witness
 carries a different reading that could change how a verse is translated, the
 passage is recorded here so that the translator can weigh the evidence. The
 variant lists (`samaritan.csv`, `qumran.csv`, `masoretic_minority.csv`) record
-**verse references only**. The Samaritan Pentateuch Hebrew text for the curated
-verses is stored separately in `samaritan/samaritan_hebrew.csv` (see
+**verse references only**, except `samaritan.csv`, which also carries the
+Samaritan Pentateuch Hebrew text of its verses in a `hebrew_text` column (see
 [`samaritan/README.md`](samaritan/README.md) for its source and credit).
 
 These three datasets are hand-maintained — nothing generates them and nothing
@@ -17,8 +17,7 @@ Testament variants are brought into the content.
 
 | File | Witness | Entries |
 |:--|:--|--:|
-| `samaritan.csv` | Samaritan Pentateuch (Genesis–Deuteronomy) | 33 |
-| `samaritan/samaritan_hebrew.csv` | SP Hebrew text for the 33 verses | 33 |
+| `samaritan.csv` | Samaritan Pentateuch (Genesis–Deuteronomy), with SP Hebrew text | 33 |
 | `qumran.csv` | Qumran — the Dead Sea Scrolls | 125 |
 | `masoretic_minority.csv` | Minority readings within the Masoretic tradition itself | 1 (in progress) |
 
