@@ -28,7 +28,7 @@ def test_dataset_has_the_expected_shape() -> None:
 
 
 @pytest.mark.skipif(
-    not (RAW / "LXX_Tov").is_dir(),
+    not any((RAW / "LXX_Tov").glob("*.par")),
     reason="Tov's CATSS .par files are not tracked (licensing); rebuild them locally first",
 )
 def test_dataset_is_reproduced_from_the_raw_files() -> None:
