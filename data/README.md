@@ -66,8 +66,8 @@ data/
   `transcription` columns of `qumran/qumran.csv`) come from the **CACCHT Dead
   Sea Scrolls dataset** (<https://github.com/ETCBC/dss>), Text-Fabric version
   2.0.5, based on Martin Abegg's data and prepared by Jarod Jacobs, Martijn
-  Naaijer and Dirk Roorda. Licence: **CC BY-NC 4.0**. See
-  `manual_datasets/qumran/README.md`.
+  Naaijer and Dirk Roorda. Licence: **CC BY-NC 4.0**. The `transcription`
+  column's editorial markers are documented in `manual_datasets/qumran/README.md`.
 - **Samaritan Pentateuch Hebrew text** (the `hebrew_text` column of
   `samaritan/samaritan.csv`) is from the **STEPBible SP version**
   (<https://www.stepbible.org/version.jsp?version=SP>), a SWORD module

@@ -18,9 +18,44 @@ list, use `SELECT DISTINCT book, chapter, verse`.
   `1Qisaa`).
 - `hebrew_text` — the clean consonantal text (editorial brackets and markers
   removed; the ETCBC word division is preserved).
-- `transcription` — the full ETCBC transcription, which preserves editorial
-  markers: `[ ]` for reconstructed text, `(^ ... ^)` for uncertain readings,
-  `#` for damaged text, and `׳` for morpheme boundaries.
+- `transcription` — the full ETCBC transcription, which preserves the editorial
+  notation described below.
+
+## Transcription metalanguage
+
+The `transcription` column uses the ETCBC/dss editorial notation. The
+`hebrew_text` column is the same text with these markers removed. The notation
+is summarised here:
+
+| Marker | Meaning |
+|---|---|
+| `[ ... ]` | reconstructed by a modern editor |
+| `( ... )` | alternative material |
+| `< ... >` | correction by a modern editor |
+| `<< ... >>` | correction by an ancient editor |
+| `^ ... ^` | supralinear (ancient) correction |
+| `{ ... }` | removed by a modern editor |
+| `{{ ... }}` | removed by an ancient editor |
+| `≤ ... ≥` | empty/unwritten space |
+| `« ... »` | uncertain material, level 2 |
+| `?` | uncertain sign, level 1 |
+| `#` | uncertain sign, level 2 |
+| `#?` | uncertain sign, level 3 |
+| `##` | uncertain sign, level 4 |
+| `ε` | missing sign |
+| `+` | addition between numerals |
+| `╱` | end of line |
+| `׳` | morpheme break (removed in `hebrew_text`) |
+| `׃` | sof pasuq (verse end) |
+| `׃׃` | paleo divider |
+| `־` | maqaf |
+
+The notation follows the ETCBC/dss feature documentation
+(<https://github.com/ETCBC/dss/blob/master/docs/feature_documentation.md>) and
+the Text-Fabric Hebrew transcription conventions
+(<https://annotation.github.io/text-fabric/tf/writing/hebrew.html>). In this
+subset of the dataset the markers that actually appear are `[ ]`, `( )`,
+`< >`, `^ ^`, `{ }`, `?`, `#`, `ε`, and the Hebrew punctuation/morpheme marks.
 
 ## Source and credit
 
