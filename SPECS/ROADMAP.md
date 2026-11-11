@@ -24,7 +24,8 @@ evaluation, which comes before hypothesis generation and adversarial analysis.
 - [x] Import textual-criticism datasets: Qumran (125 DSS references), Samaritan Pentateuch (33 references), Masoretic minority (1), enriched Qere/Ketiv (1,013 words / 837 verses with morphology, roots, readings), CTAT/HOTTP `refs.csv` (3,348 verses), Tov Septuagint corpus (`tov_flagged.csv`, 12,951 variants; 42 raw `.par` files, git-ignored per licensing policy; normalisation tables), Leningrad codex versification (23,213 verses), and book catalog (66 books) — see `data/README.md`
 - [x] Import and adapt the textual-criticism generator scripts: `scripts/qere-ketiv` (+ `scripts/qere_ketiv/`), `scripts/ctat-refs` (+ `scripts/ctat/`), `scripts/lxx-refs` (+ `scripts/lxx/`), with their tests; verified to reproduce the imported datasets (`./scripts/lxx-refs build`, `./scripts/ctat-refs refs`, Qere/Ketiv analyser)
 - [ ] Integrate the imported DSS/SP/CTAT/Septuagint data into the stage-gated pipeline (data is imported; pipeline wiring pending)
-- [ ] Samaritan Pentateuch enrichment (Hebrew text + descriptions for the ~33 variants; currently references only)
+- [x] Samaritan Pentateuch Hebrew text imported for the 33 curated variants (`data/manual_datasets/samaritan/samaritan_hebrew.csv`, STEPBible SP; credited in `samaritan/README.md`)
+- [ ] Samaritan Pentateuch enrichment beyond the Hebrew text: variant descriptions, alignment notes, and integration into the variant dataset
 - [ ] Dead Sea Scrolls enrichment (Hebrew text for the 125 variants; currently references only)
 - [ ] Peshitta data ingestion
 - [ ] Integrate Qere/Ketiv into main pipeline with morphology/roots
@@ -134,7 +135,7 @@ Each stage produces its own SQLite database for modularity and easy re-runs.
 |---|---|---|---|---|---|---|
 | Masoretic Text | Partial (English JPS; Hebrew in Tov CSV) | Partial | ✅ | ✅ | ❌ | In progress |
 | Qere/Ketiv | ✅ (1,013 words / 837 verses, with morphology & roots) | ❌ | ❌ | ❌ | ❌ | Data imported; needs integration |
-| Samaritan Pentateuch | ✅ (33 verse references; no Hebrew text) | ❌ | ❌ | ❌ | ❌ | Data imported; needs enrichment |
+| Samaritan Pentateuch | ✅ (33 references + SP Hebrew text) | ❌ | ❌ | ❌ | ❌ | Hebrew text imported; needs integration |
 | Dead Sea Scrolls | ✅ (125 verse references; no Hebrew text) | ❌ | ❌ | ❌ | ❌ | Data imported; needs enrichment |
 | Septuagint (Tov) | ✅ (`tov_flagged.csv`, 12,951 variants; 42 `.par` files) | Partial | Partial (normalisation tables) | ❌ | ❌ | Data imported; needs chain preservation |
 | Vulgate | Partial (English DRA) | Partial | ❌ | ❌ | ❌ | Needs retroversion pipeline |

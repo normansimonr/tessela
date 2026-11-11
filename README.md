@@ -197,8 +197,12 @@ files, which are not tracked (see `data/manual_datasets/qere_ketiv/README.md`).
   (https://github.com/STEPBible/STEPBible-Data)
 - **CTAT**: Dominique Barthélemy's *Critique Textuelle de l'Ancien Testament*
   (references in `data/manual_datasets/ctat/`)
-- **Samaritan Pentateuch**: curated variant list (`data/manual_datasets/samaritan/`),
-  from Florentin & Tal, *The Samaritan Pentateuch* (Open Book Publishers, 2025)
+- **Samaritan Pentateuch**: curated variant list
+  (`data/manual_datasets/samaritan/samaritan.csv`) from Florentin & Tal, *The
+  Samaritan Pentateuch* (Open Book Publishers, 2025); Hebrew text of the 33
+  verses (`samaritan_hebrew.csv`) from the STEPBible SP version
+  (<https://www.stepbible.org/version.jsp?version=SP>), a CrossWire SWORD
+  module digitized by Aleksandr Sigalov (see `data/manual_datasets/samaritan/README.md`)
 - **Dead Sea Scrolls**: curated variant list (`data/manual_datasets/qumran/`),
   from Abegg, Flint & Ulrich, *The Dead Sea Scrolls Bible* (HarperOne, 1999)
 - **Masoretic minority readings**: curated list

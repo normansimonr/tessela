@@ -6,4 +6,5 @@ pytesseract
 google-generativeai
 tqdm
 pyyaml
+pysword
 pytest

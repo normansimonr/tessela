@@ -25,7 +25,7 @@ data/
 │       └── README.md
 ├── manual_datasets/              # Hand-compiled / derived textual-criticism data
 │   ├── qumran/                   # Dead Sea Scrolls variant list (125)
-│   ├── samaritan/                # Samaritan Pentateuch variant list (33)
+│   ├── samaritan/                # Samaritan Pentateuch variant list (33) + SP Hebrew text
 │   ├── masoretic_minority/       # Minority readings within MT (1)
 │   ├── qere_ketiv/               # Qere/Ketiv dataset (from STEPBible TAHOT)
 │   └── ctat/                     # CTAT/HOTTP references + OCR pipeline
@@ -41,7 +41,7 @@ data/
 | Dataset | Original source | Tessela location | Rows | Notes |
 |---|---|---|---|---|
 | Dead Sea Scrolls variants | `textual_criticism/qumran.csv` | `manual_datasets/qumran/qumran.csv` | 125 | Verse references only (English-compiled list; no Hebrew text) |
-| Samaritan Pentateuch variants | `textual_criticism/samaritan.csv` | `manual_datasets/samaritan/samaritan.csv` | 33 | Verse references only (English-compiled list; no Hebrew text) |
+| Samaritan Pentateuch variants | `textual_criticism/samaritan.csv` | `manual_datasets/samaritan/samaritan.csv` | 33 | Verse references; the SP Hebrew text is in `samaritan_hebrew.csv` (STEPBible SP, credited in `samaritan/README.md`) |
 | Masoretic minority readings | `textual_criticism/masoretic_minority.csv` | `manual_datasets/masoretic_minority/masoretic_minority.csv` | 1 | In progress |
 | Qere/Ketiv | `textual_criticism/qere_ketiv/` | `manual_datasets/qere_ketiv/` | 1,013 words / 837 verses | Richer than the previous Tessela dataset: readings, transliteration, gloss, root, Strong's, morphology, variant type, proper-name flag |
 | CTAT/HOTTP references | `textual_criticism/ctat/` | `manual_datasets/ctat/` | 3,348 verses | Adds `refs.csv` (one row per verse with HOTTP flag and CTAT page) and README |
@@ -60,8 +60,15 @@ data/
     2025), <https://doi.org/10.11647/OBP.0415>.
   - Qumran: Abegg, Flint & Ulrich, *The Dead Sea Scrolls Bible* (HarperOne,
     1999).
-  - These are **verse-reference lists only**; the selection is subjective and
-    not a complete critical apparatus. No source text is reproduced.
+  - These are **verse-reference lists**; the selection is subjective and not a
+    complete critical apparatus.
+- **Samaritan Pentateuch Hebrew text** (`samaritan/samaritan_hebrew.csv`) is
+  from the **STEPBible SP version**
+  (<https://www.stepbible.org/version.jsp?version=SP>), a SWORD module
+  distributed by CrossWire (<https://www.crosswire.org/sword/>), digitized and
+  prepared by **Aleksandr Sigalov** from Kennicott (1780) and von Gall (1918).
+  Licence: "Copyrighted; Free non-commercial distribution". See
+  `manual_datasets/samaritan/README.md`.
 - **Qere/Ketiv** is derived from STEPBible's *Translators Amalgamated Hebrew OT*
   (TAHOT), CC BY 4.0. The four raw TAHOT files are not tracked here (STEPBible
   asks that they be distributed from its own repository); only the derived
