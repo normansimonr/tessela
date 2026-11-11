@@ -4,6 +4,8 @@ import csv
 import sys
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from lxx import align, dataset, tov  # noqa: E402
@@ -25,6 +27,10 @@ def test_dataset_has_the_expected_shape() -> None:
     assert sum(1 for row in rows if row["lxx_only"] == "yes") == 167
 
 
+@pytest.mark.skipif(
+    not (RAW / "LXX_Tov").is_dir(),
+    reason="Tov's CATSS .par files are not tracked (licensing); rebuild them locally first",
+)
 def test_dataset_is_reproduced_from_the_raw_files() -> None:
     rows = dataset.build_dataset(RAW, tov, align)
     expected = (DATA / "tov_flagged.csv").read_text(encoding="utf-8")
