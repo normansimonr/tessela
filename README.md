@@ -37,16 +37,23 @@ The project is in an early stage. What exists today:
 - **Data ingestion**: Masoretic Text (JPS 1917 English), Septuagint (Brenton
   English + Tov's Hebrew retroversions), Vulgate (Douay–Rheims English),
   Qere/Ketiv extraction from STEP-Bible TAHOT, CTAT OCR pipeline.
+- **Textual-criticism datasets**: Dead Sea Scrolls (125
+  variant references), Samaritan Pentateuch (33 variant references), Masoretic
+  minority readings (1), enriched Qere/Ketiv (1,013 words / 837 verses with
+  morphology and roots), CTAT/HOTTP references (3,348 verses), and the Tov
+  Septuagint corpus (`tov_flagged.csv`, 12,951 variants + 42 raw CATSS `.par`
+  files + normalisation tables).
+- **Reference data**: Leningrad codex verse text (23,213 verses) and a
+  machine-readable book catalog (66 books).
 - **Semantic normalization**: Gemini-based decomposition of verses into atomic
   propositions.
 - **Semantic comparison**: verse-by-verse comparison of normalized propositions
   (MT vs. LXX).
 - **SQLite database** (`data/sqlite/bible.db`): English translations with
   alignment views.
-- **Manual datasets**: Qere/Ketiv analysis, Samaritan Pentateuch verse list,
-  CTAT OCR results.
 
-See `SPECS/ROADMAP.md` for what is planned and `SPECS/MISSION.md` for the full
+See `data/README.md` for the dataset inventory, sources, and provenance. See
+`SPECS/ROADMAP.md` for what is planned and `SPECS/MISSION.md` for the full
 vision.
 
 ## Architecture
@@ -165,6 +172,21 @@ Compares normalized JPS vs. LXX verses and saves results in `comparisons/`.
 Builds `data/sqlite/bible.db` from raw ebible.org data and Tov's distilled
 dataset, creating alignment views.
 
+### Rebuilding the textual-criticism datasets
+
+The textual-criticism datasets can be regenerated with the imported generator
+scripts (see `data/README.md` for inputs and provenance):
+
+```bash
+./scripts/lxx-refs build      # Tov Septuagint corpus -> data/intermediate_datasets/septuagint/tov_flagged.csv
+./scripts/ctat-refs refs      # CTAT/HOTTP references -> data/manual_datasets/ctat/refs.csv
+./scripts/qere-ketiv <tahot-dir>  # Qere/Ketiv -> data/manual_datasets/qere_ketiv/
+```
+
+`lxx-refs` and `ctat-refs` also support `check`, `normalise`/`missing`, and the
+OCR stages respectively. The Qere/Ketiv rebuild needs the STEPBible TAHOT source
+files, which are not tracked (see `data/manual_datasets/qere_ketiv/README.md`).
+
 ## Data sources
 
 - **LXX**: Tov's CATSS project (https://ccat.sas.upenn.edu/rak/catss.html) and
@@ -174,8 +196,17 @@ dataset, creating alignment views.
 - **Qere-Ketiv**: TAHOT dataset from STEP-Bible
   (https://github.com/STEPBible/STEPBible-Data)
 - **CTAT**: Dominique Barthélemy's *Critique Textuelle de l'Ancien Testament*
-  (OCR pipeline in `data/manual_datasets/ctat/`)
-- **Samaritan Pentateuch**: curated variant list (`data/manual_datasets/samaritan/`)
+  (references in `data/manual_datasets/ctat/`)
+- **Samaritan Pentateuch**: curated variant list (`data/manual_datasets/samaritan/`),
+  from Florentin & Tal, *The Samaritan Pentateuch* (Open Book Publishers, 2025)
+- **Dead Sea Scrolls**: curated variant list (`data/manual_datasets/qumran/`),
+  from Abegg, Flint & Ulrich, *The Dead Sea Scrolls Bible* (HarperOne, 1999)
+- **Masoretic minority readings**: curated list
+  (`data/manual_datasets/masoretic_minority/`)
+- **Leningrad codex**: verse text for versification/alignment
+  (`data/reference/versification/leningrad_codex.csv`)
+
+See `data/README.md` for the full inventory, provenance, and licensing notes.
 
 ## Constitution
 

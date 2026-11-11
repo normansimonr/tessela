@@ -1,0 +1,817 @@
+# data/reference/books.yaml — machine-readable book catalog (single source of truth)
+#
+# The canonical list of the 66 books of the Bible: identity, canonical order,
+# testament and per-language names (es-co, en-gb). Migrated from
+# references/controlled_vocabularies/books.csv in Milestone 2 (that CSV is
+# retired). Validated by the Pydantic models in scripts/renderlib/models.py,
+# used by scripts/render. Nothing human-written duplicates it (DRY).
+#
+# Schema:
+#   books:
+#     <BOOK_ID>:            # e.g. GEN, 1SA, 3JO
+#       order: <int>        # canonical order, 1..66, unique, no gaps
+#       testament: OLD|NEW
+#       names:
+#         <LANG>:           # es-co | en-gb
+#           long: <str>     # display title (upper-case in the es-co column)
+#           short: <str>    # conventional short name
+#           shortest: <str> # abbreviation
+#           description: <str>  # optional; the CSV columns were empty
+#                              # everywhere, so it is omitted here (YAGNI)
+#
+# Migration corrections (confirmed 2026-08-14): 1TH es-co short was
+# "Tesalonicenses" (missing the leading 1); HOS en-gb short was "Hosiah"
+# (typo for "Hosea"). Both are corrected here.
+books:
+  GEN:
+    order: 1
+    testament: OLD
+    names:
+      es-co:
+        long: GÉNESIS
+        short: Génesis
+        shortest: Gén.
+      en-gb:
+        long: GENESIS
+        short: Genesis
+        shortest: Gen
+  EXO:
+    order: 2
+    testament: OLD
+    names:
+      es-co:
+        long: ÉXODO
+        short: Éxodo
+        shortest: Éx.
+      en-gb:
+        long: EXODUS
+        short: Exodus
+        shortest: Ex
+  LEV:
+    order: 3
+    testament: OLD
+    names:
+      es-co:
+        long: LEVÍTICO
+        short: Levítico
+        shortest: Lev.
+      en-gb:
+        long: LEVITICUS
+        short: Leviticus
+        shortest: Lev
+  NUM:
+    order: 4
+    testament: OLD
+    names:
+      es-co:
+        long: NÚMEROS
+        short: Números
+        shortest: Núm.
+      en-gb:
+        long: NUMBERS
+        short: Numbers
+        shortest: Num
+  DEU:
+    order: 5
+    testament: OLD
+    names:
+      es-co:
+        long: DEUTERONOMIO
+        short: Deuteronomio
+        shortest: Deut.
+      en-gb:
+        long: DEUTERONOMY
+        short: Deuteronomy
+        shortest: Deut
+  JOS:
+    order: 6
+    testament: OLD
+    names:
+      es-co:
+        long: JOSUÉ
+        short: Josué
+        shortest: Jos.
+      en-gb:
+        long: JOSHUA
+        short: Joshua
+        shortest: Josh
+  JDG:
+    order: 7
+    testament: OLD
+    names:
+      es-co:
+        long: JUECES
+        short: Jueces
+        shortest: Jue.
+      en-gb:
+        long: JUDGES
+        short: Judges
+        shortest: Jdg
+  RUT:
+    order: 8
+    testament: OLD
+    names:
+      es-co:
+        long: RUT
+        short: Rut
+        shortest: Rut
+      en-gb:
+        long: RUTH
+        short: Ruth
+        shortest: Ruth
+  1SA:
+    order: 9
+    testament: OLD
+    names:
+      es-co:
+        long: Primer libro de SAMUEL
+        short: 1 Samuel
+        shortest: 1 Sam.
+      en-gb:
+        long: The first book of SAMUEL
+        short: 1 Samuel
+        shortest: 1 Sam
+  2SA:
+    order: 10
+    testament: OLD
+    names:
+      es-co:
+        long: Segundo libro de SAMUEL
+        short: 2 Samuel
+        shortest: 2 Sam.
+      en-gb:
+        long: The second book of SAMUEL
+        short: 2 Samuel
+        shortest: 2 Sam
+  1KI:
+    order: 11
+    testament: OLD
+    names:
+      es-co:
+        long: Primer libro de los REYES de Israel y Judá
+        short: 1 Reyes
+        shortest: 1 Rey.
+      en-gb:
+        long: The first book of the KINGS of Israel and Judah
+        short: 1 Kings
+        shortest: 1 Kgs
+  2KI:
+    order: 12
+    testament: OLD
+    names:
+      es-co:
+        long: Segundo libro de los REYES de Israel y Judá
+        short: 2 Reyes
+        shortest: 2 Rey.
+      en-gb:
+        long: The second book of the KINGS of Israel and Judah
+        short: 2 Kings
+        shortest: 2 Kgs
+  1CH:
+    order: 13
+    testament: OLD
+    names:
+      es-co:
+        long: Primer libro de las CRÓNICAS de los reyes de Israel y Judá
+        short: 1 Crónicas
+        shortest: 1 Crón.
+      en-gb:
+        long: The first book of the CHRONICLES of the kings of Israel and Judah
+        short: 1 Chronicles
+        shortest: 1 Chron
+  2CH:
+    order: 14
+    testament: OLD
+    names:
+      es-co:
+        long: Segundo libro de las CRÓNICAS de los reyes de Israel y Judá
+        short: 2 Crónicas
+        shortest: 2 Crón.
+      en-gb:
+        long: The second book of the CHRONICLES of the kings of Israel and Judah
+        short: 2 Chronicles
+        shortest: 2 Chron
+  EZR:
+    order: 15
+    testament: OLD
+    names:
+      es-co:
+        long: ESDRAS
+        short: Esdras
+        shortest: Esdr.
+      en-gb:
+        long: EZRA
+        short: Ezra
+        shortest: Ezr
+  NEH:
+    order: 16
+    testament: OLD
+    names:
+      es-co:
+        long: NEHEMÍAS
+        short: Nehemías
+        shortest: Neh.
+      en-gb:
+        long: NEHEMIAH
+        short: Nehemiah
+        shortest: Neh
+  EST:
+    order: 17
+    testament: OLD
+    names:
+      es-co:
+        long: ESTER
+        short: Ester
+        shortest: Est.
+      en-gb:
+        long: ESTHER
+        short: Esther
+        shortest: Esth
+  JOB:
+    order: 18
+    testament: OLD
+    names:
+      es-co:
+        long: JOB
+        short: Job
+        shortest: Job
+      en-gb:
+        long: JOB
+        short: Job
+        shortest: Job
+  PSA:
+    order: 19
+    testament: OLD
+    names:
+      es-co:
+        long: SALMOS
+        short: Salmos
+        shortest: Sal.
+      en-gb:
+        long: PSALMS
+        short: Psalms
+        shortest: Ps
+  PRO:
+    order: 20
+    testament: OLD
+    names:
+      es-co:
+        long: PROVERBIOS
+        short: Proverbios
+        shortest: Prov.
+      en-gb:
+        long: PROVERBS
+        short: Proverbs
+        shortest: Prv
+  ECC:
+    order: 21
+    testament: OLD
+    names:
+      es-co:
+        long: ECLESIASTÉS
+        short: Eclesiastés
+        shortest: Ecles.
+      en-gb:
+        long: ECCLESIASTES
+        short: Ecclesiastes
+        shortest: Eccl
+  SON:
+    order: 22
+    testament: OLD
+    names:
+      es-co:
+        long: CANTAR DE LOS CANTARES
+        short: Cantares
+        shortest: Cant.
+      en-gb:
+        long: SONG OF SOLOMON
+        short: Song of Songs
+        shortest: Solom
+  ISA:
+    order: 23
+    testament: OLD
+    names:
+      es-co:
+        long: ISAÍAS
+        short: Isaías
+        shortest: Isa.
+      en-gb:
+        long: ISAIAH
+        short: Isaiah
+        shortest: Isa
+  JER:
+    order: 24
+    testament: OLD
+    names:
+      es-co:
+        long: JEREMÍAS
+        short: Jeremías
+        shortest: Jer.
+      en-gb:
+        long: JEREMIAH
+        short: Jeremiah
+        shortest: Jer
+  LAM:
+    order: 25
+    testament: OLD
+    names:
+      es-co:
+        long: LAMENTACIONES
+        short: Lamentaciones
+        shortest: Lam.
+      en-gb:
+        long: LAMENTATIONS
+        short: Lamentations
+        shortest: Lam
+  EZE:
+    order: 26
+    testament: OLD
+    names:
+      es-co:
+        long: EZEQUIEL
+        short: Ezequiel
+        shortest: Ezeq.
+      en-gb:
+        long: EZEKIEL
+        short: Ezekiel
+        shortest: Ezk
+  DAN:
+    order: 27
+    testament: OLD
+    names:
+      es-co:
+        long: DANIEL
+        short: Daniel
+        shortest: Dan.
+      en-gb:
+        long: DANIEL
+        short: Daniel
+        shortest: Dan
+  HOS:
+    order: 28
+    testament: OLD
+    names:
+      es-co:
+        long: OSEAS
+        short: Oseas
+        shortest: Os.
+      en-gb:
+        long: HOSEA
+        short: Hosea
+        shortest: Hos
+  JOE:
+    order: 29
+    testament: OLD
+    names:
+      es-co:
+        long: JOEL
+        short: Joel
+        shortest: Joel
+      en-gb:
+        long: JOEL
+        short: Joel
+        shortest: Joel
+  AMO:
+    order: 30
+    testament: OLD
+    names:
+      es-co:
+        long: AMÓS
+        short: Amós
+        shortest: Am.
+      en-gb:
+        long: AMOS
+        short: Amos
+        shortest: Am
+  OBA:
+    order: 31
+    testament: OLD
+    names:
+      es-co:
+        long: ABDÍAS
+        short: Abdías
+        shortest: Abd.
+      en-gb:
+        long: OBADIAH
+        short: Obadiah
+        shortest: Obd
+  JON:
+    order: 32
+    testament: OLD
+    names:
+      es-co:
+        long: JONÁS
+        short: Jonás
+        shortest: Jon.
+      en-gb:
+        long: JONAH
+        short: Jonah
+        shortest: Jon
+  MIC:
+    order: 33
+    testament: OLD
+    names:
+      es-co:
+        long: MIQUEAS
+        short: Miqueas
+        shortest: Miq.
+      en-gb:
+        long: MICAH
+        short: Micah
+        shortest: Mic
+  NAH:
+    order: 34
+    testament: OLD
+    names:
+      es-co:
+        long: NAHUM
+        short: Nahum
+        shortest: Nahu.
+      en-gb:
+        long: NAHUM
+        short: Nahum
+        shortest: Nahu
+  HAB:
+    order: 35
+    testament: OLD
+    names:
+      es-co:
+        long: HABACUC
+        short: Habacuc
+        shortest: Hab.
+      en-gb:
+        long: HABAKKUK
+        short: Habakkuk
+        shortest: Hab
+  ZEP:
+    order: 36
+    testament: OLD
+    names:
+      es-co:
+        long: SOFONÍAS
+        short: Sofonías
+        shortest: Sof.
+      en-gb:
+        long: ZEPHANIAH
+        short: Zephaniah
+        shortest: Zeph
+  HAG:
+    order: 37
+    testament: OLD
+    names:
+      es-co:
+        long: HAGEO
+        short: Hageo
+        shortest: Hag.
+      en-gb:
+        long: HAGGAI
+        short: Haggai
+        shortest: Hag
+  ZEC:
+    order: 38
+    testament: OLD
+    names:
+      es-co:
+        long: ZACARÍAS
+        short: Zacarías
+        shortest: Zac.
+      en-gb:
+        long: ZECHARIAH
+        short: Zechariah
+        shortest: Zec
+  MAL:
+    order: 39
+    testament: OLD
+    names:
+      es-co:
+        long: MALAQUÍAS
+        short: Malaquías
+        shortest: Malaq.
+      en-gb:
+        long: MALACHI
+        short: Malachi
+        shortest: Mlch
+  MAT:
+    order: 40
+    testament: NEW
+    names:
+      es-co:
+        long: El Evangelio según MATEO
+        short: Mateo
+        shortest: Mat.
+      en-gb:
+        long: The Gospel according to MATTHEW
+        short: Matthew
+        shortest: Matt
+  MAR:
+    order: 41
+    testament: NEW
+    names:
+      es-co:
+        long: El Evangelio según MARCOS
+        short: Marcos
+        shortest: Marc.
+      en-gb:
+        long: The Gospel according to MARK
+        short: Mark
+        shortest: Mk
+  LUK:
+    order: 42
+    testament: NEW
+    names:
+      es-co:
+        long: El Evangelio según LUCAS
+        short: Lucas
+        shortest: Luc.
+      en-gb:
+        long: The Gospel according to LUKE
+        short: Luke
+        shortest: Lk
+  JOH:
+    order: 43
+    testament: NEW
+    names:
+      es-co:
+        long: El Evangelio según JUAN
+        short: Juan
+        shortest: Jn.
+      en-gb:
+        long: The Gospel according to JOHN
+        short: John
+        shortest: Jhn
+  ACT:
+    order: 44
+    testament: NEW
+    names:
+      es-co:
+        long: Libro de los HECHOS de los apóstoles
+        short: Hechos
+        shortest: Hch.
+      en-gb:
+        long: The ACTS of the apostles
+        short: Acts
+        shortest: Acts
+  ROM:
+    order: 45
+    testament: NEW
+    names:
+      es-co:
+        long: Carta a los ROMANOS
+        short: Romanos
+        shortest: Rom.
+      en-gb:
+        long: Letter to the ROMANS
+        short: Romans
+        shortest: Rom
+  1CO:
+    order: 46
+    testament: NEW
+    names:
+      es-co:
+        long: Una carta a los CORINTIOS
+        short: 1 Corintios
+        shortest: 1 Cor.
+      en-gb:
+        long: A letter to the CORINTHIANS
+        short: 1 Corinthians
+        shortest: 1 Cor
+  2CO:
+    order: 47
+    testament: NEW
+    names:
+      es-co:
+        long: Otra carta a los CORINTIOS
+        short: 2 Corintios
+        shortest: 2 Cor.
+      en-gb:
+        long: Another letter to the CORINTHIANS
+        short: 2 Corinthians
+        shortest: 2 Cor
+  GAL:
+    order: 48
+    testament: NEW
+    names:
+      es-co:
+        long: Carta a los GÁLATAS
+        short: Gálatas
+        shortest: Gál.
+      en-gb:
+        long: Letter to the GALATIANS
+        short: Galatians
+        shortest: Gal
+  EPH:
+    order: 49
+    testament: NEW
+    names:
+      es-co:
+        long: Carta a los EFESIOS
+        short: Efesios
+        shortest: Efe.
+      en-gb:
+        long: Letter to the EPHESIANS
+        short: Ephesians
+        shortest: Eph
+  PHI:
+    order: 50
+    testament: NEW
+    names:
+      es-co:
+        long: Carta a los FILIPENSES
+        short: Filipenses
+        shortest: Fili.
+      en-gb:
+        long: Letter to the PHILIPPIANS
+        short: Philippians
+        shortest: Phil
+  COL:
+    order: 51
+    testament: NEW
+    names:
+      es-co:
+        long: Carta a los COLOSENSES
+        short: Colosenses
+        shortest: Colos.
+      en-gb:
+        long: Letter to the COLOSSIANS
+        short: Colossians
+        shortest: Cols
+  1TH:
+    order: 52
+    testament: NEW
+    names:
+      es-co:
+        long: Una carta a los TESALONICENSES
+        short: 1 Tesalonicenses
+        shortest: 1 Tes.
+      en-gb:
+        long: A letter to the THESSALONIANS
+        short: 1 Thessalonians
+        shortest: 1 Thes
+  2TH:
+    order: 53
+    testament: NEW
+    names:
+      es-co:
+        long: Otra carta a los TESALONICENSES
+        short: 2 Tesalonicenses
+        shortest: 2 Tes.
+      en-gb:
+        long: Another letter to the THESSALONIANS
+        short: 2 Thessalonians
+        shortest: 2 Thes
+  1TI:
+    order: 54
+    testament: NEW
+    names:
+      es-co:
+        long: Una carta a TIMOTEO
+        short: 1 Timoteo
+        shortest: 1 Tim.
+      en-gb:
+        long: A letter to TIMOTHY
+        short: 1 Timothy
+        shortest: 1 Tim
+  2TI:
+    order: 55
+    testament: NEW
+    names:
+      es-co:
+        long: Otra carta a TIMOTEO
+        short: 2 Timoteo
+        shortest: 2 Tim.
+      en-gb:
+        long: Another letter to TIMOTHY
+        short: 2 Timothy
+        shortest: 2 Tim
+  TIT:
+    order: 56
+    testament: NEW
+    names:
+      es-co:
+        long: Carta a TITO
+        short: Tito
+        shortest: Tito
+      en-gb:
+        long: Letter to TITUS
+        short: Titus
+        shortest: Tit
+  PLM:
+    order: 57
+    testament: NEW
+    names:
+      es-co:
+        long: Carta a FILEMÓN
+        short: Filemón
+        shortest: Filem.
+      en-gb:
+        long: Letter to PHILEMON
+        short: Philemon
+        shortest: Phlm
+  HEB:
+    order: 58
+    testament: NEW
+    names:
+      es-co:
+        long: Carta a los HEBREOS
+        short: Hebreos
+        shortest: Hebr.
+      en-gb:
+        long: Letter to the HEBREWS
+        short: Hebrews
+        shortest: Hbr
+  JAM:
+    order: 59
+    testament: NEW
+    names:
+      es-co:
+        long: Carta de SANTIAGO
+        short: Santiago
+        shortest: Sant.
+      en-gb:
+        long: A letter from JAMES
+        short: James
+        shortest: Jms
+  1PE:
+    order: 60
+    testament: NEW
+    names:
+      es-co:
+        long: Una carta de PEDRO
+        short: 1 Pedro
+        shortest: 1 Pedr.
+      en-gb:
+        long: A letter from PETER
+        short: 1 Peter
+        shortest: 1 Ptr
+  2PE:
+    order: 61
+    testament: NEW
+    names:
+      es-co:
+        long: Otra carta de PEDRO
+        short: 2 Pedro
+        shortest: 2 Pedr.
+      en-gb:
+        long: Another letter from PETER
+        short: 2 Peter
+        shortest: 2 Ptr
+  1JO:
+    order: 62
+    testament: NEW
+    names:
+      es-co:
+        long: Una carta de JUAN
+        short: 1 Juan
+        shortest: 1 Jn.
+      en-gb:
+        long: A letter from JOHN
+        short: 1 John
+        shortest: 1 Jhn
+  2JO:
+    order: 63
+    testament: NEW
+    names:
+      es-co:
+        long: Otra carta de JUAN
+        short: 2 Juan
+        shortest: 2 Jn.
+      en-gb:
+        long: Another letter from JOHN
+        short: 2 John
+        shortest: 2 Jhn
+  3JO:
+    order: 64
+    testament: NEW
+    names:
+      es-co:
+        long: Una tercera carta de JUAN
+        short: 3 Juan
+        shortest: 3 Jn.
+      en-gb:
+        long: A third letter from JOHN
+        short: 3 John
+        shortest: 3 Jhn
+  JUD:
+    order: 65
+    testament: NEW
+    names:
+      es-co:
+        long: Carta de JUDAS
+        short: Judas
+        shortest: Jud.
+      en-gb:
+        long: A letter from JUDE
+        short: Jude
+        shortest: Jude
+  REV:
+    order: 66
+    testament: NEW
+    names:
+      es-co:
+        long: El APOCALIPSIS o la Revelación de Jesucristo
+        short: Apocalipsis
+        shortest: Apoc.
+      en-gb:
+        long: The REVELATION
+        short: Revelation
+        shortest: Rev

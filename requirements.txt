@@ -5,3 +5,5 @@ Pillow
 pytesseract
 google-generativeai
 tqdm
+pyyaml
+pytest

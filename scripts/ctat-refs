@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# scripts/ctat-refs — rebuild the CTAT/HOTTP reference dataset.
+#
+# Usage:
+#   scripts/ctat-refs <command> [options] [--help]
+#
+# Commands:
+#   download   fetch the five CTAT volume PDFs from the URLs in urls.csv
+#   extract    render the PDFs, crop the running heads and OCR them
+#   clean      turn the OCR page texts into one row per CTAT verse
+#   refs       combine the cleaned CTAT data and the HOTTP text into refs.csv
+#   all        download -> extract -> clean -> refs (a full rebuild)
+#
+# Options:
+#   --pdfs DIR    where the volume PDFs are cached (default: output/ctat/pdfs)
+#   --in PATH     clean: the OCR results to read (default: the tracked snapshot)
+#   --out PATH    output file (defaults: cache for extract, the data folder otherwise)
+#   --volumes     extract: comma-separated volume numbers (e.g. 1,2)
+#   --pages       extract: 1-based page range, e.g. 148-152
+#   --help        show this help
+#
+# Inputs live in data/manual_datasets/ctat/; the OCR stages need the optional
+# `ctat` dependency group:
+#   .venv/bin/pip install -r requirements.txt
+
+set -euo pipefail
+
+REPO_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
+PYTHON="${TESSELA_PYTHON:-}"
+
+if [[ -z "${PYTHON}" ]]; then
+    if [[ -x "${REPO_ROOT}/.venv/bin/python" ]]; then
+        PYTHON="${REPO_ROOT}/.venv/bin/python"
+    else
+        PYTHON=python3
+    fi
+fi
+
+exec "${PYTHON}" "${REPO_ROOT}/scripts/ctat/cli.py" "$@"

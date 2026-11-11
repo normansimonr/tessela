@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# scripts/lxx-refs — build the Septuagint variant corpus from Tov's CATSS data.
+#
+# Usage:
+#   scripts/lxx-refs <command> [options] [--help]
+#
+# Commands:
+#   build      convert the raw .par files, align the versions and write the dataset
+#   normalise  reuse the committed normalisations; with --provider gemini, fill gaps
+#   check      validate the generated dataset
+#   all        build + check
+#
+# Options:
+#   --out PATH        build/check: the dataset file
+#   --normalise DIR   normalise: the normalisation folder
+#   --provider NAME   normalise: 'none' (default) or 'gemini'
+#   --only NAME       normalise: 'jps', 'lxx' or 'both'
+#   --limit N         normalise: stop after N missing verses
+#   --help            show this help
+
+set -euo pipefail
+
+REPO_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
+PYTHON="${TESSELA_PYTHON:-}"
+
+if [[ -z "${PYTHON}" ]]; then
+    if [[ -x "${REPO_ROOT}/.venv/bin/python" ]]; then
+        PYTHON="${REPO_ROOT}/.venv/bin/python"
+    else
+        PYTHON=python3
+    fi
+fi
+
+exec "${PYTHON}" "${REPO_ROOT}/scripts/lxx/cli.py" "$@"

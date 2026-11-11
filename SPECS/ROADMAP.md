@@ -21,11 +21,14 @@ evaluation, which comes before hypothesis generation and adversarial analysis.
 - [x] Tov's LXX retroversion processing (word-level → verse-level boolean flag)
 - [x] Qere/Ketiv extraction from STEP-Bible TAHOT (standalone scripts)
 - [x] CTAT OCR pipeline (PDF → images → OCR → verse/page mapping)
-- [ ] Integration of Qumran (Dead Sea Scrolls) textual data (~150 curated variants)
-- [ ] Samaritan Pentateuch enrichment (Hebrew text + descriptions for ~20 variants)
+- [x] Import textual-criticism datasets: Qumran (125 DSS references), Samaritan Pentateuch (33 references), Masoretic minority (1), enriched Qere/Ketiv (1,013 words / 837 verses with morphology, roots, readings), CTAT/HOTTP `refs.csv` (3,348 verses), Tov Septuagint corpus (`tov_flagged.csv`, 12,951 variants; 42 raw `.par` files, git-ignored per licensing policy; normalisation tables), Leningrad codex versification (23,213 verses), and book catalog (66 books) — see `data/README.md`
+- [x] Import and adapt the textual-criticism generator scripts: `scripts/qere-ketiv` (+ `scripts/qere_ketiv/`), `scripts/ctat-refs` (+ `scripts/ctat/`), `scripts/lxx-refs` (+ `scripts/lxx/`), with their tests; verified to reproduce the imported datasets (`./scripts/lxx-refs build`, `./scripts/ctat-refs refs`, Qere/Ketiv analyser)
+- [ ] Integrate the imported DSS/SP/CTAT/Septuagint data into the stage-gated pipeline (data is imported; pipeline wiring pending)
+- [ ] Samaritan Pentateuch enrichment (Hebrew text + descriptions for the ~33 variants; currently references only)
+- [ ] Dead Sea Scrolls enrichment (Hebrew text for the 125 variants; currently references only)
 - [ ] Peshitta data ingestion
 - [ ] Integrate Qere/Ketiv into main pipeline with morphology/roots
-- [ ] Integrate CTAT OCR output into variant evaluation
+- [ ] Integrate CTAT OCR/refs output into variant evaluation
 
 ### 1.2 Semantic normalization (done)
 - [x] Implementation of semantic normalization (atomic propositions via Gemini)
@@ -130,13 +133,13 @@ Each stage produces its own SQLite database for modularity and easy re-runs.
 | Witness | Ingestion | Alignment | Normalization | Comparison | Hypotheses | Status |
 |---|---|---|---|---|---|---|
 | Masoretic Text | Partial (English JPS; Hebrew in Tov CSV) | Partial | ✅ | ✅ | ❌ | In progress |
-| Qere/Ketiv | ✅ (standalone) | ❌ | ❌ | ❌ | ❌ | Not integrated |
-| Samaritan Pentateuch | Partial (verse refs only) | ❌ | ❌ | ❌ | ❌ | Needs enrichment |
-| Dead Sea Scrolls | ❌ | ❌ | ❌ | ❌ | ❌ | Not started |
-| Septuagint (Tov) | ✅ (word-level) | Partial | ❌ | ❌ | ❌ | Needs chain preservation |
+| Qere/Ketiv | ✅ (1,013 words / 837 verses, with morphology & roots) | ❌ | ❌ | ❌ | ❌ | Data imported; needs integration |
+| Samaritan Pentateuch | ✅ (33 verse references; no Hebrew text) | ❌ | ❌ | ❌ | ❌ | Data imported; needs enrichment |
+| Dead Sea Scrolls | ✅ (125 verse references; no Hebrew text) | ❌ | ❌ | ❌ | ❌ | Data imported; needs enrichment |
+| Septuagint (Tov) | ✅ (`tov_flagged.csv`, 12,951 variants; 42 `.par` files) | Partial | Partial (normalisation tables) | ❌ | ❌ | Data imported; needs chain preservation |
 | Vulgate | Partial (English DRA) | Partial | ❌ | ❌ | ❌ | Needs retroversion pipeline |
 | Peshitta | ❌ | ❌ | ❌ | ❌ | ❌ | Not started |
-| CTAT | ✅ (OCR) | ❌ | N/A | N/A | ❌ | Needs integration |
+| CTAT | ✅ (`refs.csv`, 3,348 verses + OCR pipeline) | ❌ | N/A | N/A | ❌ | Data imported; needs integration |
 
 ---
 

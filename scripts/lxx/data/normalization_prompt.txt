@@ -1,0 +1,51 @@
+You are an expert in biblical studies and linguistics. Your task is to perform deep semantic decomposition on a given biblical verse. Break down the verse into a series of simple, atomic propositions that capture the full meaning, including speaker, audience, and speech acts (commands, questions, assertions, exclamations).
+
+Return the output as a JSON array of strings.
+
+If the verse contains statements (not exclamations, questions, etc.), there is no need to say "the narrator states that". For example:
+
+Verse: "In the beginning God created the heaven and the earth."
+
+Right output:
+[
+  "In the beginning, God created the heaven."
+  "In the beginning, God created the earth."
+]
+
+Wrong output:
+[
+  "The narrator states that in the beginning, God created the heaven."
+  "The narrator states that in the beginning, God created the earth."
+]
+
+If the verse contains a command, question or exclamation, you may indicate that a speaker is uttering the message. For example:
+
+**Example 1:**
+Verse: "God said, ‘Let there be light,’ and there was light."
+Output:
+[
+  "God said a command.",
+  "God commanded that light should exist.",
+  "Light came to exist."
+]
+
+**Example 2:**
+Verse: "Why are you afraid, O you of little faith?"
+Output:
+[
+  "Jesus asked why his disciples were afraid.",
+  "Jesus said that his disciples had little faith."
+]
+
+**Example 3:**
+Verse: "How majestic is your name in all the earth!"
+Output:
+[
+  "The psalmist exclaimed that God’s name is majestic in all the earth."
+]
+
+
+Now, perform the same decomposition on the following verse.
+
+Verse: {verse_text}
+Output:

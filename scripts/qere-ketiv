@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+# scripts/qere-ketiv — rebuild the Qere/Ketiv datasets from the STEPBible TAHOT files.
+#
+# Usage:
+#   scripts/qere-ketiv <tahot-dir> [--out DIR] [--python PATH] [--help]
+#
+# Inputs:
+#   <tahot-dir> — a directory holding the four STEPBible "Translators Amalgamated
+#   Hebrew OT" (TAHOT) files, named exactly as STEPBible publishes them. See
+#   data/manual_datasets/qere_ketiv/README.md for where to get them.
+#
+# Outputs (in --out, default data/manual_datasets/qere_ketiv):
+#   extracted/{Gen-Deu,Jos-Est,Job-Sng,Isa-Mal}.tsv — stage 1 intermediates
+#   OT-QK.tsv                                      — stage 1 concatenation
+#   lemmas.tsv                                     — stage 1 Strong's to lemma index
+#   different_lexicon_entry.csv                    — stage 2
+#   same_lexicon_entry_different_parsing.csv       — stage 2
+#   stats.csv                                      — stage 2 summary
+#   qere_ketiv_verses.csv                          — stage 3, one row per verse
+#
+# Prerequisites:
+#   Python 3 with pandas: `.venv/bin/pip install -r requirements.txt`
+#
+# The three stages are idempotent and deterministic: the same TAHOT files give
+# byte-identical datasets.
+
+set -euo pipefail
+
+REPO_ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
+OUT_DIR="${REPO_ROOT}/data/manual_datasets/qere_ketiv"
+PYTHON="${TESSELA_PYTHON:-}"
+
+usage() {
+    awk 'NR == 1 { next } /^#/ { sub(/^# ?/, ""); print; next } { exit }' "$0"
+    exit "${1:-0}"
+}
+
+tahot_dir=""
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --out) OUT_DIR=$2; shift 2 ;;
+        --python) PYTHON=$2; shift 2 ;;
+        --help|-h) usage 0 ;;
+        -*) echo "qere-ketiv: unknown option: $1" >&2; usage 1 ;;
+        *) tahot_dir=$1; shift ;;
+    esac
+done
+
+if [[ -z "${tahot_dir}" ]]; then
+    echo "qere-ketiv: missing <tahot-dir>" >&2
+    usage 1
+fi
+if [[ ! -d "${tahot_dir}" ]]; then
+    echo "qere-ketiv: not a directory: ${tahot_dir}" >&2
+    exit 1
+fi
+
+if [[ -z "${PYTHON}" ]]; then
+    if [[ -x "${REPO_ROOT}/.venv/bin/python" ]]; then
+        PYTHON="${REPO_ROOT}/.venv/bin/python"
+    else
+        PYTHON=python3
+    fi
+fi
+if ! "${PYTHON}" -c "import pandas" >/dev/null 2>&1; then
+    cat >&2 <<EOF
+qere-ketiv: ${PYTHON} cannot import pandas.
+
+Create the environment and install the optional dependency:
+  python3 -m venv .venv
+  .venv/bin/pip install -r requirements.txt
+
+or pass --python /path/to/python.
+EOF
+    exit 1
+fi
+
+"${REPO_ROOT}/scripts/qere_ketiv/qk_extractor.sh" "${tahot_dir}" "${OUT_DIR}"
+"${PYTHON}" "${REPO_ROOT}/scripts/qere_ketiv/qk_analyzer.py" \
+    --input "${OUT_DIR}/OT-QK.tsv" --lemmas "${OUT_DIR}/lemmas.tsv" --out-dir "${OUT_DIR}"
+"${PYTHON}" "${REPO_ROOT}/scripts/qere_ketiv/verse_consolidator.py" \
+    --in-dir "${OUT_DIR}" --out-dir "${OUT_DIR}"
+
+echo "qere-ketiv: datasets rebuilt in ${OUT_DIR}"
