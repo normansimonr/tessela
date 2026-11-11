@@ -1,5 +1,11 @@
 # Septuagint variants (Tov / CATSS)
 
+> **Data is fetched locally.** `tov_flagged.csv` and `normalisation/` are not
+> tracked: they are derived from Tov's CATSS data and are written to
+> `data/derived/septuagint/` by `make data-septuagint` (see
+> [`DATA_LICENSES.md`](../../DATA_LICENSES.md)). The paths in this README are
+> relative to that derived folder unless stated otherwise.
+
 The verses where the Septuagint probably reflects a Hebrew Vorlage different
 from the Masoretic Text, with the evidence side by side: Tov's Greek, his
 retroverted Hebrew, the Masoretic text, a word-level diff, Brenton's English

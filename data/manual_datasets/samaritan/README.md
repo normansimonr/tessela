@@ -3,14 +3,19 @@
 The curated list of Samaritan Pentateuch (SP) variant passages, with the SP
 Hebrew text of those verses in the same file.
 
-## File
+## Files
 
-| File | Contents |
-|---|---|
-| `samaritan.csv` | 33 variant passages (`book`, `chapter`, `verse`) with their SP Hebrew text (`hebrew_text`) |
+| File | Tracked? | Contents |
+|---|---|---|
+| `samaritan.csv` | yes | 33 variant passages (`book`, `chapter`, `verse`) |
+| `data/derived/samaritan.csv` | no (git-ignored) | The same passages with their SP Hebrew text (`hebrew_text`) |
 
-One row per variant passage; the reference list and its Hebrew text share a
-single source of truth.
+The reference list is tracked; the Hebrew text is non-commercial and is
+generated locally by `make data-samaritan` (or
+`python3 scripts/fetch_data.py samaritan`). The derived file is the single
+source of truth for the enriched readings, and `src/witnesses.py` prefers it
+when it exists. The Bible references and their order come from the tracked
+list; only the `hebrew_text` column is added locally.
 
 ## Source and credit
 
@@ -37,12 +42,14 @@ transliteration) can be read with `pysword` if needed, but is not stored here.
 ## Rebuilding
 
 ```bash
-python3 scripts/fetch_samaritan_sp.py
+make data-samaritan
+# or: python3 scripts/fetch_data.py samaritan
 ```
 
-The script downloads the SP SWORD module from CrossWire (or uses a cached
-`--zip`), reads the references in `samaritan.csv`, and updates the
-`hebrew_text` column in place. It requires `pysword` (see `requirements.txt`).
+This seeds `data/derived/samaritan.csv` from the tracked reference list, then
+runs `scripts/fetch_samaritan_sp.py`, which downloads the SP SWORD module from
+CrossWire (or uses a cached `--zip`) and adds the `hebrew_text` column. It
+requires `pysword` (see `requirements.txt`).
 
 ## Note on the variant list
 

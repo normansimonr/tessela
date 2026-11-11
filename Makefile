@@ -1,4 +1,4 @@
-.PHONY: help install install-dev test lint format check demo
+.PHONY: help install install-dev test lint format check data data-samaritan data-dss data-septuagint demo
 
 help:
 	@echo "Tessela development targets:"
@@ -8,6 +8,10 @@ help:
 	@echo "  make lint          run ruff and mypy"
 	@echo "  make format        auto-fix and format with ruff"
 	@echo "  make check         run lint and tests"
+	@echo "  make data          fetch all non-commercial datasets into data/derived/"
+	@echo "  make data-samaritan  fetch the Samaritan Hebrew text"
+	@echo "  make data-dss        fetch the Dead Sea Scrolls readings (~2.5 GB clone)"
+	@echo "  make data-septuagint rebuild the Tov corpus from local .par files"
 	@echo "  make demo          print the MT / SP / DSS comparison for DEU 32:8"
 
 install:
@@ -28,6 +32,18 @@ format:
 	ruff format .
 
 check: lint test
+
+data:
+	python3 scripts/fetch_data.py all
+
+data-samaritan:
+	python3 scripts/fetch_data.py samaritan
+
+data-dss:
+	python3 scripts/fetch_data.py dss
+
+data-septuagint:
+	python3 scripts/fetch_data.py septuagint
 
 demo:
 	python3 scripts/demo.py "DEU 32:8"

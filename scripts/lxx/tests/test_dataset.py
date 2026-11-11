@@ -10,8 +10,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from lxx import align, dataset, tov  # noqa: E402
 
-DATA = Path(__file__).resolve().parents[3] / "data" / "intermediate_datasets" / "septuagint"
+DATA = Path(__file__).resolve().parents[3] / "data" / "derived" / "septuagint"
 RAW = Path(__file__).resolve().parents[3] / "data" / "raw"
+
+pytestmark = pytest.mark.skipif(
+    not (DATA / "tov_flagged.csv").exists(),
+    reason="the Tov corpus is fetched locally; run `make data-septuagint`",
+)
 
 
 def test_checked_in_dataset_passes_the_checks() -> None:

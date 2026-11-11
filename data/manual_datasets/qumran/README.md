@@ -3,16 +3,21 @@
 The curated list of Dead Sea Scrolls (DSS) variant passages, with the Hebrew
 readings of the scrolls that attest each passage.
 
-## File
+## Files
 
-| File | Contents |
-|---|---|
-| `qumran.csv` | One row per (passage, scroll) reading: `book`, `chapter`, `verse`, `scroll`, `hebrew_text`, `transcription` |
+| File | Tracked? | Contents |
+|---|---|---|
+| `qumran.csv` | yes | 125 variant passages (`book`, `chapter`, `verse`) |
+| `data/derived/qumran.csv` | no (git-ignored) | One row per (passage, scroll) reading: `book`, `chapter`, `verse`, `scroll`, `hebrew_text`, `transcription` |
 
-The list contains **125 distinct passages**; because a passage may be attested
-in more than one scroll, the file has **199 rows** (195 readings plus 4
-passages that are not present in the source dataset). To recover the passage
-list, use `SELECT DISTINCT book, chapter, verse`.
+The reference list is tracked; the readings are **CC BY-NC 4.0** and are
+generated locally by `make data-dss` (or `python3 scripts/fetch_data.py dss`).
+The derived file is the single source of truth for the enriched readings, and
+`src/witnesses.py` prefers it when it exists.
+
+The derived file has **199 rows**: 195 readings plus 4 passages that are not
+present in the source dataset. To recover the passage list, use
+`SELECT DISTINCT book, chapter, verse`.
 
 - `scroll` — the manuscript siglum as used by the dataset (e.g. `4Q9`,
   `1Qisaa`).
@@ -68,15 +73,18 @@ The Hebrew readings come from the **CACCHT Dead Sea Scrolls dataset**:
   project.
 - Licence: **Creative Commons Attribution-NonCommercial 4.0 International
   (CC BY-NC 4.0)**. Use for research; do not use commercially.
-- The dataset is **not vendored** in this repository (it is large). To rebuild
-  the CSV, clone it first:
+- The dataset is **not vendored** in this repository (it is large), and the
+  derived readings are written to the git-ignored `data/derived/qumran.csv`.
+  To rebuild them:
 
   ```bash
-  git clone --depth 1 https://github.com/ETCBC/dss.git /path/to/ETCBC-dss
-  python3 scripts/fetch_qumran_dss.py --dss-dir /path/to/ETCBC-dss
+  make data-dss
+  # or, with an existing clone:
+  python3 scripts/fetch_data.py dss --dss-dir /path/to/ETCBC-dss
   ```
 
-  The script requires `text-fabric` (see `requirements.txt`).
+  `make data-dss` clones `https://github.com/ETCBC/dss.git` (shallow, ~2.5 GB)
+  if needed. The script requires `text-fabric` (see `requirements.txt`).
 
 ## Missing passages
 

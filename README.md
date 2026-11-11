@@ -52,8 +52,10 @@ Differences vs MT (normalised consonantal comparison):
   DSS 4Q45: MT ' למספר בני ישראל' -> ''
 ```
 
-The comparison is consonantal: vowel points, cantillation, maqaf and
-punctuation are normalised away. DSS editorial markers (reconstruction,
+The DSS readings are fetched by `make data-dss` (or `make data`); the
+repository itself tracks only the reference lists. The comparison is
+consonantal: vowel points, cantillation, maqaf and punctuation are normalised
+away. DSS editorial markers (reconstruction,
 uncertainty, damage, lacunae) are preserved in the `transcription` column of
 `qumran.csv` and documented in
 [`data/manual_datasets/qumran/README.md`](data/manual_datasets/qumran/README.md).
@@ -64,8 +66,9 @@ uncertainty, damage, lacunae) are preserved in the `transcription` column of
 
 - A curated, source-aware dataset of textual variants across MT, SP, DSS,
   Qere/Ketiv, the Tov Septuagint corpus, and CTAT/HOTTP references.
-- Hebrew text for the curated Samaritan and DSS variant passages, with
-  manuscript attribution and ETCBC editorial notation.
+- On-demand Hebrew text for the curated Samaritan and DSS variant passages,
+  with manuscript attribution and ETCBC editorial notation (fetched locally by
+  `make data`, not tracked for licensing reasons).
 - A consonantal comparison demo (`scripts/demo.py` / `make demo`).
 - Reproducible generator scripts for the Qere/Ketiv, CTAT and Tov datasets
   (`scripts/qere-ketiv`, `scripts/ctat-refs`, `scripts/lxx-refs`), with tests.
@@ -108,13 +111,25 @@ vision is in [`SPECS/MISSION.md`](SPECS/MISSION.md).
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
+make data-samaritan       # fetch the non-commercial Samaritan Hebrew text
 make demo                 # print the MT / SP / DSS comparison for DEU 32:8
 ```
 
-Try other curated references:
+The repository tracks the **reference lists** for the Samaritan and DSS
+variants. Their readings are non-commercial, so they are fetched locally into
+`data/derived/` (git-ignored):
 
 ```bash
-python3 scripts/demo.py "Genesis 2:2"   # SP reads "the sixth" for MT "the seventh"
+make data-samaritan    # STEPBible SP module (~1 MB)
+make data-dss          # ETCBC/dss clone (~2.5 GB, optional)
+make data-septuagint   # rebuild from local Tov CATSS .par files
+make data              # all of the above
+```
+
+Try other curated references (after `make data-samaritan`):
+
+```bash
+python3 scripts/demo.py "Genesis 2:2"       # SP reads "the sixth" for MT "the seventh"
 python3 scripts/demo.py "Deuteronomy 27:4"  # SP reads Mount Gerizim for MT Mount Ebal
 ```
 
@@ -161,15 +176,20 @@ the mapping from the original import layout.
 
 The **code is MIT** (see [`LICENSE`](LICENSE)). The **data has separate
 licences**; the full details are in [`DATA_LICENSES.md`](DATA_LICENSES.md).
-The most important ones:
+
+The non-commercial datasets are **not tracked**. The repository contains only
+the factual reference lists for the Samaritan and DSS variants; their readings
+are fetched locally into `data/derived/` (git-ignored) by `make data`. The
+most important terms:
 
 - **Samaritan Pentateuch text:** STEPBible SP / CrossWire, “Copyrighted; Free
   non-commercial distribution”, digitized by Aleksandr Sigalov.
 - **Dead Sea Scrolls readings:** ETCBC/dss, **CC BY-NC 4.0**, based on Martin
   Abegg’s data.
 - **Qere/Ketiv:** STEPBible TAHOT, CC BY 4.0.
-- **Septuagint:** Tov CATSS `.par` files are **not tracked**; derived tables and
-  public-domain English texts are included.
+- **Septuagint:** Tov CATSS `.par` files are **not tracked**; the derived corpus
+  is rebuilt into `data/derived/` from local `.par` files, and the English texts
+  are public domain.
 - **CTAT/HOTTP:** page references only; the copyrighted CTAT PDFs are not
   tracked.
 

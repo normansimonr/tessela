@@ -5,7 +5,7 @@ Usage:
 
 Commands:
   build      convert the raw .par files, align the versions and write
-             data/intermediate_datasets/septuagint/tov_flagged.csv
+             data/derived/septuagint/tov_flagged.csv
   normalise  reuse the committed normalisations and (optionally) normalise the
              missing verses with Gemini; writes normalisation/{jps,lxx}.csv
   missing    write the list of verses still to normalise
@@ -38,7 +38,7 @@ from lxx import align, tov  # noqa: E402
 from lxx.dataset import build_dataset, check_dataset, write_dataset  # noqa: E402
 from lxx.normalise import normalise, write_missing  # noqa: E402
 
-DATA_DIR = REPO_ROOT / "data" / "intermediate_datasets" / "septuagint"
+DATA_DIR = REPO_ROOT / "data" / "derived" / "septuagint"
 RAW = REPO_ROOT / "data" / "raw"
 
 

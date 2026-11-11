@@ -33,6 +33,12 @@ def main(argv: list[str] | None = None) -> int:
     for reading in items:
         print(f"{reading.witness:4} {reading.detail}: {reading.text}")
 
+    if not any(reading.witness in ("SP", "DSS") for reading in items):
+        print(
+            "\nSamaritan and DSS readings are not available locally. "
+            "Run `make data` to fetch them; they are git-ignored for licensing reasons."
+        )
+
     base = next((reading for reading in items if reading.witness == "MT"), None)
     if base is not None:
         print("\nDifferences vs MT (normalised consonantal comparison):")

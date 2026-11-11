@@ -218,3 +218,7 @@ __marimo__/
 
 # LibreOffice lock files
 .~lock.*#
+
+# Locally fetched datasets (non-commercial; see DATA_LICENSES.md)
+data/derived/
+data/raw/dss/

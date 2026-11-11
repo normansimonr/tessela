@@ -25,9 +25,18 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
+DERIVED = DATA / "derived"
 MT_CSV = DATA / "reference" / "versification" / "leningrad_codex.csv"
-SP_CSV = DATA / "manual_datasets" / "samaritan" / "samaritan.csv"
-DSS_CSV = DATA / "manual_datasets" / "qumran" / "qumran.csv"
+SP_CSV = (
+    DERIVED / "samaritan.csv"
+    if (DERIVED / "samaritan.csv").exists()
+    else DATA / "manual_datasets" / "samaritan" / "samaritan.csv"
+)
+DSS_CSV = (
+    DERIVED / "qumran.csv"
+    if (DERIVED / "qumran.csv").exists()
+    else DATA / "manual_datasets" / "qumran" / "qumran.csv"
+)
 BOOKS_YAML = DATA / "reference" / "books.yaml"
 
 _POINTS = re.compile(r"[\u0591-\u05C7\u05BE\u05C0\u05C3\u05C6]")
@@ -108,7 +117,10 @@ def load_sp(book_id: str, chapter: int, verse: int) -> Reading | None:
                 and int(row["chapter"]) == chapter
                 and int(row["verse"]) == verse
             ):
-                return Reading("SP", "Samaritan Pentateuch", normalise(row["hebrew_text"]))
+                text = row.get("hebrew_text", "")
+                if text.strip():
+                    return Reading("SP", "Samaritan Pentateuch", normalise(text))
+                return None
     return None
 
 
@@ -125,11 +137,12 @@ def load_dss(book_id: str, chapter: int, verse: int) -> list[Reading]:
                 row["book"] == name
                 and int(row["chapter"]) == chapter
                 and int(row["verse"]) == verse
-                and row["hebrew_text"].strip()
             ):
-                readings.append(
-                    Reading("DSS", row["scroll"], normalise(row["hebrew_text"]))
-                )
+                text = row.get("hebrew_text", "")
+                if text.strip():
+                    readings.append(
+                        Reading("DSS", row.get("scroll", ""), normalise(text))
+                    )
     return sorted(readings, key=lambda reading: _natural_key(reading.detail))
 
 

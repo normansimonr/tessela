@@ -17,10 +17,10 @@ The dataset is not vendored in this repository (it is large). Clone it first:
 What it does
 ------------
 1. Loads the `tf/2.0.5` Text-Fabric dataset from the local clone.
-2. Reads `data/manual_datasets/qumran/qumran.csv` (the curated list of DSS
-   variant passages).
+2. Reads the tracked reference list (`data/manual_datasets/qumran/qumran.csv`).
 3. For each passage, finds the biblical verse in the DSS dataset and writes
-   one row per (passage, scroll) reading with:
+   the enriched copy to `data/derived/qumran.csv` (git-ignored), with one row
+   per (passage, scroll) reading and:
    - `scroll`: the manuscript (e.g. `4Q9`);
    - `hebrew_text`: the clean consonantal text;
    - `transcription`: the full ETCBC transcription, which preserves editorial
@@ -43,12 +43,14 @@ from __future__ import annotations
 import argparse
 import csv
 import re
+import shutil
 import sys
 from collections import defaultdict
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_CSV = REPO_ROOT / "data" / "manual_datasets" / "qumran" / "qumran.csv"
+DEFAULT_CSV = REPO_ROOT / "data" / "derived" / "qumran.csv"
+TRACKED_CSV = REPO_ROOT / "data" / "manual_datasets" / "qumran" / "qumran.csv"
 DEFAULT_VERSION = "2.0.5"
 
 # The curated list uses full English book names; the Text-Fabric dataset uses
@@ -233,6 +235,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--csv", type=Path, default=DEFAULT_CSV,
                         help="the curated variant list to update in place")
     args = parser.parse_args(argv)
+
+    if not args.csv.exists():
+        args.csv.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(TRACKED_CSV, args.csv)
 
     F, L = load_dataset(args.dss_dir, args.version)
     groups = collect_groups(F, L)

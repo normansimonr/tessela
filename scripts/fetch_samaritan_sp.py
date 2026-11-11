@@ -21,10 +21,10 @@ What it does
 ------------
 1. Downloads the SP SWORD module (`SP.zip`) from CrossWire (or uses a cached
    copy with `--zip`).
-2. Reads `data/manual_datasets/samaritan/samaritan.csv` (the curated list of
-   variant verses).
-3. Adds/updates a `hebrew_text` column in that same CSV, so the reference list
-   and its Hebrew text share one source of truth.
+2. Reads the tracked reference list (`data/manual_datasets/samaritan/samaritan.csv`)
+   and writes the enriched copy to `data/derived/samaritan.csv` (git-ignored).
+3. Adds/updates the `hebrew_text` column, so the reference list and its Hebrew
+   text share one source of truth.
 
 Usage
 -----
@@ -38,13 +38,15 @@ from __future__ import annotations
 import argparse
 import csv
 import io
+import shutil
 import sys
 import tempfile
 import zipfile
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_CSV = REPO_ROOT / "data" / "manual_datasets" / "samaritan" / "samaritan.csv"
+DEFAULT_CSV = REPO_ROOT / "data" / "derived" / "samaritan.csv"
+TRACKED_CSV = REPO_ROOT / "data" / "manual_datasets" / "samaritan" / "samaritan.csv"
 SP_URL = "https://www.crosswire.org/ftpmirror/pub/sword/packages/rawzip/SP.zip"
 
 # The curated list uses full English book names; the SWORD module uses OSIS IDs.
@@ -135,6 +137,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--csv", type=Path, default=DEFAULT_CSV,
                         help="the curated variant list to update in place")
     args = parser.parse_args(argv)
+
+    if not args.csv.exists():
+        args.csv.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(TRACKED_CSV, args.csv)
 
     with tempfile.TemporaryDirectory(prefix="sp-") as temporary:
         temp = Path(temporary)

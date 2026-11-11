@@ -16,16 +16,14 @@ data/
 │   ├── engDRA_vpl/               # Douay–Rheims Vulgate (English)
 │   ├── engjps_vpl/               # JPS 1917 (English)
 │   └── LXX_Tov/                  # Tov CATSS .par files (42; git-ignored, local only)
-├── intermediate_datasets/        # Processed datasets
+├── derived/                      # Fetched locally (git-ignored): SP/DSS text, Tov corpus
+├── intermediate_datasets/        # Legacy processed datasets
 │   ├── tov.csv                   # Tov word-level alignment (legacy)
 │   ├── tov_distilled.csv         # Tov verse-level boolean flag (legacy)
-│   └── septuagint/               # Septuagint variant corpus
-│       ├── tov_flagged.csv       # One row per LXX variant (12,951)
-│       ├── normalisation/        # Semantic normalisations (jps/lxx/missing)
-│       └── README.md
-├── manual_datasets/              # Hand-compiled / derived textual-criticism data
-│   ├── qumran/                   # Dead Sea Scrolls variants + Hebrew readings
-│   ├── samaritan/                # Samaritan Pentateuch variants + Hebrew text (33)
+│   └── septuagint/README.md      # Septuagint corpus documentation
+├── manual_datasets/              # Curated reference lists / permissive datasets
+│   ├── qumran/                   # DSS variant references (125)
+│   ├── samaritan/                # SP variant references (33)
 │   ├── masoretic_minority/       # Minority readings within MT (1)
 │   ├── qere_ketiv/               # Qere/Ketiv dataset (from STEPBible TAHOT)
 │   └── ctat/                     # CTAT/HOTTP references + OCR pipeline
@@ -36,18 +34,20 @@ data/
 └── sqlite/                       # SQLite database (bible.db) and views
 ```
 
-## Imported datasets
+## Datasets
+
+Non-commercial readings are **not tracked**: the repository keeps the factual reference lists, and `make data` fetches/rebuilds the text into `data/derived/` (git-ignored). See `DATA_LICENSES.md`.
 
 | Dataset | Original source | Tessela location | Rows | Notes |
 |---|---|---|---|---|
-| Dead Sea Scrolls variants | `textual_criticism/qumran.csv` | `manual_datasets/qumran/qumran.csv` | 125 passages / 199 rows | One row per (passage, scroll) reading: `scroll`, `hebrew_text`, `transcription`; readings from ETCBC/dss 2.0.5 (credited in `qumran/README.md`) |
-| Samaritan Pentateuch variants | `textual_criticism/samaritan.csv` | `manual_datasets/samaritan/samaritan.csv` | 33 | `book`, `chapter`, `verse`, `hebrew_text`; SP Hebrew text from STEPBible SP (credited in `samaritan/README.md`) |
+| Dead Sea Scrolls references | `textual_criticism/qumran.csv` | `manual_datasets/qumran/qumran.csv` | 125 passages | `book`, `chapter`, `verse` only (tracked); readings are fetched into `derived/qumran.csv` (199 rows, git-ignored) |
+| Samaritan Pentateuch references | `textual_criticism/samaritan.csv` | `manual_datasets/samaritan/samaritan.csv` | 33 | `book`, `chapter`, `verse` only (tracked); the Hebrew text is fetched into `derived/samaritan.csv` (git-ignored) |
 | Masoretic minority readings | `textual_criticism/masoretic_minority.csv` | `manual_datasets/masoretic_minority/masoretic_minority.csv` | 1 | In progress |
 | Qere/Ketiv | `textual_criticism/qere_ketiv/` | `manual_datasets/qere_ketiv/` | 1,013 words / 837 verses | Richer than the previous Tessela dataset: readings, transliteration, gloss, root, Strong's, morphology, variant type, proper-name flag |
 | CTAT/HOTTP references | `textual_criticism/ctat/` | `manual_datasets/ctat/` | 3,348 verses | Adds `refs.csv` (one row per verse with HOTTP flag and CTAT page) and README |
-| Septuagint variants (Tov) | `textual_criticism/septuagint/` | `intermediate_datasets/septuagint/` | 12,951 | Greek, retroverted Hebrew, Masoretic, word diff, Brenton, JPS, LXX-only flag, Tov markers |
+| Septuagint variants (Tov) | `textual_criticism/septuagint/` | `derived/septuagint/` (git-ignored) | 12,951 | Greek, retroverted Hebrew, Masoretic, word diff, Brenton, JPS, LXX-only flag, Tov markers |
 | Tov CATSS `.par` files | `textual_criticism/septuagint/raw/LXX_Tov/` | `raw/LXX_Tov/` | 42 files | Word-level Hebrew/Greek alignment; **git-ignored** (`*.par`) per the repository's licensing policy, so present locally only |
-| Septuagint normalisations | `textual_criticism/septuagint/normalisation/` | `intermediate_datasets/septuagint/normalisation/` | ~25k | Atomic propositions for JPS and LXX |
+| Septuagint normalisations | `textual_criticism/septuagint/normalisation/` | `derived/septuagint/normalisation/` (git-ignored) | ~25k | Atomic propositions for JPS and LXX |
 | Leningrad codex text | `references/standards/versification/leningrad_codex.csv` | `reference/versification/leningrad_codex.csv` | 23,213 | Hebrew verse text (unpointed/pointed) |
 | Book catalog | `meta/books.yaml` | `reference/books.yaml` | 66 books | Canonical IDs, order, testament, names |
 
@@ -97,12 +97,12 @@ The imported subfolder READMEs describe the original layout:
 
 | Original path | Tessela path |
 |---|---|
-| `textual_criticism/qumran.csv` | `data/manual_datasets/qumran/qumran.csv` |
-| `textual_criticism/samaritan.csv` | `data/manual_datasets/samaritan/samaritan.csv` |
+| `textual_criticism/qumran.csv` | `data/manual_datasets/qumran/qumran.csv` (references) + `data/derived/qumran.csv` (readings) |
+| `textual_criticism/samaritan.csv` | `data/manual_datasets/samaritan/samaritan.csv` (references) + `data/derived/samaritan.csv` (text) |
 | `textual_criticism/masoretic_minority.csv` | `data/manual_datasets/masoretic_minority/masoretic_minority.csv` |
 | `textual_criticism/qere_ketiv/` | `data/manual_datasets/qere_ketiv/` |
 | `textual_criticism/ctat/` | `data/manual_datasets/ctat/` |
-| `textual_criticism/septuagint/` | `data/intermediate_datasets/septuagint/` |
+| `textual_criticism/septuagint/` | `data/derived/septuagint/` (git-ignored) |
 | `references/standards/versification/` | `data/reference/versification/` |
 | `data/reference/books.yaml` | `data/reference/books.yaml` |
 
@@ -113,7 +113,7 @@ The generator scripts were imported and adapted to Tessela's
 |---|---|---|
 | `scripts/qere-ketiv` | `manual_datasets/qere_ketiv/` | STEPBible TAHOT files (not tracked) |
 | `scripts/ctat-refs` | `manual_datasets/ctat/refs.csv` (and OCR stages) | `urls.csv`, `header_coordinates.csv`, `HOTTP-PENTATEUCH.txt` |
-| `scripts/lxx-refs` | `intermediate_datasets/septuagint/tov_flagged.csv` and normalisations | `raw/LXX_Tov/*.par`, `raw/eng-*/…txt`, `reference/versification/leningrad_codex.csv` |
+| `scripts/lxx-refs` | `derived/septuagint/tov_flagged.csv` and normalisations | `raw/LXX_Tov/*.par`, `raw/eng-*/…txt`, `reference/versification/leningrad_codex.csv` |
 
 The underlying modules live in `scripts/lxx/`, `scripts/ctat/` and
 `scripts/qere_ketiv/`; each has tests. Verified against the imported snapshots:

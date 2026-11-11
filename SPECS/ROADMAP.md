@@ -53,6 +53,8 @@ judgment. This cycle takes precedence over all research-roadmap work.
       slice used by `make demo`).
 - [x] Add `DATA_LICENSES.md` separating the MIT code licence from the dataset
       licences.
+- [x] Move the non-commercial readings behind `make data` (`scripts/fetch_data.py`);
+      track only the factual reference lists in the repository.
 
 ## P1 — Build the vertical slice (the single most compelling thing)
 
@@ -62,7 +64,8 @@ working end-to-end feature changes the story from “ambitious vision” to
 
 - [ ] Implement a `tessela` CLI with a `dossier` command:
   - load MT (`data/reference/versification/leningrad_codex.csv`), SP
-    (`samaritan.csv`) and DSS (`qumran.csv`) for a reference;
+    (`data/derived/samaritan.csv`) and DSS (`data/derived/qumran.csv`) for a
+    reference (with a clear hint when `make data` has not been run);
   - normalise (remove points/cantillation, maqaf → space, punctuation);
   - print a side-by-side comparison with the differences highlighted;
   - emit a Markdown dossier with provenance and a short assessment.
