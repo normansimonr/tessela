@@ -30,26 +30,29 @@ judgment. This cycle takes precedence over all research-roadmap work.
    active development.
 5. **`docs/decisions/`** with short ADRs showing engineering trade-offs.
 
-## P0 — Fix the first impression (do first)
+## P0 — Fix the first impression (COMPLETE)
 
-- [ ] Make the repo public (or grant the reviewer access); verify description,
-      topics and social preview.
-- [ ] README overhaul:
-  - one-sentence pitch and a concrete example (e.g. Deut 32:8: MT “sons of
+- [x] Make the repo public; description, topics and demo set.
+- [x] README overhaul:
+  - one-sentence pitch and a concrete example (Deut 32:8: MT “sons of
     Israel” vs 4Q37 “sons of God”);
-  - terminal screenshot/GIF of the demo;
+  - terminal demo output (`make demo`) — a rendered GIF can be added later;
   - Mermaid architecture diagram (Stage 0 → 7);
-  - “Current status” table (works end-to-end vs. planned);
+  - “Current status” and “What it does — and what is planned” tables;
   - three-command quickstart;
-  - “Why this is hard” section (versification, fragmentary DSS, provenance,
-    attested vs. reconstructed).
-- [ ] Add CI (`.github/workflows/ci.yml`) running `ruff`, `mypy` and `pytest`;
-      add the badge to the README.
-- [ ] Add `pyproject.toml` with `[tool.ruff]`, `[tool.mypy]` and
+  - “Why this exists” and data/licensing sections.
+- [x] Add CI (`.github/workflows/ci.yml`) running `ruff`, `mypy` and `pytest`;
+      badge added to the README.
+- [x] Add `pyproject.toml` with `[tool.ruff]`, `[tool.mypy]` and
       `[tool.pytest.ini_options]`.
-- [ ] Add a `Makefile` (`make install`, `make test`, `make lint`, `make demo`).
-- [ ] Add GitHub topics (`biblical-studies`, `textual-criticism`, `nlp`,
-      `python`, `ai`).
+- [x] Add a `Makefile` (`make install`, `make install-dev`, `make test`,
+      `make lint`, `make check`, `make demo`).
+- [x] Add GitHub topics (`biblical-studies`, `textual-criticism`,
+      `dead-sea-scrolls`, `septuagint`, `hebrew-bible`, `nlp`, `python`, `ai`).
+- [x] Add `src/witnesses.py` + `scripts/demo.py` (a first, data-only vertical
+      slice used by `make demo`).
+- [x] Add `DATA_LICENSES.md` separating the MIT code licence from the dataset
+      licences.
 
 ## P1 — Build the vertical slice (the single most compelling thing)
 
