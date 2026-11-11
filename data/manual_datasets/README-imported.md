@@ -4,9 +4,11 @@ The translation is made from the Masoretic Text. Where another textual witness
 carries a different reading that could change how a verse is translated, the
 passage is recorded here so that the translator can weigh the evidence. The
 variant lists (`samaritan.csv`, `qumran.csv`, `masoretic_minority.csv`) record
-**verse references only**, except `samaritan.csv`, which also carries the
-Samaritan Pentateuch Hebrew text of its verses in a `hebrew_text` column (see
-[`samaritan/README.md`](samaritan/README.md) for its source and credit).
+**verse references**, and two of them also carry the witness's Hebrew text:
+`samaritan.csv` has the Samaritan Pentateuch text in `hebrew_text` (see
+[`samaritan/README.md`](samaritan/README.md)), and `qumran.csv` has the Dead Sea
+Scrolls readings, one row per (passage, scroll), in `scroll`, `hebrew_text` and
+`transcription` (see [`qumran/README.md`](qumran/README.md)).
 
 These three datasets are hand-maintained — nothing generates them and nothing
 checks them yet. They are the translator's working list, which Milestone 4 of the
@@ -18,7 +20,7 @@ Testament variants are brought into the content.
 | File | Witness | Entries |
 |:--|:--|--:|
 | `samaritan.csv` | Samaritan Pentateuch (Genesis–Deuteronomy), with SP Hebrew text | 33 |
-| `qumran.csv` | Qumran — the Dead Sea Scrolls | 125 |
+| `qumran.csv` | Qumran — the Dead Sea Scrolls, with Hebrew readings | 125 passages / 199 rows |
 | `masoretic_minority.csv` | Minority readings within the Masoretic tradition itself | 1 (in progress) |
 
 ### How the datasets were made

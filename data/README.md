@@ -24,7 +24,7 @@ data/
 │       ├── normalisation/        # Semantic normalisations (jps/lxx/missing)
 │       └── README.md
 ├── manual_datasets/              # Hand-compiled / derived textual-criticism data
-│   ├── qumran/                   # Dead Sea Scrolls variant list (125)
+│   ├── qumran/                   # Dead Sea Scrolls variants + Hebrew readings
 │   ├── samaritan/                # Samaritan Pentateuch variants + Hebrew text (33)
 │   ├── masoretic_minority/       # Minority readings within MT (1)
 │   ├── qere_ketiv/               # Qere/Ketiv dataset (from STEPBible TAHOT)
@@ -40,7 +40,7 @@ data/
 
 | Dataset | Original source | Tessela location | Rows | Notes |
 |---|---|---|---|---|
-| Dead Sea Scrolls variants | `textual_criticism/qumran.csv` | `manual_datasets/qumran/qumran.csv` | 125 | Verse references only (English-compiled list; no Hebrew text) |
+| Dead Sea Scrolls variants | `textual_criticism/qumran.csv` | `manual_datasets/qumran/qumran.csv` | 125 passages / 199 rows | One row per (passage, scroll) reading: `scroll`, `hebrew_text`, `transcription`; readings from ETCBC/dss 2.0.5 (credited in `qumran/README.md`) |
 | Samaritan Pentateuch variants | `textual_criticism/samaritan.csv` | `manual_datasets/samaritan/samaritan.csv` | 33 | `book`, `chapter`, `verse`, `hebrew_text`; SP Hebrew text from STEPBible SP (credited in `samaritan/README.md`) |
 | Masoretic minority readings | `textual_criticism/masoretic_minority.csv` | `manual_datasets/masoretic_minority/masoretic_minority.csv` | 1 | In progress |
 | Qere/Ketiv | `textual_criticism/qere_ketiv/` | `manual_datasets/qere_ketiv/` | 1,013 words / 837 verses | Richer than the previous Tessela dataset: readings, transliteration, gloss, root, Strong's, morphology, variant type, proper-name flag |
@@ -60,8 +60,14 @@ data/
     2025), <https://doi.org/10.11647/OBP.0415>.
   - Qumran: Abegg, Flint & Ulrich, *The Dead Sea Scrolls Bible* (HarperOne,
     1999).
-  - These are **verse-reference lists**; the selection is subjective and not a
-    complete critical apparatus.
+  - These are **working lists**; the selection is subjective and not a complete
+    critical apparatus.
+- **Dead Sea Scrolls Hebrew readings** (the `scroll`, `hebrew_text` and
+  `transcription` columns of `qumran/qumran.csv`) come from the **CACCHT Dead
+  Sea Scrolls dataset** (<https://github.com/ETCBC/dss>), Text-Fabric version
+  2.0.5, based on Martin Abegg's data and prepared by Jarod Jacobs, Martijn
+  Naaijer and Dirk Roorda. Licence: **CC BY-NC 4.0**. See
+  `manual_datasets/qumran/README.md`.
 - **Samaritan Pentateuch Hebrew text** (the `hebrew_text` column of
   `samaritan/samaritan.csv`) is from the **STEPBible SP version**
   (<https://www.stepbible.org/version.jsp?version=SP>), a SWORD module

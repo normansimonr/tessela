@@ -26,7 +26,8 @@ evaluation, which comes before hypothesis generation and adversarial analysis.
 - [ ] Integrate the imported DSS/SP/CTAT/Septuagint data into the stage-gated pipeline (data is imported; pipeline wiring pending)
 - [x] Samaritan Pentateuch Hebrew text imported for the 33 curated variants (the `hebrew_text` column of `data/manual_datasets/samaritan/samaritan.csv`, STEPBible SP; credited in `samaritan/README.md`)
 - [ ] Samaritan Pentateuch enrichment beyond the Hebrew text: variant descriptions, alignment notes, and integration into the variant dataset
-- [ ] Dead Sea Scrolls enrichment (Hebrew text for the 125 variants; currently references only)
+- [x] Dead Sea Scrolls Hebrew readings imported for the 125 curated passages (`qumran.csv`: one row per passage and scroll, with clean text and ETCBC transcription; ETCBC/dss 2.0.5, CC BY-NC 4.0; credited in `qumran/README.md`)
+- [ ] Dead Sea Scrolls enrichment beyond the Hebrew readings: alignment notes, variant descriptions, and integration into the variant dataset
 - [ ] Peshitta data ingestion
 - [ ] Integrate Qere/Ketiv into main pipeline with morphology/roots
 - [ ] Integrate CTAT OCR/refs output into variant evaluation
@@ -136,7 +137,7 @@ Each stage produces its own SQLite database for modularity and easy re-runs.
 | Masoretic Text | Partial (English JPS; Hebrew in Tov CSV) | Partial | ✅ | ✅ | ❌ | In progress |
 | Qere/Ketiv | ✅ (1,013 words / 837 verses, with morphology & roots) | ❌ | ❌ | ❌ | ❌ | Data imported; needs integration |
 | Samaritan Pentateuch | ✅ (33 references + SP Hebrew text) | ❌ | ❌ | ❌ | ❌ | Hebrew text imported; needs integration |
-| Dead Sea Scrolls | ✅ (125 verse references; no Hebrew text) | ❌ | ❌ | ❌ | ❌ | Data imported; needs enrichment |
+| Dead Sea Scrolls | ✅ (125 passages / 199 readings, with Hebrew text) | ❌ | ❌ | ❌ | ❌ | Hebrew readings imported; needs integration |
 | Septuagint (Tov) | ✅ (`tov_flagged.csv`, 12,951 variants; 42 `.par` files) | Partial | Partial (normalisation tables) | ❌ | ❌ | Data imported; needs chain preservation |
 | Vulgate | Partial (English DRA) | Partial | ❌ | ❌ | ❌ | Needs retroversion pipeline |
 | Peshitta | ❌ | ❌ | ❌ | ❌ | ❌ | Not started |

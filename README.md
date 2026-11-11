@@ -203,8 +203,11 @@ files, which are not tracked (see `data/manual_datasets/qere_ketiv/README.md`).
   `hebrew_text` column gives the SP Hebrew text from the STEPBible SP version
   (<https://www.stepbible.org/version.jsp?version=SP>), a CrossWire SWORD
   module digitized by Aleksandr Sigalov (see `data/manual_datasets/samaritan/README.md`)
-- **Dead Sea Scrolls**: curated variant list (`data/manual_datasets/qumran/`),
-  from Abegg, Flint & Ulrich, *The Dead Sea Scrolls Bible* (HarperOne, 1999)
+- **Dead Sea Scrolls**: curated variant list (`data/manual_datasets/qumran/qumran.csv`)
+  from Abegg, Flint & Ulrich, *The Dead Sea Scrolls Bible* (HarperOne, 1999);
+  Hebrew readings (one row per passage and scroll) from the CACCHT Dead Sea
+  Scrolls dataset (<https://github.com/ETCBC/dss>), Text-Fabric 2.0.5, based on
+  Martin Abegg's data, CC BY-NC 4.0 (see `data/manual_datasets/qumran/README.md`)
 - **Masoretic minority readings**: curated list
   (`data/manual_datasets/masoretic_minority/`)
 - **Leningrad codex**: verse text for versification/alignment

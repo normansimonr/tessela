@@ -7,4 +7,5 @@ google-generativeai
 tqdm
 pyyaml
 pysword
+text-fabric
 pytest
